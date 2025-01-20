@@ -8,7 +8,7 @@ export default function Home() {
 
       <header className="bg-blue-950 text-white">
         <nav className="container mx-auto flex justify-between items-center p-4">
-          <div className="text-2xl font-bold">Maldives Paradise</div>
+          <div className="text-2xl font-bold">Cruise Republic</div>
           <ul className="flex space-x-4">
             <li><a href="#about" className="hover:text-gray-400">About</a></li>
             <li><a href="#services" className="hover:text-gray-400">Services</a></li>
@@ -72,7 +72,7 @@ export default function Home() {
       </main>
 
       <footer className="bg-blue-950 text-white py-4 text-center">
-        <p>&copy; 2025 Maldives Paradise. All rights reserved.</p>
+        <p>&copy; 2025 Cruise Republic. All rights reserved.</p>
       </footer>
     </div>
   );
