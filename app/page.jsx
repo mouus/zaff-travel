@@ -147,7 +147,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/dives"
+                href="/dive-itineraries"
                 className="bg-blue-800 hover:bg-blue-950 text-white font-semibold py-3 px-6 rounded"
               >
                 Learn More
