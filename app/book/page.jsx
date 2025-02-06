@@ -55,10 +55,10 @@ function BookingPage() {
                 {/* Mobile Menu */}
                 {menuOpen && (
                     <div className="md:hidden bg-slate-900 text-white flex flex-col gap-4 p-4">
-                        <Link href="/south-dives" className="hover:underline transition text-lg">
+                        <Link href="/dive-itineraries" className="hover:underline transition text-lg">
                             Dive Itineraries
                         </Link>
-                        <Link href="/dives" className="hover:underline transition text-lg">
+                        <Link href="/our-criuse" className="hover:underline transition text-lg">
                             Our Cruise
                         </Link>
                         <Link href="/about-us" className="hover:underline transition text-lg">

@@ -59,7 +59,7 @@ function DiveItinerariesPage() {
             <Link href="/dive-itineraries" className="hover:underline transition text-lg">
               Dive Itineraries
             </Link>
-            <Link href="/our-curise" className="hover:underline transition text-lg">
+            <Link href="/our-cruise" className="hover:underline transition text-lg">
               Our Cruise
             </Link>
             <Link href="/about-us" className="hover:underline transition text-lg">
