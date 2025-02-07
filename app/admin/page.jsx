@@ -11,7 +11,11 @@ function AdminDashboard() {
   }, []);
 
   const fetchSupabaseData = async () => {
-    const { data, error } = await supabase.from("info").select("*");
+    const { data, error } = await supabase
+    .from("info")
+    .select("*")
+    .order("created_at", { ascending: false }); // Orders newest records first
+    
     if (error) {
       console.error("Error fetching bookings:", error);
     } else {
