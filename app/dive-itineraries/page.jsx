@@ -134,10 +134,10 @@ function DiveItinerariesPage() {
                 className="w-full h-64 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2">Wreck Dive Expedition</h3>
+                <h3 className="text-2xl font-bold mb-2">Tiger Shark Expedition</h3>
                 <p className="text-gray-700 mb-4">
-                  Explore mysterious shipwrecks and uncover the secrets of the
-                  deep.
+                Immerse yourself in the thrilling world of tiger sharks—witness these majestic predators up close as 
+                you explore their natural habitat and learn about their fascinating behavior.
                 </p>
                 <Link href={'/book'} className="bg-blue-800 text-white py-2 px-4 rounded hover:bg-blue-900 transition">
                   Learn More
@@ -162,6 +162,25 @@ function DiveItinerariesPage() {
                 </Link>
               </div>
             </div>
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img
+                src="manta.jpg"
+                alt="Itinerary 3"
+                className="w-full h-64 object-cover"
+              />
+                 <div className="p-6">
+                <h3 className="text-2xl font-bold mb-2">Addu Manta Point</h3>
+                <p className="text-gray-700 mb-4">
+                 Embark on a deep-sea adventure and encounter graceful 
+                 manta rays in their natural habitat.
+                </p>
+                <Link href={'/book'} className="bg-blue-800 text-white py-2 px-4 rounded hover:bg-blue-900 transition">
+                  Learn More
+                </Link>
+              </div>
+            </div>
+
+       
             {/* Itinerary Card 4 */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <img

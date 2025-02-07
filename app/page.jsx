@@ -176,14 +176,14 @@ export default function Home() {
                   South Dives
                 </h2>
                 <p className="text-base sm:text-lg leading-relaxed text-slate-700">
-                  Embark on an unforgettable diving adventure in the pristine waters of
-                  the southern Maldives. Begin your journey in Fuvahmulah, renowned for its
-                  unique ecosystem and encounters with tiger sharks. Next, venture to Addu
-                  Atoll, where vibrant coral reefs and abundant marine life await. Return to
-                  Fuvahmulah for another breathtaking dive, then proceed to the serene waters
-                  of Hithadhoo, known for its tranquil beauty and rich underwater biodiversity.
-                  Experience the magic of these exclusive dive spots, each offering a new and
-                  thrilling perspective of the Maldives' underwater paradise.
+                 
+                Ideal for adventurous and experienced divers, the Deep South offers one 
+                of the best routes in the Maldives for encountering a diverse range of 
+                pelagic marine life. This itinerary is a top choice for deep-sea enthusiasts 
+                and has become a favorite among our returning guests. If you&apos;re seeking 
+                thrilling drift dives, encounters with tiger sharks, hammerheads, and other 
+                ocean giants, the Deep South is an experience like no other.
+
                 </p>
               </div>
             </div>
