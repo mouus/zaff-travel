@@ -12,14 +12,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Fuvahmulah Dive - Maldives Dive Adventures",
-  description:
-    "Experience the ultimate diving adventure in Fuvahmulah and the Maldives. Explore vibrant coral reefs, encounter rich marine life, and embark on an unforgettable underwater journey.",
-  keywords:
-    "fuvahmulah dive, maldives dive, diving in fuvahmulah, maldives diving, underwater adventure, coral reefs, marine life, Cruise Republic",
+    title: "Fuvahmulah Dive - Maldives Dive Adventures",
+    description:
+      "Experience the ultimate diving adventure in Fuvahmulah and the Maldives. Explore vibrant coral reefs, encounter rich marine life, and embark on an unforgettable underwater journey.",
     icons: {
-      icon: '/logo.jpg', // or '/favicon.png'
+      icon: "/favicon.jpg",
     },
+ 
+    keywords:
+    "fuvahmulah dive, maldives dive, diving in fuvahmulah, maldives diving, underwater adventure, coral reefs, marine life, Cruise Republic",
+  
     openGraph: {
     title: "Fuvahmulah Dive - Maldives Dive Adventures",
     description:
