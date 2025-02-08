@@ -11,7 +11,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// SEO Metadata for better search engine indexing
 export const metadata = {
   title: "Fuvahmulah Dive - Maldives Dive Adventures",
   description:
@@ -22,11 +21,11 @@ export const metadata = {
     title: "Fuvahmulah Dive - Maldives Dive Adventures",
     description:
       "Experience the ultimate diving adventure in Fuvahmulah and the Maldives. Explore vibrant coral reefs, encounter rich marine life, and embark on an unforgettable underwater journey.",
-    url: "https://yourwebsite.com", // Replace with your actual website URL
+    url: "http://www.cruiserepublicmaldives.com", // Replace with your actual website URL
     siteName: "Cruise Republic",
     images: [
       {
-        url: "https://yourwebsite.com/path/to/your-image.jpg", // Replace with your actual image URL
+        url: "http://www.cruiserepublicmaldives.com/boat-top.jpg", // Updated to use boat-top.jpg from your public folder
         width: 1200,
         height: 630,
         alt: "Fuvahmulah Dive",
@@ -40,7 +39,7 @@ export const metadata = {
     title: "Fuvahmulah Dive - Maldives Dive Adventures",
     description:
       "Experience the ultimate diving adventure in Fuvahmulah and the Maldives.",
-    images: ["https://yourwebsite.com/path/to/your-image.jpg"], // Replace with your actual image URL
+    images: ["http://www.cruiserepublicmaldives.com/boat-top.jpg"], // Updated image URL for Twitter card
   },
 };
 
