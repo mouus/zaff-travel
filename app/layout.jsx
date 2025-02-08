@@ -17,7 +17,10 @@ export const metadata = {
     "Experience the ultimate diving adventure in Fuvahmulah and the Maldives. Explore vibrant coral reefs, encounter rich marine life, and embark on an unforgettable underwater journey.",
   keywords:
     "fuvahmulah dive, maldives dive, diving in fuvahmulah, maldives diving, underwater adventure, coral reefs, marine life, Cruise Republic",
-  openGraph: {
+    icons: {
+      icon: '/logo.jpg', // or '/favicon.png'
+    },
+    openGraph: {
     title: "Fuvahmulah Dive - Maldives Dive Adventures",
     description:
       "Experience the ultimate diving adventure in Fuvahmulah and the Maldives. Explore vibrant coral reefs, encounter rich marine life, and embark on an unforgettable underwater journey.",
@@ -33,6 +36,7 @@ export const metadata = {
     ],
     locale: "en_US",
     type: "website",
+   
   },
   twitter: {
     card: "summary_large_image",
