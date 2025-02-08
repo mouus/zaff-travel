@@ -1,4 +1,5 @@
 'use client'
+import Footer from '@/components/Footer';
 import { supabase } from '@/utils/supabase';
 import Link from 'next/link';
 import React, { useState } from 'react';
@@ -228,26 +229,7 @@ function BookingPage() {
       </a>
 
       {/* Footer */}
-      <footer className="bg-black text-white py-4 text-center">
-        <div className="container mx-auto">
-          <p>&copy; 2025 Cruise Republic. All rights reserved.</p>
-          <div className="mt-4">
-            <p className="text-sm">
-              Everfront PVT Ltd<br />
-              Zindha, Funaad, Husnuheenamagu<br />
-              Fuvahmulah City
-            </p>
-          </div>
-          <div className="flex justify-center mt-2 gap-4 flex-wrap">
-            <a href="#" className="hover:underline flex items-center gap-2">
-              <FaFacebook /> Facebook
-            </a>
-            <a href="#" className="hover:underline flex items-center gap-2">
-              <FaInstagram /> Instagram
-            </a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
