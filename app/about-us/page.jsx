@@ -79,7 +79,7 @@ function Page() {
             <main className="flex-grow px-4 sm:px-6 py-12 max-w-5xl mx-auto text-gray-800">
                 <section className="text-center mb-10">
                     <h1 className="text-3xl sm:text-4xl font-extrabold text-blue-900 mb-4">
-                        Cruise Republic by Evefront Maldives Pvt Ltd
+                        Cruise Republic by Everfront Maldives Pvt Ltd
                     </h1>
                     <p className="text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
                         With over 20 years of experience in the Maldives liveaboard industry and a strong background in hospitality,
