@@ -305,7 +305,6 @@ export default function Home() {
         >
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-3xl text-white text-center font-bold mb-8">
-              <FaTint className="inline-block mr-2" size={24} />
               Explore the Ocean
             </h2>
             <div
