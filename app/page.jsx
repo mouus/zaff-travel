@@ -366,14 +366,14 @@ export default function Home() {
               className="absolute left-2 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow-md hover:bg-gray-300 z-10"
               aria-label="Previous Journey Slide"
             >
-              <FaChevronLeft size={20} />
+              <FaChevronLeft className='text-black' size={20} />
             </button>
             <button
               onClick={nextJourneySlide}
               className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow-md hover:bg-gray-300 z-10"
               aria-label="Next Journey Slide"
             >
-              <FaChevronRight size={20} />
+              <FaChevronRight className='text-black' size={20} />
             </button>
           </div>
         </section>
