@@ -362,8 +362,12 @@ export default function Home() {
                 <div key={index} className="w-full flex-shrink-0 px-4">
                   <div className="bg-gray-50 p-6">
                     <h3 className="text-2xl pl-10 font-semibold mb-4 flex items-center">
-                      {slide.icon}
-                      {slide.title}
+                      <span className='text-black'>
+                        {slide.icon}
+                      </span>
+                      <span className='text-black'>
+                        {slide.title}
+                      </span>
                     </h3>
                     <div className="text-left pl-10 text-black">{slide.content}</div>
                   </div>
@@ -373,14 +377,14 @@ export default function Home() {
             {/* Vessel Specifications Arrow Buttons */}
             <button
               onClick={prevSlide}
-              className="absolute left-2 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow-md hover:bg-gray-200"
+              className="absolute left-2 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full text-gray-950 shadow-md hover:bg-gray-200"
               aria-label="Previous Slide"
             >
               <FaChevronLeft size={20} />
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow-md hover:bg-gray-200"
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full text-gray-950 shadow-md hover:bg-gray-200"
               aria-label="Next Slide"
             >
               <FaChevronRight size={20} />
