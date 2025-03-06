@@ -9,8 +9,11 @@ import {
   FaTheaterMasks,
   FaChevronLeft,
   FaChevronRight,
+  FaTint,
 } from 'react-icons/fa';
-import { GiJourney } from "react-icons/gi";
+import { GiJourney } from 'react-icons/gi';
+import { TbScubaDiving } from 'react-icons/tb';
+import { GiDiving } from 'react-icons/gi';
 import { useState, useEffect, useRef } from 'react';
 import Footer from '@/components/Footer';
 import Image from 'next/image';
@@ -105,6 +108,24 @@ export default function Home() {
     window.addEventListener('scroll', handleScroll);
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Scroll reveal functionality for sections and pop-ups.
+  useEffect(() => {
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    reveals.forEach((r) => observer.observe(r));
+    return () => observer.disconnect();
   }, []);
 
   // Vessel Specifications slider slides.
@@ -277,37 +298,45 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Ocean Exploration Section with Southern Image */}
+        {/* Ocean Exploration Section */}
         <section
-          className="relative bg-gray-100 py-12"
+          className="reveal bg-gray-100 py-12 transition-all duration-1000"
           style={{ backgroundImage: 'url(/island-map.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
         >
-          <h2 className="text-3xl text-white text-center font-bold mb-8">Explore the Ocean</h2>
-          <div
-            id="southernImage"
-            className="absolute top-50 right-40 transition-transform duration-200 ease-out"
-            style={{
-              transform: `scale(${southernTransform.scale})`
-            }}
-          >
-            <Image
-              src="/southern.png"
-              alt="People diving"
-              width={200}
-              height={200}
-              className="rounded-lg object-cover"
-            />
-          </div>
-          <div className="py-12">
-            <div className="max-w-4xl mx-auto">
-              <div className="h-72"></div>
+          <div className="max-w-4xl mx-auto px-4">
+            <h2 className="text-3xl text-white text-center font-bold mb-8">
+              <FaTint className="inline-block mr-2" size={24} />
+              Explore the Ocean
+            </h2>
+            <div
+              id="southernImage"
+              className="absolute top-50 right-40 transition-transform duration-200 ease-out"
+              style={{ transform: `scale(${southernTransform.scale})` }}
+            >
+              <Image
+                src="/southern.png"
+                alt="People diving"
+                width={200}
+                height={200}
+                className="rounded-lg object-cover"
+              />
+            </div>
+            <div className="py-12">
+              <div className="max-w-4xl mx-auto">
+                <div className="h-72"></div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Journey with Us Carousel – Gray background, responsive */}
-        <section className="bg-gray-200 py-12 w-full">
-          <h2 className="text-3xl font-bold text-black text-center mb-8"> <span className='flex justify-center'><GiJourney className="mr-2 text-blue-800"  /> Journey With Us</span></h2>
+        {/* Journey with Us Carousel */}
+        <section className="reveal bg-gray-200 py-12 w-full transition-all duration-1000">
+          <h2 className="text-3xl font-bold text-black text-center mb-8">
+            <span className="flex justify-center">
+              <GiJourney className="mr-2 text-blue-800" />
+              Journey With Us
+            </span>
+          </h2>
           <div ref={journeyContainerRef} className="relative mx-auto w-full max-w-[1000px] px-4">
             <div className="overflow-hidden w-full">
               <div
@@ -331,7 +360,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            {/* Journey Carousel Arrow Buttons (inside container) */}
+            {/* Journey Carousel Arrow Buttons */}
             <button
               onClick={prevJourneySlide}
               className="absolute left-2 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow-md hover:bg-gray-300 z-10"
@@ -349,11 +378,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Vessel Specifications Slider – Full Width */}
-        <section className="bg-gray-50 py-12 w-full">
+        {/* Vessel Specifications Slider */}
+        <section className="reveal bg-gray-50 py-12 w-full transition-all duration-1000">
           <div className="relative overflow-hidden w-full">
             <h2 className="text-3xl font-bold text-center mb-8 flex items-center justify-center">
-              <FaShip className="mr-2 text-blue-800" /> <span className='text-black'>Vessel Specifications</span>
+              <FaShip className="mr-2 text-blue-800" /> 
+              <span className="text-black">Vessel Specifications</span>
             </h2>
             <div
               className="flex transition-transform duration-500 ease-in-out w-full"
@@ -363,12 +393,8 @@ export default function Home() {
                 <div key={index} className="w-full flex-shrink-0 px-4">
                   <div className="bg-gray-50 p-6">
                     <h3 className="text-2xl pl-10 font-semibold mb-4 flex items-center">
-                      <span className='text-black'>
-                        {slide.icon}
-                      </span>
-                      <span className='text-black'>
-                        {slide.title}
-                      </span>
+                      <span className="text-black">{slide.icon}</span>
+                      <span className="text-black">{slide.title}</span>
                     </h3>
                     <div className="text-left pl-10 text-black">{slide.content}</div>
                   </div>
@@ -381,15 +407,121 @@ export default function Home() {
               className="absolute left-2 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow-md hover:bg-gray-200"
               aria-label="Previous Slide"
             >
-              <FaChevronLeft className='text-black' size={20} />
+              <FaChevronLeft className="text-black" size={20} />
             </button>
             <button
               onClick={nextSlide}
               className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow-md hover:bg-gray-200"
               aria-label="Next Slide"
             >
-              <FaChevronRight className='text-black' size={20} />
+              <FaChevronRight className="text-black" size={20} />
             </button>
+          </div>
+        </section>
+
+        {/* Dive Charter Booking Section */}
+        <section className="reveal bg-white py-12 transition-all duration-1000">
+          <div className="max-w-4xl mx-auto px-4">
+            {/* Heading */}
+            <div className="pop-up reveal" style={{ animationDelay: '0.2s' }}>
+              <h2 className="text-3xl font-bold text-center mb-8">
+                <TbScubaDiving className="inline-block text-blue-800 mr-2" size={24} />
+                5-Day Private Dive Charter - Deep South Maldives
+              </h2>
+            </div>
+            {/* Duration & Price */}
+            <div className="pop-up reveal" style={{ animationDelay: '0.4s' }}>
+              <div className="bg-gray-100 p-6 rounded-lg shadow-lg mb-6">
+                <div className="mb-6">
+                  <p className="text-xl font-semibold">Duration: 5 Days, 4 Nights</p>
+                  <p className="text-xl font-semibold">Price: $10,000 (Private Boat Charter)</p>
+                </div>
+              </div>
+            </div>
+            {/* Inclusions & Additional Costs */}
+            <div className="pop-up reveal" style={{ animationDelay: '0.6s' }}>
+              <div className="mb-6">
+                <h3 className="text-2xl font-semibold mb-2">Inclusions:</h3>
+                <ul className="list-disc pl-5 text-black">
+                  <li>Full board accommodation (meals included)</li>
+                  <li>2 dives per day</li>
+                  <li>Private dive boat &amp; crew</li>
+                  <li>Dive guides &amp; tanks</li>
+                  <li>Soft drinks &amp; snacks</li>
+                </ul>
+              </div>
+              <div className="mb-6">
+                <h3 className="text-2xl font-semibold mb-2">Additional Costs:</h3>
+                <ul className="list-disc pl-5 text-black">
+                  <li>Equipment rental: $10 per day per diver</li>
+                  <li>50% deposit required for booking confirmation</li>
+                </ul>
+              </div>
+            </div>
+            {/* Itinerary */}
+            <div className="pop-up reveal" style={{ animationDelay: '0.8s' }}>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="text-xl font-semibold">Day 1 – Arrival &amp; Addu Atoll Diving</h4>
+                  <ul className="list-disc pl-5 text-black">
+                    <li>Arrival at Gan International Airport</li>
+                    <li>Check-in &amp; briefing onboard the private charter</li>
+                    <li>Dive 1: Maakandu Manta Point – Manta cleaning station</li>
+                    <li>Lunch onboard</li>
+                    <li>Dive 2: Addu Atoll Reef – Reef sharks, eagle rays, and schools of fish</li>
+                    <li>Dinner &amp; overnight stay near Addu Atoll</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold">Day 2 – Addu to Huvadhoo Atoll (6 Dives)</h4>
+                  <ul className="list-disc pl-5 text-black">
+                    <li>Early morning departure from Addu to Huvadhoo Atoll</li>
+                    <li>Dive 3: Foammulah Kandu – Tiger sharks, thresher sharks, and oceanic mantas</li>
+                    <li>Breakfast onboard</li>
+                    <li>Dive 4: Tiger Zoo – Guaranteed tiger shark encounters</li>
+                    <li>Lunch onboard during the journey</li>
+                    <li>Dive 5: Gemanafushi Kandu – Hammerheads and Reef Sharks</li>
+                    <li>Dive 6: Villingili Kandu – Grey reef sharks, eagle rays, and large fish schools</li>
+                    <li>Dinner &amp; overnight stay near Huvadhoo Atoll</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold">Day 3 – Huvadhoo Atoll (2 Dives)</h4>
+                  <ul className="list-disc pl-5 text-black">
+                    <li>Dive 7: Mareha Kandu – Over 100 grey reef sharks, schooling barracuda</li>
+                    <li>Breakfast onboard</li>
+                    <li>Dive 8: Nilandhoo Kandu – Silvertip sharks, tunas, and sailfish</li>
+                    <li>Lunch &amp; Relaxation</li>
+                    <li>Island visit &amp; beach BBQ dinner</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold">Day 4 – Huvadhoo Atoll (2 Dives)</h4>
+                  <ul className="list-disc pl-5 text-black">
+                    <li>Dive 9: Kooddoo Kandu – Spinner sharks &amp; reef fish</li>
+                    <li>Breakfast onboard</li>
+                    <li>Dive 10: Boodu Whale Shark Point – Night dive with whale sharks</li>
+                    <li>Dinner &amp; overnight stay in Huvadhoo</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold">Day 5 – Departure from Huvadhoo</h4>
+                  <ul className="list-disc pl-5 text-black">
+                    <li>Breakfast onboard</li>
+                    <li>Relax &amp; check-out</li>
+                    <li>Transfer to the airport for departure</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            {/* Book Now Button */}
+            <div className="pop-up reveal" style={{ animationDelay: '1.2s' }}>
+              <div className="text-center mt-8">
+                <Link href="/book" className="bg-blue-800 hover:bg-blue-900 text-white px-6 py-3 rounded transition">
+                  Book Now
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
       </main>
@@ -408,6 +540,27 @@ export default function Home() {
 
       {/* Footer */}
       <Footer />
+
+      {/* Global styles for reveal/pop-up animations */}
+      <style jsx global>{`
+        .reveal {
+          opacity: 0;
+          transform: translateY(8px);
+          transition: all 1s ease;
+        }
+        .reveal.active {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .pop-up {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        .pop-up.active {
+          animation: popUp 1.2s forwards;
+        }
+        }
+      `}</style>
     </div>
   );
 }
