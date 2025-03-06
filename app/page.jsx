@@ -306,7 +306,7 @@ export default function Home() {
 
         {/* Journey with Us Carousel – Gray background, responsive */}
         <section className="bg-gray-200 py-12 w-full">
-          <h2 className="text-3xl font-bold text-center mb-8">Journey with Us</h2>
+          <h2 className="text-3xl font-bold text-black text-center mb-8">Journey with Us</h2>
           <div ref={journeyContainerRef} className="relative mx-auto w-full max-w-[1000px] px-4">
             <div className="overflow-hidden w-full">
               <div
@@ -377,17 +377,17 @@ export default function Home() {
             {/* Vessel Specifications Arrow Buttons */}
             <button
               onClick={prevSlide}
-              className="absolute left-2 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full text-gray-950 shadow-md hover:bg-gray-200"
+              className="absolute left-2 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow-md hover:bg-gray-200"
               aria-label="Previous Slide"
             >
-              <FaChevronLeft size={20} />
+              <FaChevronLeft className='text-black' size={20} />
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full text-gray-950 shadow-md hover:bg-gray-200"
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow-md hover:bg-gray-200"
               aria-label="Next Slide"
             >
-              <FaChevronRight size={20} />
+              <FaChevronRight className='text-black' size={20} />
             </button>
           </div>
         </section>
