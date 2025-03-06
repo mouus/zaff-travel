@@ -425,7 +425,7 @@ export default function Home() {
             <div className="pop-up reveal" style={{ animationDelay: '0.2s' }}>
               <h2 className="text-3xl font-bold text-center mb-8">
                 <TbScubaDiving className="inline-block text-blue-800 mr-2" size={24} />
-                <span className='text-black'>5-Day Private Dive Charter - Deep South Maldivess </span>
+                <span className='text-black'>5-Day Private Dive Charter - Deep South Maldives </span>
               </h2>
             </div>
             {/* Duration & Price */}
