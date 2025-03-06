@@ -124,7 +124,7 @@ function CruisePage() {
                     <h2 className="text-3xl font-bold text-center mb-8">Gallery</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                         <img
-                            src="people-1.jpg"
+                            src="women.jpg"
                             alt="Gallery Image 1"
                             className="w-full h-64 object-cover rounded"
                         />
@@ -134,7 +134,7 @@ function CruisePage() {
                             className="w-full h-64 object-cover rounded"
                         />
                         <img
-                            src="people-2.jpg"
+                            src="coco2.jpg"
                             alt="Gallery Image 3"
                             className="w-full h-64 object-cover rounded"
                         />
