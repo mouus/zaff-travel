@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className="bg-black text-white py-4 text-center">
       <div className="container mx-auto">
-        <p>&copy; Cruise Republic. All rights reserved.</p>
+        <p>&copy; Cruise Republic All rights reserved.</p>
         <div className="mt-4">
           <p className="text-sm">
             Everfront PVT Ltd<br />
