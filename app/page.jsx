@@ -8,8 +8,9 @@ import {
   FaBed,
   FaTheaterMasks,
   FaChevronLeft,
-  FaChevronRight
+  FaChevronRight,
 } from 'react-icons/fa';
+import { GiJourney } from "react-icons/gi";
 import { useState, useEffect, useRef } from 'react';
 import Footer from '@/components/Footer';
 import Image from 'next/image';
@@ -306,7 +307,7 @@ export default function Home() {
 
         {/* Journey with Us Carousel – Gray background, responsive */}
         <section className="bg-gray-200 py-12 w-full">
-          <h2 className="text-3xl font-bold text-black text-center mb-8">Journey with Us</h2>
+          <h2 className="text-3xl font-bold text-black text-center mb-8"> <span className='flex justify-center'><GiJourney className="mr-2 text-blue-800"  /> Journey with Us</span></h2>
           <div ref={journeyContainerRef} className="relative mx-auto w-full max-w-[1000px] px-4">
             <div className="overflow-hidden w-full">
               <div
