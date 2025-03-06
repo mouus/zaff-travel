@@ -27,7 +27,7 @@ export default function Home() {
     'boat.JPG',
     'room.JPG',
     'coco2.JPG',
-    'coco.JPG',
+    'coco.jpg',
     'women.JPG',
     'set.JPG'
   ];
@@ -112,7 +112,7 @@ export default function Home() {
       title: 'General Information',
       icon: <FaShip className="mr-2 text-blue-800" />,
       content: (
-        <ul className="list-disc pl-5 space-y-1">
+        <ul className="list-disc pl-5 text-black space-y-1">
           <li>Length: 21.6m (74 feet)</li>
           <li>Width: 6.61m</li>
           <li>Depth: 1.98m</li>
@@ -130,7 +130,7 @@ export default function Home() {
       icon: <FaBed className="mr-2 text-blue-800" />,
       content: (
         <>
-          <ul className="list-disc pl-5 space-y-1">
+          <ul className="list-disc text-black pl-5 space-y-1">
             <li>Cabins: 5 (Bunk Beds)</li>
             <li>
               Facilities:
@@ -145,7 +145,7 @@ export default function Home() {
             </li>
             <li>
               Equipment Provided:
-              <ul className="list-disc pl-5">
+              <ul className="list-disc text-black pl-5">
                 <li>Snorkeling Gear</li>
                 <li>Scuba Diving Equipment</li>
                 <li>Dinghy with Outboard Engine (Mercury)</li>
@@ -159,7 +159,7 @@ export default function Home() {
       title: 'Leisure & Entertainment',
       icon: <FaTheaterMasks className="mr-2 text-blue-800" />,
       content: (
-        <ul className="list-disc pl-5 space-y-1">
+        <ul className="list-disc text-black pl-5 space-y-1">
           <li>Snorkeling</li>
           <li>Scuba Diving</li>
           <li>Wavesurfing (on request)</li>
@@ -174,7 +174,7 @@ export default function Home() {
       title: 'Electricity & Water',
       icon: null,
       content: (
-        <ul className="list-disc pl-5 space-y-1">
+        <ul className="list-disc text-black pl-5 space-y-1">
           <li>2 x 40 KW Cummins Generator Soundproof</li>
           <li>Power: AC 220V</li>
           <li>Water: Desalination System</li>
@@ -185,7 +185,7 @@ export default function Home() {
       title: 'Navigation & Communication',
       icon: null,
       content: (
-        <ul className="list-disc pl-5 space-y-1">
+        <ul className="list-disc text-black pl-5 space-y-1">
           <li>Map &amp; Compass</li>
           <li>GPS</li>
           <li>Search Light</li>
@@ -352,7 +352,7 @@ export default function Home() {
         <section className="bg-gray-50 py-12 w-full">
           <div className="relative overflow-hidden w-full">
             <h2 className="text-3xl font-bold text-center mb-8 flex items-center justify-center">
-              <FaShip className="mr-2 text-blue-800" /> Vessel Specifications
+              <FaShip className="mr-2 text-blue-800" /> <span className='text-black'>Vessel Specifications</span>
             </h2>
             <div
               className="flex transition-transform duration-500 ease-in-out w-full"
@@ -365,7 +365,7 @@ export default function Home() {
                       {slide.icon}
                       {slide.title}
                     </h3>
-                    <div className="text-left pl-10">{slide.content}</div>
+                    <div className="text-left pl-10 text-black">{slide.content}</div>
                   </div>
                 </div>
               ))}
