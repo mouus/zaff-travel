@@ -426,22 +426,22 @@ export default function Home() {
             <div className="pop-up reveal" style={{ animationDelay: '0.2s' }}>
               <h2 className="text-3xl font-bold text-center mb-8">
                 <TbScubaDiving className="inline-block text-blue-800 mr-2" size={24} />
-                5-Day Private Dive Charter - Deep South Maldives
+                <span className='text-black'>5-Day Private Dive Charter - Deep South Maldivess </span>
               </h2>
             </div>
             {/* Duration & Price */}
             <div className="pop-up reveal" style={{ animationDelay: '0.4s' }}>
               <div className="bg-gray-100 p-6 rounded-lg shadow-lg mb-6">
                 <div className="mb-6">
-                  <p className="text-xl font-semibold">Duration: 5 Days, 4 Nights</p>
-                  <p className="text-xl font-semibold">Price: $10,000 (Private Boat Charter)</p>
+                  <p className="text-xl font-semibold text-black">Duration: 5 Days, 4 Nights</p>
+                  <p className="text-xl font-semibold text-black">Price: $10,000 (Private Boat Charter)</p>
                 </div>
               </div>
             </div>
             {/* Inclusions & Additional Costs */}
             <div className="pop-up reveal" style={{ animationDelay: '0.6s' }}>
               <div className="mb-6">
-                <h3 className="text-2xl font-semibold mb-2">Inclusions:</h3>
+                <h3 className="text-2xl font-semibold mb-2 text-black">Inclusions:</h3>
                 <ul className="list-disc pl-5 text-black">
                   <li>Full board accommodation (meals included)</li>
                   <li>2 dives per day</li>
@@ -451,7 +451,7 @@ export default function Home() {
                 </ul>
               </div>
               <div className="mb-6">
-                <h3 className="text-2xl font-semibold mb-2">Additional Costs:</h3>
+                <h3 className="text-2xl font-semibold mb-2 text-black">Additional Costs:</h3>
                 <ul className="list-disc pl-5 text-black">
                   <li>Equipment rental: $10 per day per diver</li>
                   <li>50% deposit required for booking confirmation</li>
@@ -462,7 +462,7 @@ export default function Home() {
             <div className="pop-up reveal" style={{ animationDelay: '0.8s' }}>
               <div className="space-y-4">
                 <div>
-                  <h4 className="text-xl font-semibold">Day 1 – Arrival &amp; Addu Atoll Diving</h4>
+                  <h4 className="text-xl font-semibold text-black">Day 1 – Arrival &amp; Addu Atoll Diving</h4>
                   <ul className="list-disc pl-5 text-black">
                     <li>Arrival at Gan International Airport</li>
                     <li>Check-in &amp; briefing onboard the private charter</li>
@@ -473,7 +473,7 @@ export default function Home() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold">Day 2 – Addu to Huvadhoo Atoll (6 Dives)</h4>
+                  <h4 className="text-xl font-semibold text-black">Day 2 – Addu to Huvadhoo Atoll (6 Dives)</h4>
                   <ul className="list-disc pl-5 text-black">
                     <li>Early morning departure from Addu to Huvadhoo Atoll</li>
                     <li>Dive 3: Foammulah Kandu – Tiger sharks, thresher sharks, and oceanic mantas</li>
@@ -486,7 +486,7 @@ export default function Home() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold">Day 3 – Huvadhoo Atoll (2 Dives)</h4>
+                  <h4 className="text-xl font-semibold text-black">Day 3 – Huvadhoo Atoll (2 Dives)</h4>
                   <ul className="list-disc pl-5 text-black">
                     <li>Dive 7: Mareha Kandu – Over 100 grey reef sharks, schooling barracuda</li>
                     <li>Breakfast onboard</li>
@@ -496,7 +496,7 @@ export default function Home() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold">Day 4 – Huvadhoo Atoll (2 Dives)</h4>
+                  <h4 className="text-xl font-semibold text-black">Day 4 – Huvadhoo Atoll (2 Dives)</h4>
                   <ul className="list-disc pl-5 text-black">
                     <li>Dive 9: Kooddoo Kandu – Spinner sharks &amp; reef fish</li>
                     <li>Breakfast onboard</li>
@@ -505,7 +505,7 @@ export default function Home() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold">Day 5 – Departure from Huvadhoo</h4>
+                  <h4 className="text-xl font-semibold text-black">Day 5 – Departure from Huvadhoo</h4>
                   <ul className="list-disc pl-5 text-black">
                     <li>Breakfast onboard</li>
                     <li>Relax &amp; check-out</li>
