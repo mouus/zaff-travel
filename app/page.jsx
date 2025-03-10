@@ -51,6 +51,17 @@ export default function Home() {
     return () => window.removeEventListener('resize', updateImagesPerPage);
   }, []);
 
+  // Determine if the device is mobile (phones).
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   // Helper function: Group journeyImages into pages.
   const getJourneyPages = () => {
     let pages = [];
@@ -299,34 +310,62 @@ export default function Home() {
         </section>
 
         {/* Ocean Exploration Section */}
-        <section
-          className="reveal bg-gray-100 py-12 transition-all duration-1000"
-          style={{ backgroundImage: 'url(/island-map.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
-        >
-          <div className="max-w-4xl mx-auto px-4">
-            <h2 className="text-3xl text-white text-center font-bold mb-8">
-              Explore the Ocean
-            </h2>
-            <div
-              id="southernImage"
-              className="absolute top-50 right-40 transition-transform duration-200 ease-out"
-              style={{ transform: `scale(${southernTransform.scale})` }}
-            >
-              <Image
-                src="/southern.png"
-                alt="People diving"
-                width={200}
-                height={200}
-                className="rounded-lg object-cover"
-              />
-            </div>
-            <div className="py-12">
-              <div className="max-w-4xl mx-auto">
-                <div className="h-72"></div>
+        {isMobile ? (
+          <section className="reveal bg-gray-100 py-12 transition-all duration-1000">
+            <div className="max-w-4xl mx-auto px-4">
+              <h2 className="text-3xl text-black text-center font-bold mb-8">
+                Explore the Ocean
+              </h2>
+              <div className="flex flex-col items-center">
+                <Image
+                  src="/island-map.png"
+                  alt="Island Map"
+                  width={400}
+                  height={300}
+                  className="rounded-lg object-cover"
+                />
+                <div className="mt-4">
+                  <Image
+                    src="/southern.png"
+                    alt="People diving"
+                    width={400}
+                    height={200}
+                    className="rounded-lg object-cover"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        ) : (
+          <section
+            className="reveal bg-gray-100 py-12 transition-all duration-1000"
+            style={{ backgroundImage: 'url(/island-map.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+          >
+            <div className="max-w-4xl mx-auto px-4 relative">
+              <h2 className="text-3xl text-white text-center font-bold mb-8">
+                Explore the Ocean
+              </h2>
+              <div
+                id="southernImage"
+                className="absolute top-5 right-10 transition-transform duration-200 ease-out"
+                style={{ transform: `scale(${southernTransform.scale})` }}
+              >
+                <Image
+                  src="/southern.png"
+                  alt="People diving"
+                  width={200}
+                  height={200}
+                  className="rounded-lg object-cover"
+                />
+              </div>
+              <div className="py-12">
+                <div className="max-w-4xl mx-auto">
+                  <div className="h-72"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Journey with Us Carousel */}
         <section className="reveal bg-gray-200 py-12 w-full transition-all duration-1000">
@@ -376,12 +415,22 @@ export default function Home() {
             </button>
           </div>
         </section>
-
+        <section>
+          <div className='flex justify-center py-2 '>
+            <Image
+              src="/boat-map.jpg"
+              alt="Journey image"
+              width={400}
+              height={400}
+              className="rounded-lg px-2 py-1 shadow-lg shadow-black/20 object-cover"
+            />
+          </div>
+        </section>
         {/* Vessel Specifications Slider */}
         <section className="reveal bg-gray-50 py-12 w-full transition-all duration-1000">
           <div className="relative overflow-hidden w-full">
             <h2 className="text-3xl font-bold text-center mb-8 flex items-center justify-center">
-              <FaShip className="mr-2 text-blue-800" /> 
+              <FaShip className="mr-2 text-blue-800" />
               <span className="text-black">Vessel Specifications</span>
             </h2>
             <div
@@ -557,7 +606,6 @@ export default function Home() {
         }
         .pop-up.active {
           animation: popUp 1.2s forwards;
-        }
         }
       `}</style>
     </div>
