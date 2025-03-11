@@ -1,6 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-// Import Buffer to polyfill it for the Edge runtime
-import { Buffer } from "buffer";
 
 export async function middleware(req) {
   if ((await isAuthenticated(req)) === false) {
@@ -15,11 +13,11 @@ async function isAuthenticated(req) {
   const authHeader =
     req.headers.get("authorization") || req.headers.get("Authorization");
 
-  if (authHeader == null) return false;
+  if (!authHeader) return false;
 
-  const [username, password] = Buffer.from(authHeader.split(" ")[1], "base64")
-    .toString()
-    .split(":");
+  // Decode Base64 credentials using the built-in atob function
+  const credentials = authHeader.split(" ")[1];
+  const [username, password] = atob(credentials).split(":");
 
   return (
     username === process.env.ADMIN_USERNAME &&
