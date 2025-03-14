@@ -17,12 +17,13 @@ function Navbar() {
             <Link href="/our-cruise" className="hover:underline transition text-xs">
               Our Cruise
             </Link>
-            <Link href="/about-us" className="hover:underline transition text-xs">
-              About Us
-            </Link>
             <Link href="/our-team" className="hover:underline transition text-xs">
             Our Team
           </Link>
+            <Link href="/about-us" className="hover:underline transition text-xs">
+              About Us
+            </Link>
+           
           </div>
           <div className="hidden md:block">
             <Link
@@ -58,12 +59,13 @@ function Navbar() {
           <Link href="/our-cruise" className="hover:underline transition text-lg">
             Our Cruise
           </Link>
-          <Link href="/about-us" className="hover:underline transition text-lg">
-            About Us
-          </Link>
           <Link href="/our-team" className="hover:underline transition text-lg">
             Our Team
           </Link>
+          <Link href="/about-us" className="hover:underline transition text-lg">
+            About Us
+          </Link>
+        
           <Link
             href="/book"
             className="bg-white text-blue-950 font-bold py-2 px-4 rounded-lg shadow-md hover:bg-gray-200 transition"
