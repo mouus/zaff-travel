@@ -54,6 +54,9 @@ export default function Page() {
                         <h3 className="text-2xl font-bold mt-4">
                             Lead Manager - Javier Ayensa
                         </h3>
+                        <p className="mt-2 text-lg max-w-md">
+                        A PADI & SSI diving instructor and freediving enthusiast, Javi took his first dive at age 13 in Mexico, sparking a lifelong passion for the ocean. With hands-on experience in dive center operations and customer relations, he has worked closely with divers from around the world, deepening his knowledge of marine life and dive logistics. He is also a passionate underwater 
+                        </p>
                     </div>
 
                     {/* Team Member 2 */}
