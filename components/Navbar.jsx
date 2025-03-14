@@ -52,7 +52,7 @@ function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-slate-900 text-white flex flex-col gap-4 p-4">
+        <div className="md:hidden bg-black text-white flex flex-col gap-4 p-4">
           <Link href="/dive-itineraries" className="hover:underline transition text-lg">
             Dive Itineraries
           </Link>
@@ -68,7 +68,7 @@ function Navbar() {
         
           <Link
             href="/book"
-            className="bg-white text-blue-950 font-bold py-2 px-4 rounded-lg shadow-md hover:bg-gray-200 transition"
+            className="bg-white text-black font-bold py-2 px-4 rounded-lg shadow-md hover:bg-gray-200 transition"
           >
             Book Now
           </Link>
