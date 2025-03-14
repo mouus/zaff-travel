@@ -60,7 +60,7 @@ function DiveItinerariesPage() {
                   Experience vibrant free diving and diverse marine life on this
                   thrilling dive itinerary.
                 </p>
-                <Link href={'https://wa.me/9607795512'} className="bg-blue-800 text-white py-2 px-4 rounded hover:bg-blue-900 transition">
+                <Link href={'https://wa.me/9607795512'} className="bg-black text-white py-2 px-4 rounded hover:bg-blue-900 transition">
                   Learn More
                 </Link>
               </div>
@@ -78,7 +78,7 @@ function DiveItinerariesPage() {
                 Immerse yourself in the thrilling world of tiger sharks—witness these majestic predators up close as 
                 you explore their natural habitat and learn about their fascinating behavior.
                 </p>
-                <Link href={'https://wa.me/9607795512'} className="bg-blue-800 text-white py-2 px-4 rounded hover:bg-blue-900 transition">
+                <Link href={'https://wa.me/9607795512'} className="bg-black text-white py-2 px-4 rounded hover:bg-blue-900 transition">
                   Learn More
                 </Link>
               </div>
@@ -96,7 +96,7 @@ function DiveItinerariesPage() {
                   Embark on an adventure to encounter rare and majestic
                   marine creatures.
                 </p>
-                <Link href={'https://wa.me/9607795512'} className="bg-blue-800 text-white py-2 px-4 rounded hover:bg-blue-900 transition">
+                <Link href={'https://wa.me/9607795512'} className="bg-black text-white py-2 px-4 rounded hover:bg-blue-900 transition">
                   Learn More
                 </Link>
               </div>
@@ -113,7 +113,7 @@ function DiveItinerariesPage() {
                  Embark on a deep-sea adventure and encounter graceful 
                  manta rays in their natural habitat.
                 </p>
-                <Link href={'https://wa.me/9607795512'} className="bg-blue-800 text-white py-2 px-4 rounded hover:bg-blue-900 transition">
+                <Link href={'https://wa.me/9607795512'} className="bg-black text-white py-2 px-4 rounded hover:bg-blue-900 transition">
                   Learn More
                 </Link>
               </div>

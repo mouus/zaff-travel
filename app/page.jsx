@@ -157,7 +157,7 @@ export default function Home() {
   const slides = [
     {
       title: 'General Information',
-      icon: <FaShip className="mr-2 text-blue-800" />,
+      icon: <FaShip className="mr-2 text-black" />,
       content: (
         <ul className="list-disc pl-5 text-black space-y-1">
           <li>Length: 21.6m (74 feet)</li>
@@ -309,13 +309,13 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/dive-itineraries"
-                className="bg-blue-800 hover:bg-blue-900 text-white px-6 py-3 rounded transition"
+                className="bg-black hover:bg-gray-900 text-white px-6 py-3 rounded transition"
               >
                 Learn More
               </Link>
               <Link
                 href="/book"
-                className="bg-white text-blue-950 hover:bg-gray-200 px-6 py-3 rounded transition"
+                className="bg-white text-gray-950 hover:bg-gray-200 px-6 py-3 rounded transition"
               >
                 Book Now
               </Link>
@@ -324,9 +324,9 @@ export default function Home() {
         </section>
 
         {/* Ocean Exploration Section */}
-        <section className="reveal py-12 transition-all duration-1000 bg-gray-100 md:bg-slate-950">
+        <section className="reveal py-12 transition-all duration-1000 bg-gray-100 md:bg-white">
           <div className="max-w-4xl mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-8 text-black md:text-white">
+            <h2 className="text-3xl font-bold text-center mb-8 text-black md:text-black">
               Explore the Ocean
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
@@ -354,10 +354,10 @@ export default function Home() {
         </section>
 
         {/* Journey with Us Carousel */}
-        <section className="reveal bg-gray-200 py-12 w-full transition-all duration-1000">
+        <section className="reveal bg-white py-12 w-full transition-all duration-1000">
           <h2 className="text-3xl font-bold text-black text-center mb-8">
             <span className="flex justify-center">
-              <GiJourney className="mr-2 text-blue-800" />
+              <GiJourney className="mr-2 text-black" />
               Journey With Us
             </span>
           </h2>
@@ -425,7 +425,7 @@ export default function Home() {
         <section className="reveal bg-gray-50 py-12 w-full transition-all duration-1000">
           <div className="relative overflow-hidden w-full">
             <h2 className="text-3xl font-bold text-center mb-8 flex items-center justify-center">
-              <FaShip className="mr-2 text-blue-800" />
+              <FaShip className="mr-2 text-black" />
               <span className="text-black">Vessel Specifications</span>
             </h2>
             <div
@@ -468,7 +468,7 @@ export default function Home() {
             {/* Heading */}
             <div className="pop-up reveal" style={{ animationDelay: '0.2s' }}>
               <h2 className="text-3xl font-bold text-center mb-8">
-                <TbScubaDiving className="inline-block text-blue-800 mr-2" size={24} />
+                <TbScubaDiving className="inline-block text-black mr-2" size={24} />
                 <span className="text-black">
                   5-Day Private Dive Charter - Deep South Maldives{' '}
                 </span>
@@ -590,7 +590,7 @@ export default function Home() {
               <div className="text-center mt-8">
                 <Link
                   href="/book"
-                  className="bg-blue-800 hover:bg-blue-900 text-white px-6 py-3 rounded transition"
+                  className="bg-black hover:bg-gray-900 text-white px-6 py-3 rounded transition"
                 >
                   Book Now
                 </Link>

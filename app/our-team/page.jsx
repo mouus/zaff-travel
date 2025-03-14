@@ -2,6 +2,8 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Image from 'next/image'
 import React from 'react'
+import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+
 
 export default function Page() {
     return (

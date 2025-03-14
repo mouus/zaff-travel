@@ -23,7 +23,7 @@ function CruisePage() {
                     <p className="text-xl text-white mb-8">
                         Embark on a luxurious journey with us.
                     </p>
-                    <Link href="/book" className="bg-white text-blue-900 px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition">
+                    <Link href="/book" className="bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition">
                         Book Now
                     </Link>
                 </div>
@@ -96,13 +96,13 @@ function CruisePage() {
             </section>
 
             {/* Contact / Booking Section */}
-            <section className="py-16 bg-blue-900 text-white text-center">
+            <section className="py-16 bg-white text-black text-center">
                 <div className="max-w-4xl mx-auto px-4">
                     <h2 className="text-3xl font-bold mb-4">Ready to Sail?</h2>
                     <p className="mb-8 text-lg">
                         Book your dream cruise now and experience the luxury and adventure that awaits.
                     </p>
-                    <Link href={"/book"} className="bg-white text-blue-900 px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition">
+                    <Link href={"/book"} className="bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition">
                         Book Now
                     </Link>
                 </div>

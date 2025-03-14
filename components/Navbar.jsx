@@ -28,7 +28,7 @@ function Navbar() {
           <div className="hidden md:block">
             <Link
               href="/book"
-              className="bg-black text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-blue-800 transition"
+              className="bg-black text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-gray-900  transition"
             >
               Book Now
             </Link>

@@ -142,7 +142,7 @@ function BookingPage() {
             <div className="text-center">
               <button
                 type="submit"
-                className="bg-blue-800 hover:bg-blue-950 text-white font-bold py-3 px-6 rounded-lg"
+                className="bg-black hover:bg-gray-900 text-white font-bold py-3 px-6 rounded-lg"
               >
                 Submit Booking
               </button>
