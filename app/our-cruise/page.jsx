@@ -77,7 +77,7 @@ function CruisePage() {
                             className="w-full h-64 object-cover rounded"
                         />
                         <img
-                            src="people-4.jpg"
+                            src="img-4.JPG"
                             alt="Gallery Image 4"
                             className="w-full h-64 object-cover rounded"
                         />
@@ -87,7 +87,7 @@ function CruisePage() {
                             className="w-full h-64 object-cover rounded"
                         />
                         <img
-                            src="people-6.jpg"
+                            src="img-6.JPG"
                             alt="Gallery Image 6"
                             className="w-full h-64 object-cover rounded"
                         />
