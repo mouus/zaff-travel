@@ -109,6 +109,16 @@ export default function Page() {
                             A young and energetic key player with a strong background in hospitality, food, and beverage service. Jumaan&apos;s dedication to excellence ensures that guests enjoy a seamless and comfortable experience.
                         </p>
                     </div>
+                      {/* WhatsApp Button */}
+                          <a
+                            href="https://wa.me/9607780739"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition flex items-center justify-center"
+                            style={{ zIndex: 1000 }}
+                          >
+                            <FaWhatsapp size={24} />
+                          </a>
 
                     {/* Team Member 5 */}
                     <div className="flex flex-col items-center text-center">

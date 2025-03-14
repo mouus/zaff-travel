@@ -30,16 +30,16 @@ function DiveItinerariesPage() {
         </div>
       </section>
 
-      {/* WhatsApp Button */}
-      <a
-        href="https://wa.me/9607795512"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition flex items-center justify-center"
-        style={{ zIndex: 1000 }}
-      >
-        <FaWhatsapp size={24} />
-      </a>
+       {/* WhatsApp Button */}
+           <a
+             href="https://wa.me/9607780739"
+             target="_blank"
+             rel="noopener noreferrer"
+             className="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition flex items-center justify-center"
+             style={{ zIndex: 1000 }}
+           >
+             <FaWhatsapp size={24} />
+           </a>
       {/* Itineraries Section */}
       <section className="py-16 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4">
