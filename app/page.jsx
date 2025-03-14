@@ -34,7 +34,20 @@ export default function Home() {
     'coco2.JPG',
     'coco.jpg',
     'women.JPG',
-    'set.JPG'
+    'set.JPG',
+    'img-1.JPG',
+    'img-2.JPG',
+    'img-3.JPG',
+    'img-4.JPG',
+    'img-5.JPG',
+    'img-6.JPG',
+    'img-7.JPG',
+    'img-8.JPG',
+    'img-9.JPG',
+    'img-10.JPG',
+    'img-11.JPG',
+    'img-12.JPG',
+    'img-13.JPG',
   ];
 
   // Responsive images per page.
@@ -355,7 +368,10 @@ export default function Home() {
                 style={{ transform: `translateX(-${currentJourneyPage * containerWidth}px)` }}
               >
                 {journeyPages.map((page, pageIndex) => (
-                  <div key={pageIndex} className="w-full flex-shrink-0 flex justify-center gap-4">
+                  <div
+                    key={pageIndex}
+                    className="w-full flex-shrink-0 flex justify-center gap-4 px-4"
+                  >
                     {page.map((img, index) => (
                       <div key={index} className="w-[200px] h-[200px] relative">
                         <Image
@@ -388,6 +404,7 @@ export default function Home() {
             </button>
           </div>
         </section>
+
 
         <section className="bg-white py-5">
           <h2 className="text-center font-semibold text-2xl mb-2 text-black">
