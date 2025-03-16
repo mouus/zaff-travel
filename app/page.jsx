@@ -296,7 +296,7 @@ export default function Home() {
         {/* Hero Section */}
         <section
           className="relative h-screen bg-cover bg-center"
-          style={{ backgroundImage: 'url(/boat-top.jpg)' }}
+          style={{ backgroundImage: 'url(/img-4.JPG)' }}
         >
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
@@ -325,29 +325,50 @@ export default function Home() {
 
         {/* Ocean Exploration Section */}
         <section className="reveal py-12 transition-all duration-1000 bg-gray-100 md:bg-white">
-          <div className="max-w-4xl mx-auto px-4">
+          <div className=" mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-8 text-black md:text-black">
               Explore the Ocean
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+            <div className="grid grid-cols-1 md:flex-col gap-4 items-center">
               <div className="flex justify-center">
-                <Image
-                  src="/island.JPG"
+                {isMobile ? (
+                  <Image
+                    src="/island.JPG"
+                    alt="Island Map"
+                    width={400}
+                    height={400}
+                    className="rounded-lg object-cover"
+                  />
+                ) : (
+                  <Image
+                  src="/island-map.png"
                   alt="Island Map"
-                  width={400}
+                  width={1920}
                   height={400}
                   className="rounded-lg object-cover"
                 />
+                )}
+
               </div>
               <div className="flex justify-center">
-                <Image
+                {isMobile ? (<Image
                   src="/southern.png"
                   alt="People diving"
                   // Use the isMobile state to set a different width value on mobile devices.
-                  width={isMobile ? 400 : 315}
+                  width={400}
                   height={400}
                   className="rounded-lg object-cover"
-                />
+                />) : (
+                  <Image
+                    src="/map.png"
+                    alt="People diving"
+                    // Use the isMobile state to set a different width value on mobile devices.
+                    width={1920}
+                    height={600}
+                    className="rounded-lg object-cover"
+                  />
+                )}
+
               </div>
             </div>
           </div>
@@ -532,10 +553,10 @@ export default function Home() {
                   <ul className="list-disc pl-5 text-black">
                     <li>Early morning departure from Addu to Huvadhoo Atoll</li>
                     <li>
-                      Dive 3: Foammulah Kandu – Tiger sharks, thresher sharks, and oceanic mantas
+                      Dive 3: Fuvamulah Kandu – Tiger sharks, thresher sharks, and oceanic mantas
                     </li>
                     <li>Breakfast onboard</li>
-                    <li> Dive 4: Tiger Zoo – Guaranteed tiger shark encounters</li>
+                    <li> Dive 4: Tiger zone – Guaranteed tiger shark encounters</li>
                     <li>Lunch onboard during the journey</li>
                     <li> Dive 5: Gemanafushi Kandu – Hammerheads and Reef Sharks</li>
                     <li>

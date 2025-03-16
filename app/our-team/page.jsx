@@ -37,9 +37,37 @@ export default function Page() {
                     <h2 className="text-4xl font-bold mb-4 text-center">
                         Meet Our Leadership &amp; Crew
                     </h2>
-                    <p className="text-lg max-w-3xl mx-auto text-center mb-8">
-                        • <strong>CEO Ahmed Ali</strong> – A seasoned hospitality professional with 20 years of experience, Ahmed Ali has worked his way up from receptionist to front office manager and airport manager at various five-star resorts. A pioneer in promoting Fuvahmulah tourism, he is known for his dedication, authenticity, and welcoming personality.
-                    </p>
+                    <div className='flex flex-col gap-3'>
+                        <div className='flex items-center justify-center '>
+                        <Image
+                            src="/founder-2.PNG"
+                            alt="Lead Manager - Javier Ayensa"
+                            width={200}
+                            height={200}
+                            className="rounded-full shadow-lg"
+                        />
+                        </div>
+                   
+
+                        <p className="text-lg max-w-3xl mx-auto text-center mb-8">
+                            • <strong>CEO Ahmed Ali</strong> – A seasoned hospitality professional with 20 years of experience, Ahmed Ali has worked his way up from receptionist to front office manager and airport manager at various five-star resorts. A pioneer in promoting Fuvahmulah tourism, he is known for his dedication, authenticity, and welcoming personality.
+                        </p>
+                    </div>
+                    <div className='flex flex-col gap-3'>
+                    <div className='flex items-center justify-center '>
+                        <Image
+                            src="/founder-1.jpg"
+                            alt="Lead Manager - Javier Ayensa"
+                            width={200}
+                            height={200}
+                            className="rounded-full shadow-lg"
+                        />
+                        </div>
+                        <p className="text-lg max-w-3xl mx-auto text-center mb-8">
+                            • <strong>Founder & COO of Cruise Republic</strong> – Zafar continues to expand ocean tourism in Fuvahmulah, offering experiences such as scuba diving, island hopping, and sunset cruises. A lifelong surfer and sports enthusiast, he remains committed to developing Fuvahmulah&apos;s water sports and marine tourism while ensuring its natural ecosystem is protected.
+                        </p>
+                    </div>
+
                 </section>
 
                 {/* Team Members */}
@@ -57,7 +85,7 @@ export default function Page() {
                             Lead Manager - Javier Ayensa
                         </h3>
                         <p className="mt-2 text-lg max-w-md">
-                        A PADI & SSI diving instructor and freediving enthusiast, Javi took his first dive at age 13 in Mexico, sparking a lifelong passion for the ocean. With hands-on experience in dive center operations and customer relations, he has worked closely with divers from around the world, deepening his knowledge of marine life and dive logistics. He is also a passionate underwater 
+                            A PADI & SSI diving instructor and freediving enthusiast, Javi took his first dive at age 13 in Mexico, sparking a lifelong passion for the ocean. With hands-on experience in dive center operations and customer relations, he has worked closely with divers from around the world, deepening his knowledge of marine life and dive logistics. He is also a passionate underwater
                         </p>
                     </div>
 
@@ -111,16 +139,16 @@ export default function Page() {
                             A young and energetic key player with a strong background in hospitality, food, and beverage service. Jumaan&apos;s dedication to excellence ensures that guests enjoy a seamless and comfortable experience.
                         </p>
                     </div>
-                      {/* WhatsApp Button */}
-                          <a
-                            href="https://wa.me/9607780739"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition flex items-center justify-center"
-                            style={{ zIndex: 1000 }}
-                          >
-                            <FaWhatsapp size={24} />
-                          </a>
+                    {/* WhatsApp Button */}
+                    <a
+                        href="https://wa.me/9607780739"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition flex items-center justify-center"
+                        style={{ zIndex: 1000 }}
+                    >
+                        <FaWhatsapp size={24} />
+                    </a>
 
                     {/* Team Member 5 */}
                     <div className="flex flex-col items-center text-center">
