@@ -350,6 +350,23 @@ export default function Home() {
                 )}
 
               </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+  <Image
+    src="/huvadhoo.png"
+    alt="Diving"
+    width={400}
+    height={400}
+    className="rounded-lg object-cover w-full max-w-xs sm:max-w-none"
+  />
+  <Image
+    src="/addu.png"
+    alt="Diving"
+    width={400}
+    height={400}
+    className="rounded-lg object-cover w-full max-w-xs sm:max-w-none"
+  />
+</div>
+
               <div className="flex justify-center">
                 {isMobile ? (<Image
                   src="/southern.png"
