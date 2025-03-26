@@ -73,7 +73,7 @@ function BookingPage() {
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name */}
             <div>
-              <label htmlFor="name" className="block font-semibold mb-2">
+              <label htmlFor="name" className=" text-black block font-semibold mb-2">
                 Name
               </label>
               <input
@@ -90,7 +90,7 @@ function BookingPage() {
 
             {/* Phone Number */}
             <div>
-              <label htmlFor="phone" className="block font-semibold mb-2">
+              <label htmlFor="phone" className="block text-black font-semibold mb-2">
                 Phone Number
               </label>
               <input
@@ -107,7 +107,7 @@ function BookingPage() {
 
             {/* Email */}
             <div>
-              <label htmlFor="email" className="block font-semibold mb-2">
+              <label htmlFor="email" className="block text-black font-semibold mb-2">
                 Email
               </label>
               <input
@@ -124,7 +124,7 @@ function BookingPage() {
 
             {/* Special Requirements */}
             <div>
-              <label htmlFor="specialRequest" className="block font-semibold mb-2">
+              <label htmlFor="specialRequest" className="block text-black font-semibold mb-2">
                 Special Requirements
               </label>
               <textarea
