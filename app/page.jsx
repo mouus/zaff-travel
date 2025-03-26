@@ -341,31 +341,31 @@ export default function Home() {
                   />
                 ) : (
                   <Image
-                  src="/island-map.png"
-                  alt="Island Map"
-                  width={1920}
-                  height={400}
-                  className="rounded-lg object-cover"
-                />
+                    src="/island-map.png"
+                    alt="Island Map"
+                    width={1920}
+                    height={400}
+                    className="rounded-lg object-cover"
+                  />
                 )}
 
               </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-  <Image
-    src="/huvadhoo.png"
-    alt="Diving"
-    width={400}
-    height={400}
-    className="rounded-lg object-cover w-full max-w-xs sm:max-w-none"
-  />
-  <Image
-    src="/addu.png"
-    alt="Diving"
-    width={400}
-    height={400}
-    className="rounded-lg object-cover w-full max-w-xs sm:max-w-none"
-  />
-</div>
+                <Image
+                  src="/huvadhoo.png"
+                  alt="Diving"
+                  width={400}
+                  height={400}
+                  className="rounded-lg object-cover w-full max-w-xs sm:max-w-none"
+                />
+                <Image
+                  src="/addu.png"
+                  alt="Diving"
+                  width={400}
+                  height={400}
+                  className="rounded-lg object-cover w-full max-w-xs sm:max-w-none"
+                />
+              </div>
 
               <div className="flex justify-center">
                 {isMobile ? (<Image
@@ -633,9 +633,19 @@ export default function Home() {
                   Book Now
                 </Link>
               </div>
+              <div className="flex justify-end">
+                <Link
+                  href="/faq"
+                  className="text-black underline transition-all duration-200 hover:text-blue-900 hover:scale-105"
+                >
+                  FAQ
+                </Link>
+              </div>
+
             </div>
           </div>
         </section>
+
       </main>
 
       {/* WhatsApp Button */}
