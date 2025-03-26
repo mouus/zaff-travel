@@ -395,7 +395,6 @@ export default function Home() {
         <section className="reveal bg-white py-12 w-full transition-all duration-1000">
           <h2 className="text-3xl font-bold text-black text-center mb-8">
             <span className="flex justify-center">
-              <GiJourney className="mr-2 text-black" />
               Journey With Us
             </span>
           </h2>
