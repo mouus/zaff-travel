@@ -518,7 +518,7 @@ export default function Home() {
                 <div className="mb-6">
                   <p className="text-xl font-semibold text-black">Duration: 5 Days, 4 Nights</p>
                   <p className="text-xl font-semibold text-black">
-                    Price: $10,000 (Private Boat Charter)
+                    Pricing: Get in touch with us for personalized pricing information.
                   </p>
                 </div>
               </div>
