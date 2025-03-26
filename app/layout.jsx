@@ -42,9 +42,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fuvahmulah Dive - Maldives Dive Adventures",
+    title: "Cruise Republic | Maldives' Premier Floating Dive Center",
     description:
-      "Experience the ultimate diving adventure in Fuvahmulah and the Maldives.",
+      "Explore the deep south of the Maldives, including Huvadhoo, Fuvahmulah, and Addu Atoll. Discover world-class dive sites, vibrant marine life, and thrilling encounters with apex predators. Book your adventure today!",
     images: ["http://www.cruiserepublicmaldives.com/boat-top.jpg"], // Updated image URL for Twitter card
   },
 };
