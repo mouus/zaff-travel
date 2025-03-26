@@ -13,6 +13,8 @@ import {
   FaArrowCircleUp,
   FaGasPump,
   FaBoxOpen,
+  FaWhatsapp,
+
 } from 'react-icons/fa'
 
 const rentals = [
@@ -46,7 +48,7 @@ function RentalPage() {
             className="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center text-center"
           >
             <div className="mb-4 text-black">{item.icon}</div>
-            <h2 className="text-xl font-semibold mb-2">{item.name}</h2>
+            <h2 className="text-xl text-black font-semibold mb-2">{item.name}</h2>
             <p className="text-gray-700">Rental: <strong>{item.price}</strong></p>
             <p className="text-gray-700">Loss/Damage: <strong>{item.loss}</strong></p>
           </div>
@@ -59,7 +61,19 @@ function RentalPage() {
           Full Equipment Rental Available: <span className="text-black">$4 per day</span>
         </p>
       </div>
+      
     </div>
+      {/* WhatsApp Button */}
+          <a
+            href="https://wa.me/9607780739"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition flex items-center justify-center"
+            style={{ zIndex: 1000 }}
+          >
+            <FaWhatsapp size={24} />
+          </a>
+    
       <Footer />
     </div>
   )

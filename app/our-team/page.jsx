@@ -4,7 +4,6 @@ import Image from 'next/image'
 import React from 'react'
 import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
-
 export default function Page() {
     return (
         <div>
@@ -34,39 +33,57 @@ export default function Page() {
 
                 {/* Leadership & Crew Introduction */}
                 <section className="mb-12">
-                    <h2 className="text-4xl font-bold mb-4 text-center">
+                    <h2 className="text-4xl font-bold mb-8 text-center">
                         Meet Our Leadership &amp; Crew
                     </h2>
-                    <div className='flex flex-col gap-3'>
-                        <div className='flex items-center justify-center '>
-                        <Image
-                            src="/founder-2.PNG"
-                            alt="Lead Manager - Javier Ayensa"
-                            width={200}
-                            height={200}
-                            className="rounded-full shadow-lg"
-                        />
+              
+                    {/* Updated Founder Card */}
+                    <div className='flex flex-col gap-3 bg-yellow-100 p-6 rounded-lg'>
+                        <div className='flex items-center justify-center'>
+                            <Image
+                                src="/founder-1.jpg"
+                                alt="Abdulla Zafar Ali - Pioneer of Tiger Shark Diving in Fuvahmulah"
+                                width={200}
+                                height={200}
+                                className="rounded-full shadow-lg"
+                            />
                         </div>
-                   
-
+                        <h3 className="text-3xl font-bold text-center">Abdulla Zafar Ali</h3>
+                        <p className="text-xl font-semibold text-center mb-4">Pioneer of Tiger Shark Diving in Fuvahmulah</p>
+                        <p className="text-lg max-w-3xl mx-auto text-center">
+                            Abdulla Zafar Ali is a PADI-certified scuba instructor, surfer, and hospitality professional with over 25 years of experience in the tourism industry. Since 1999, he has worked in various roles—from receptionist to butler—before fully dedicating himself to scuba diving.
+                        </p>
+                        <p className="text-lg max-w-3xl mx-auto text-center">
+                            In 2011, Zafar had his first scuba diving experience in Fuvahmulah, a time when the island had no dive centers or schools and very limited scuba equipment. His passion for diving and vision for the island’s tourism led him to make a groundbreaking discovery: tiger sharks near the harbor. Despite initial doubts, support from fellow divers and local fishermen helped him document the first tiger shark sighting, proving Fuvahmulah as a prime shark diving destination.
+                        </p>
+                        <p className="text-lg max-w-3xl mx-auto text-center">
+                            This discovery transformed Fuvahmulah into the world’s No. 1 tiger shark diving destination. Soon after, local entrepreneurs began investing in tourism, resulting in 21 guest houses and 12 registered dive centers.
+                        </p>
+                        <p className="text-lg max-w-3xl mx-auto text-center">
+                            Since 2015, Zafar has promoted Fuvahmulah internationally, showcasing its unique diving experiences and establishing it as a premier destination.
+                        </p>
+                        <p className="text-lg max-w-3xl mx-auto text-center">
+                            In recognition of his contributions, Zafar received the General Award for Recognition in Tourism 2024, celebrating 10 years of Fuvahmulah tourism development.
+                        </p>
+                        <p className="text-lg max-w-3xl mx-auto text-center">
+                            As the Founder &amp; COO of Cruise Republic, he continues to expand ocean tourism in Fuvahmulah with experiences such as scuba diving, island hopping, and sunset cruises, while remaining committed to protecting the natural ecosystem.
+                        </p>
+                    </div>
+                    <div className='flex mt-8 flex-col gap-3'>
+                        <div className='flex items-center justify-center'>
+                            <Image
+                                src="/founder-2.PNG"
+                                alt="Lead Manager - Javier Ayensa"
+                                width={200}
+                                height={200}
+                                className="rounded-full shadow-lg"
+                            />
+                        </div>
                         <p className="text-lg max-w-3xl mx-auto text-center mb-8">
                             • <strong>CEO Ahmed Ali</strong> – A seasoned hospitality professional with 20 years of experience, Ahmed Ali has worked his way up from receptionist to front office manager and airport manager at various five-star resorts. A pioneer in promoting Fuvahmulah tourism, he is known for his dedication, authenticity, and welcoming personality.
                         </p>
                     </div>
-                    <div className='flex flex-col gap-3'>
-                    <div className='flex items-center justify-center '>
-                        <Image
-                            src="/founder-1.jpg"
-                            alt="Lead Manager - Javier Ayensa"
-                            width={200}
-                            height={200}
-                            className="rounded-full shadow-lg"
-                        />
-                        </div>
-                        <p className="text-lg max-w-3xl mx-auto text-center mb-8">
-                            • <strong>Founder & COO of Cruise Republic</strong> – Zafar continues to expand ocean tourism in Fuvahmulah, offering experiences such as scuba diving, island hopping, and sunset cruises. A lifelong surfer and sports enthusiast, he remains committed to developing Fuvahmulah&apos;s water sports and marine tourism while ensuring its natural ecosystem is protected.
-                        </p>
-                    </div>
+
 
                 </section>
 
@@ -85,7 +102,7 @@ export default function Page() {
                             Lead Manager - Javier Ayensa
                         </h3>
                         <p className="mt-2 text-lg max-w-md">
-                            A PADI & SSI diving instructor and freediving enthusiast, Javi took his first dive at age 13 in Mexico, sparking a lifelong passion for the ocean. With hands-on experience in dive center operations and customer relations, he has worked closely with divers from around the world, deepening his knowledge of marine life and dive logistics. He is also a passionate underwater
+                            A PADI & SSI diving instructor and freediving enthusiast, Javi took his first dive at age 13 in Mexico, sparking a lifelong passion for the ocean. With hands-on experience in dive center operations and customer relations, he has worked closely with divers from around the world, deepening his knowledge of marine life and dive logistics.
                         </p>
                     </div>
 
@@ -139,6 +156,7 @@ export default function Page() {
                             A young and energetic key player with a strong background in hospitality, food, and beverage service. Jumaan&apos;s dedication to excellence ensures that guests enjoy a seamless and comfortable experience.
                         </p>
                     </div>
+
                     {/* WhatsApp Button */}
                     <a
                         href="https://wa.me/9607780739"

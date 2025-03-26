@@ -358,6 +358,13 @@ export default function Home() {
                   height={400}
                   className="rounded-lg object-cover w-full max-w-xs sm:max-w-none"
                 />
+                   <Image
+                  src="/east.JPG"
+                  alt="Diving"
+                  width={400}
+                  height={400}
+                  className="rounded-lg object-cover w-full max-w-xs sm:max-w-none"
+                />
                 <Image
                   src="/addu.png"
                   alt="Diving"
