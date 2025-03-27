@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from "react"
 import Footer from "@/components/Footer"
 import Image from "next/image"
 import Navbar from "@/components/Navbar"
+import Head from "next/head"
 
 
 export default function Home() {
@@ -248,6 +249,22 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen bg-white text-black">
+       <Head>
+        <title>Maldives Dive Cruises | Explore the Deep South with Cruise Republic</title>
+        <meta
+          name="description"
+          content="Discover diverse dive itineraries in the Maldives, from tiger shark dives to colorful reefs. Plan your next underwater adventure with Cruise Republic."
+        />
+        <meta name="keywords" content="fuvahmulah dive, maldives dive, diving in fuvahmulah, maldives diving, underwater adventure, coral reefs, marine life, Cruise Republic" />
+        <meta property="og:title" content="Maldives Dive Cruises | Explore the Deep South with Cruise Republic" />
+        <meta property="og:description" content="Experience unforgettable diving trips in the Maldives deep south. Join Cruise Republic for shark encounters, coral reefs, and vibrant marine life. Book your dive cruise today!" />
+        <meta property="og:image" content="http://www.cruiserepublicmaldives.com/boat-top.jpg" />
+        <meta property="og:url" content="http://www.cruiserepublicmaldives.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Maldives Dive Cruises | Explore the Deep South with Cruise Republic" />
+        <meta name="twitter:description" content="Experience unforgettable diving trips in the Maldives deep south. Join Cruise Republic for shark encounters, coral reefs, and vibrant marine life. Book your dive cruise today!" />
+        <meta name="twitter:image" content="http://www.cruiserepublicmaldives.com/boat-top.jpg" />
+      </Head>
       {/* Header */}
       <Navbar />
 

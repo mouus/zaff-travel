@@ -2,6 +2,7 @@
 
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
+import Head from "next/head"
 import Link from "next/link"
 import { useState } from "react"
 import { FaWhatsapp, FaCalendarAlt, FaMapMarkerAlt, FaArrowRight } from "react-icons/fa"
@@ -11,6 +12,22 @@ export default function DiveItinerariesPage() {
 
   return (
     <div className="min-h-screen bg-white text-black">
+      <Head>
+        <title>Maldives Dive Itineraries | Shark Dives & Coral Reefs</title>
+        <meta
+          name="description"
+          content="Discover diverse dive itineraries in the Maldives, from tiger shark dives to colorful reefs. Plan your next underwater adventure with Cruise Republic."
+        />
+        <meta name="keywords" content="fuvahmulah dive, maldives dive, diving in fuvahmulah, maldives diving, underwater adventure, coral reefs, marine life, Cruise Republic" />
+        <meta property="og:title" content="Maldives Dive Itineraries | Shark Dives & Coral Reefs" />
+        <meta property="og:description" content="Discover diverse dive itineraries in the Maldives, from tiger shark dives to colorful reefs. Plan your next underwater adventure with Cruise Republic." />
+        <meta property="og:image" content="http://www.cruiserepublicmaldives.com/boat-top.jpg" />
+        <meta property="og:url" content="http://www.cruiserepublicmaldives.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Maldives Dive Itineraries | Shark Dives & Coral Reefs" />
+        <meta name="twitter:description" content="Discover diverse dive itineraries in the Maldives, from tiger shark dives to colorful reefs. Plan your next underwater adventure with Cruise Republic." />
+        <meta name="twitter:image" content="http://www.cruiserepublicmaldives.com/boat-top.jpg" />
+      </Head>
       {/* Navbar */}
       <Navbar />
 
@@ -218,31 +235,28 @@ export default function DiveItinerariesPage() {
           <div className="flex flex-wrap justify-center mb-12">
             <button
               onClick={() => setActiveTab("5-day")}
-              className={`px-8 py-4 text-lg font-medium mx-2 mb-2 transition-colors ${
-                activeTab === "5-day"
+              className={`px-8 py-4 text-lg font-medium mx-2 mb-2 transition-colors ${activeTab === "5-day"
                   ? "bg-white text-black"
                   : "bg-transparent text-white border border-white hover:bg-white/10"
-              }`}
+                }`}
             >
               5-Day Itinerary
             </button>
             <button
               onClick={() => setActiveTab("7-day")}
-              className={`px-8 py-4 text-lg font-medium mx-2 mb-2 transition-colors ${
-                activeTab === "7-day"
+              className={`px-8 py-4 text-lg font-medium mx-2 mb-2 transition-colors ${activeTab === "7-day"
                   ? "bg-white text-black"
                   : "bg-transparent text-white border border-white hover:bg-white/10"
-              }`}
+                }`}
             >
               7-Day Itinerary
             </button>
             <button
               onClick={() => setActiveTab("10-day")}
-              className={`px-8 py-4 text-lg font-medium mx-2 mb-2 transition-colors ${
-                activeTab === "10-day"
+              className={`px-8 py-4 text-lg font-medium mx-2 mb-2 transition-colors ${activeTab === "10-day"
                   ? "bg-white text-black"
                   : "bg-transparent text-white border border-white hover:bg-white/10"
-              }`}
+                }`}
             >
               10-Day Itinerary
             </button>
@@ -634,7 +648,7 @@ export default function DiveItinerariesPage() {
             <div className="bg-white p-8 border-2 border-black">
               <div className="text-5xl font-serif mb-6">"</div>
               <p className="text-gray-800 mb-6 italic">
-              We took a day trip from Fuvahmulah to Addu to see manta rays with Cruise Republic and it was a 10! Super nice and attentive with everything. Great diving, food and trip in general. A hug to all
+                We took a day trip from Fuvahmulah to Addu to see manta rays with Cruise Republic and it was a 10! Super nice and attentive with everything. Great diving, food and trip in general. A hug to all
               </p>
               <div className="font-bold">Maria E.</div>
               <div className="text-gray-600">Spain</div>
@@ -643,7 +657,7 @@ export default function DiveItinerariesPage() {
             <div className="bg-white p-8 border-2 border-black">
               <div className="text-5xl font-serif mb-6">"</div>
               <p className="text-gray-800 mb-6 italic">
-              An extraordinary experience, a great day of crossing from Fuvahmulha to Addu. We saw the sunrise in the sea, the beautiful dives with blankets, a very good breakfast and very good food... incredible sailing, exquisite treatment, I recommend it 100x100.
+                An extraordinary experience, a great day of crossing from Fuvahmulha to Addu. We saw the sunrise in the sea, the beautiful dives with blankets, a very good breakfast and very good food... incredible sailing, exquisite treatment, I recommend it 100x100.
               </p>
               <div className="font-bold">Carmen Q.</div>
               <div className="text-gray-600">Spain</div>

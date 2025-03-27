@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
 import { FaChevronLeft, FaChevronRight, FaWhatsapp } from 'react-icons/fa';
 
 
@@ -43,6 +44,22 @@ function ImageTransition({ images, intervalTime = 5000, transitionTime = 500 }) 
 
   return (
     <div className="relative overflow-hidden">
+       <Head>
+        <title>Cruise Experience in the Maldives | Your Ideal Dive Getaway</title>
+        <meta
+          name="description"
+          content="Explore the deep south of the Maldives, including Huvadhoo, Fuvahmulah, and Addu Atoll. Discover world-class dive sites, vibrant marine life, and thrilling encounters with apex predators. Book your adventure today!"
+        />
+        <meta name="keywords" content="fuvahmulah dive, maldives dive, diving in fuvahmulah, maldives diving, underwater adventure, coral reefs, marine life, Cruise Republic" />
+        <meta property="og:title" content="Cruise Experience in the Maldives | Your Ideal Dive Getaway" />
+        <meta property="og:description" content="Step aboard our fully equipped dive boat with comfortable cabins, delicious meals, and experienced guides. Explore the Maldives' rich marine life." />
+        <meta property="og:image" content="http://www.cruiserepublicmaldives.com/boat-top.jpg" />
+        <meta property="og:url" content="http://www.cruiserepublicmaldives.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Cruise Experience in the Maldives | Your Ideal Dive Getaway" />
+        <meta name="twitter:description" content="Step aboard our fully equipped dive boat with comfortable cabins, delicious meals, and experienced guides. Explore the Maldives' rich marine life." />
+        <meta name="twitter:image" content="http://www.cruiserepublicmaldives.com/boat-top.jpg" />
+      </Head>
       <div className="relative">
         <img
           src={images[currentIndex] || "/placeholder.svg"}
