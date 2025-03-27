@@ -23,9 +23,10 @@ export const metadata = {
     "fuvahmulah dive, maldives dive, diving in fuvahmulah, maldives diving, underwater adventure, coral reefs, marine life, Cruise Republic",
   
     openGraph: {
-    title: "Fuvahmulah Dive - Maldives Dive Adventures",
+    title: "Cruise Republic | Maldives' Premier Floating Dive Center",
     description:
-      "Experience the ultimate diving adventure in Fuvahmulah and the Maldives. Explore vibrant coral reefs, encounter rich marine life, and embark on an unforgettable underwater journey.",
+    "Explore the deep south of the Maldives, including Huvadhoo, Fuvahmulah, and Addu Atoll. Discover world-class dive sites, vibrant marine life, and thrilling encounters with apex predators. Book your adventure today!",
+
     url: "http://www.cruiserepublicmaldives.com", // Replace with your actual website URL
     siteName: "Cruise Republic",
     images: [
