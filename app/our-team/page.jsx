@@ -6,7 +6,7 @@ import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 export default function Page() {
     return (
-        <div>
+        <div className='bg-white'>
             <Navbar />
             <div className='px-6 py-12 mx-auto'>
                 {/* Header */}
@@ -38,7 +38,7 @@ export default function Page() {
                     </h2>
               
                     {/* Updated Founder Card */}
-                    <div className='flex flex-col gap-3 bg-yellow-100 p-6 rounded-lg'>
+                    <div className='flex flex-col gap-3 text-black bg-yellow-100 p-6 rounded-lg'>
                         <div className='flex items-center justify-center'>
                             <Image
                                 src="/founder-1.jpg"

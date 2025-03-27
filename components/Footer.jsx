@@ -1,11 +1,21 @@
 import React from 'react'
 import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { BsFillTelephoneFill } from "react-icons/bs";
+import Link from 'next/link';
 
 function Footer() {
   return (
     <footer className="bg-black text-white py-4 text-center">
+      
       <div className="container mx-auto">
+      <div className="flex  justify-end">
+                <Link
+                  href="/faq"
+                  className="text-white px-10 underline transition-all duration-200 hover:text-blue-900"
+                >
+                  FAQ
+                </Link>
+              </div>
         <p>&copy; Cruise Republic All rights reserved.</p>
         <div className="mt-4">
           <p className="text-sm">
@@ -33,6 +43,7 @@ function Footer() {
             <BsFillTelephoneFill /> Hotline: +9607795512
           </p>
         </div>
+   
       </div>
     </footer>
   );
