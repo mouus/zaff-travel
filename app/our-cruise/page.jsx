@@ -5,11 +5,6 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight, FaWhatsapp } from 'react-icons/fa';
 
-export const metadata = {
-  title: "Cruise Experience in the Maldives | Your Ideal Dive Getaway",
-  description:
-    "Step aboard our fully equipped dive boat with comfortable cabins, delicious meals, and experienced guides. Explore the Maldives' rich marine life.",
-}
 
 // ImageTransition component for fading between images
 function ImageTransition({ images, intervalTime = 5000, transitionTime = 500 }) {

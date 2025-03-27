@@ -6,11 +6,6 @@ import Link from "next/link"
 import { useState } from "react"
 import { FaWhatsapp, FaCalendarAlt, FaMapMarkerAlt, FaArrowRight } from "react-icons/fa"
 
-export const metadata = {
-  title: "Maldives Dive Itineraries | Shark Dives & Coral Reefs",
-  description: "Discover diverse dive itineraries in the Maldives, from tiger shark dives to colorful reefs. Plan your next underwater adventure with Cruise Republic."
-}
-
 export default function DiveItinerariesPage() {
   const [activeTab, setActiveTab] = useState("5-day")
 
