@@ -4,82 +4,202 @@ import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import Link from "next/link"
 import { useState } from "react"
-import { FaWhatsapp } from "react-icons/fa"
+import { FaWhatsapp, FaCalendarAlt, FaMapMarkerAlt, FaArrowRight } from "react-icons/fa"
 
 export default function DiveItinerariesPage() {
   const [activeTab, setActiveTab] = useState("5-day")
 
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100">
+    <div className="min-h-screen bg-white text-black">
       {/* Navbar */}
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative h-[60vh] bg-cover bg-center" style={{ backgroundImage: "url('boat-top.jpg')" }}>
-        <div className="absolute inset-0 bg-black/70"></div>
+      <section className="relative h-[80vh] bg-cover bg-center" style={{ backgroundImage: "url('boat-top.jpg')" }}>
+        <div className="absolute inset-0 bg-black/75"></div>
         <div className="relative z-10 container mx-auto flex flex-col items-center justify-center h-full text-center px-4">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Dive Itineraries</h1>
-          <p className="mt-4 text-xl text-gray-300 max-w-3xl">
-            Explore the magnificent underwater world of the Maldives
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">DIVE ITINERARIES</h1>
+          <div className="w-24 h-1 bg-white mb-8"></div>
+          <p className="mt-4 text-xl md:text-2xl text-gray-200 max-w-3xl font-light">
+            Explore the magnificent underwater world of the Maldives with our expertly crafted dive adventures
           </p>
-          <div className="mt-8">
+          <div className="mt-12">
             <Link
               href="#itineraries"
-              className="bg-white text-black hover:bg-gray-100 transition-colors px-8 py-3 rounded-full font-medium"
+              className="group bg-white text-black hover:bg-gray-100 transition-colors px-10 py-4 rounded-none font-medium text-lg flex items-center"
             >
               Explore Itineraries
+              <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Featured Itineraries Cards */}
-      <section id="itineraries" className="py-16 bg-white">
+      {/* Overview Section */}
+      <section className="py-20 bg-black text-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8 text-black">Our Dive Itineraries</h2>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">DISCOVER THE DEEP SOUTH</h2>
+            <p className="text-lg md:text-xl mb-12 leading-relaxed">
+              Our dive itineraries take you to the most remote and pristine locations in the Maldives. From close
+              encounters with tiger sharks to drifting alongside majestic manta rays, each journey is carefully designed
+              to provide unforgettable underwater experiences.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="border border-gray-800 p-8 hover:bg-gray-900 transition-colors">
+                <div className="text-4xl font-bold mb-2">5</div>
+                <div className="text-xl font-medium mb-4">Day Expedition</div>
+                <p className="text-gray-400">Perfect for those seeking a concentrated shark diving experience</p>
+              </div>
+              <div className="border border-gray-800 p-8 hover:bg-gray-900 transition-colors">
+                <div className="text-4xl font-bold mb-2">7</div>
+                <div className="text-xl font-medium mb-4">Day Expedition</div>
+                <p className="text-gray-400">Our most popular itinerary with a balance of shark and manta encounters</p>
+              </div>
+              <div className="border border-gray-800 p-8 hover:bg-gray-900 transition-colors">
+                <div className="text-4xl font-bold mb-2">10</div>
+                <div className="text-xl font-medium mb-4">Day Expedition</div>
+                <p className="text-gray-400">The ultimate deep south adventure for serious diving enthusiasts</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Itineraries Cards */}
+      <section id="itineraries" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">FEATURED EXPERIENCES</h2>
+            <div className="w-24 h-1 bg-black mx-auto"></div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Itinerary Card 1 */}
-            <div className="bg-black rounded-lg shadow-md overflow-hidden border border-gray-700">
-              <img src="zaff.jpg" alt="Free Diving Fuvamulah" className="w-full h-64 object-cover" />
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-gray-300">Free Diving Fuvamulah</h3>
-                <p className="text-gray-300 mb-4">
+            <div className="group bg-white border-2 border-black overflow-hidden relative">
+              <div className="relative overflow-hidden">
+                <img
+                  src="zaff.jpg"
+                  alt="Free Diving Fuvamulah"
+                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">Free Diving Fuvamulah</h3>
+                </div>
+              </div>
+              <div className="p-6 bg-white">
+                <div className="flex items-center text-sm text-gray-600 mb-4">
+                  <FaCalendarAlt className="mr-2" />
+                  <span>5 days</span>
+                  <FaMapMarkerAlt className="ml-4 mr-2" />
+                  <span>Fuvahmulah</span>
+                </div>
+                <p className="text-gray-700 mb-6">
                   Experience vibrant free diving and diverse marine life on this thrilling dive itinerary.
                 </p>
+                <Link
+                  href="https://wa.me/9607795512"
+                  className="inline-flex items-center text-black font-medium border-b-2 border-black pb-1 hover:pb-2 transition-all"
+                >
+                  LEARN MORE <FaArrowRight className="ml-2" />
+                </Link>
               </div>
             </div>
 
             {/* Itinerary Card 2 */}
-            <div className="bg-black rounded-lg shadow-md overflow-hidden border border-gray-700">
-              <img src="img2.jpg" alt="Tiger Shark Expedition" className="w-full h-64 object-cover" />
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-gray-300">Tiger Shark Expedition</h3>
-                <p className="text-gray-300 mb-4">
+            <div className="group bg-white border-2 border-black overflow-hidden relative">
+              <div className="relative overflow-hidden">
+                <img
+                  src="img2.jpg"
+                  alt="Tiger Shark Expedition"
+                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">Tiger Shark Expedition</h3>
+                </div>
+              </div>
+              <div className="p-6 bg-white">
+                <div className="flex items-center text-sm text-gray-600 mb-4">
+                  <FaCalendarAlt className="mr-2" />
+                  <span>7 days</span>
+                  <FaMapMarkerAlt className="ml-4 mr-2" />
+                  <span>Multiple Atolls</span>
+                </div>
+                <p className="text-gray-700 mb-6">
                   Immerse yourself in the thrilling world of tiger sharks—witness these majestic predators up close.
                 </p>
+                <Link
+                  href="https://wa.me/9607795512"
+                  className="inline-flex items-center text-black font-medium border-b-2 border-black pb-1 hover:pb-2 transition-all"
+                >
+                  LEARN MORE <FaArrowRight className="ml-2" />
+                </Link>
               </div>
             </div>
 
             {/* Itinerary Card 3 */}
-            <div className="bg-black rounded-lg shadow-md overflow-hidden border border-gray-700">
-              <img src="shark.jpg" alt="Encounter Giants" className="w-full h-64 object-cover" />
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-gray-300">Encounter Giants</h3>
-                <p className="text-gray-300 mb-4">
+            <div className="group bg-white border-2 border-black overflow-hidden relative">
+              <div className="relative overflow-hidden">
+                <img
+                  src="shark.jpg"
+                  alt="Encounter Giants"
+                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">Encounter Giants</h3>
+                </div>
+              </div>
+              <div className="p-6 bg-white">
+                <div className="flex items-center text-sm text-gray-600 mb-4">
+                  <FaCalendarAlt className="mr-2" />
+                  <span>7 days</span>
+                  <FaMapMarkerAlt className="ml-4 mr-2" />
+                  <span>Huvadhoo</span>
+                </div>
+                <p className="text-gray-700 mb-6">
                   Embark on an adventure to encounter rare and majestic marine creatures in their natural habitat.
                 </p>
+                <Link
+                  href="https://wa.me/9607795512"
+                  className="inline-flex items-center text-black font-medium border-b-2 border-black pb-1 hover:pb-2 transition-all"
+                >
+                  LEARN MORE <FaArrowRight className="ml-2" />
+                </Link>
               </div>
             </div>
 
             {/* Itinerary Card 4 */}
-            <div className="bg-black rounded-lg shadow-md overflow-hidden border border-gray-700">
-              <img src="manta.jpg" alt="Addu Manta Point" className="w-full h-64 object-cover" />
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-gray-300">Addu Manta Point</h3>
-                <p className="text-gray-300 mb-4">
+            <div className="group bg-white border-2 border-black overflow-hidden relative">
+              <div className="relative overflow-hidden">
+                <img
+                  src="manta.jpg"
+                  alt="Addu Manta Point"
+                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">Addu Manta Point</h3>
+                </div>
+              </div>
+              <div className="p-6 bg-white">
+                <div className="flex items-center text-sm text-gray-600 mb-4">
+                  <FaCalendarAlt className="mr-2" />
+                  <span>10 days</span>
+                  <FaMapMarkerAlt className="ml-4 mr-2" />
+                  <span>Addu Atoll</span>
+                </div>
+                <p className="text-gray-700 mb-6">
                   Embark on a deep-sea adventure and encounter graceful manta rays in their natural habitat.
                 </p>
+                <Link
+                  href="https://wa.me/9607795512"
+                  className="inline-flex items-center text-black font-medium border-b-2 border-black pb-1 hover:pb-2 transition-all"
+                >
+                  LEARN MORE <FaArrowRight className="ml-2" />
+                </Link>
               </div>
             </div>
           </div>
@@ -87,34 +207,41 @@ export default function DiveItinerariesPage() {
       </section>
 
       {/* Detailed Itineraries Section */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-black text-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8 text-black">Detailed Itineraries</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">DETAILED ITINERARIES</h2>
+            <div className="w-24 h-1 bg-white mx-auto"></div>
+          </div>
 
           {/* Tabs */}
-          <div className="flex flex-wrap justify-center mb-8 border-b border-gray-700">
+          <div className="flex flex-wrap justify-center mb-12">
             <button
               onClick={() => setActiveTab("5-day")}
-              className={`px-6 py-3 text-lg font-medium ${
-                activeTab === "5-day" ? "text-black border-b-2 border-black" : "text-gray-600 hover:text-black"
+              className={`px-8 py-4 text-lg font-medium mx-2 mb-2 transition-colors ${
+                activeTab === "5-day"
+                  ? "bg-white text-black"
+                  : "bg-transparent text-white border border-white hover:bg-white/10"
               }`}
             >
               5-Day Itinerary
             </button>
             <button
               onClick={() => setActiveTab("7-day")}
-              className={`px-6 py-3 text-lg font-medium ${
-                activeTab === "7-day" ? "text-black border-b-2 border-black" : "text-gray-600 hover:text-black"
+              className={`px-8 py-4 text-lg font-medium mx-2 mb-2 transition-colors ${
+                activeTab === "7-day"
+                  ? "bg-white text-black"
+                  : "bg-transparent text-white border border-white hover:bg-white/10"
               }`}
             >
               7-Day Itinerary
             </button>
             <button
               onClick={() => setActiveTab("10-day")}
-              className={`px-6 py-3 text-lg font-medium ${
+              className={`px-8 py-4 text-lg font-medium mx-2 mb-2 transition-colors ${
                 activeTab === "10-day"
-                  ? "text-black border-b-2 border-black"
-                  : "text-gray-600 hover:text-black"
+                  ? "bg-white text-black"
+                  : "bg-transparent text-white border border-white hover:bg-white/10"
               }`}
             >
               10-Day Itinerary
@@ -124,53 +251,114 @@ export default function DiveItinerariesPage() {
           {/* 5-Day Itinerary Content */}
           {activeTab === "5-day" && (
             <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold mb-4 text-black">5-Day Deep South Maldives Diving Itinerary</h3>
-                <p className="text-lg text-gray-800">Starting from Fuvahmulah &amp; Ending in Addu Atoll</p>
+              <div className="text-center mb-12">
+                <h3 className="text-3xl font-bold mb-4">5-Day Deep South Maldives Diving Itinerary</h3>
+                <p className="text-xl text-gray-300">Starting from Fuvahmulah &amp; Ending in Addu Atoll</p>
               </div>
 
-              <div className="space-y-8">
-                <div className="bg-black rounded-lg p-6 border border-gray-700">
-                  <h4 className="text-xl font-bold mb-3 text-gray-300">
-                    Day 1: Arrival in Fuvahmulah &amp; Deep Dive at Sea Fan
-                  </h4>
-                  <p className="text-gray-300 mb-4">
-                    Upon arrival, our representative will warmly welcome you. Once onboard, you will be shown to your
-                    cabin and given a comprehensive tour of the boat. After lunch, our entire team will conduct a
-                    detailed briefing, followed by an in-depth overview of your dives provided by your dive guides.
-                  </p>
-                  <ul className="list-disc pl-5 text-gray-300 space-y-2">
-                    <li>Arrival at Fuvahmulah Domestic Airport, transfer to dive boat</li>
-                    <li>First Dive: Sea Fan (Gorgonian) – a deep drift dive featuring massive gorgonian sea fans</li>
-                    <li>Evening briefing on shark diving and expedition plan</li>
-                  </ul>
+              <div className="space-y-12">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
+                  <div className="md:col-span-1 text-center md:text-left">
+                    <div className="inline-block md:block bg-white text-black font-bold text-xl py-2 px-4 mb-2">
+                      DAY 1
+                    </div>
+                  </div>
+                  <div className="md:col-span-4 border-l-2 border-white pl-6">
+                    <h4 className="text-2xl font-bold mb-4">Arrival in Fuvahmulah &amp; Deep Dive at Sea Fan</h4>
+                    <p className="text-gray-300 mb-6 leading-relaxed">
+                      Upon arrival, our representative will warmly welcome you. Once onboard, you will be shown to your
+                      cabin and given a comprehensive tour of the boat. After lunch, our entire team will conduct a
+                      detailed briefing, followed by an in-depth overview of your dives provided by your dive guides.
+                    </p>
+                    <ul className="space-y-3 text-gray-300">
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Arrival at Fuvahmulah Domestic Airport, transfer to dive boat</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>
+                          First Dive: Sea Fan (Gorgonian) – a deep drift dive featuring massive gorgonian sea fans
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Evening briefing on shark diving and expedition plan</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
 
-                <div className="bg-black rounded-lg p-6 border border-gray-700">
-                  <h4 className="text-xl font-bold mb-3 text-gray-300">
-                    Day 2-3: Fuvahmulah – The Ultimate Shark Diving Destination
-                  </h4>
-                  <ul className="list-disc pl-5 text-gray-300 space-y-2">
-                    <li>Tiger Zone – close encounters with tiger sharks</li>
-                    <li>Thresher Shark Deep Dive – early morning dive for rare pelagic threshers</li>
-                    <li>Hammerhead Search – deep dive in the blue for schooling hammerheads</li>
-                    <li>Farikede Plateau &amp; Pelagic Drift Dives – encounter silvertips and oceanic whitetips</li>
-                    <li>Sunset at Thoondu Beach, then overnight transfer toward Huvadhoo</li>
-                  </ul>
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
+                  <div className="md:col-span-1 text-center md:text-left">
+                    <div className="inline-block md:block bg-white text-black font-bold text-xl py-2 px-4 mb-2">
+                      DAYS 2-3
+                    </div>
+                  </div>
+                  <div className="md:col-span-4 border-l-2 border-white pl-6">
+                    <h4 className="text-2xl font-bold mb-4">Fuvahmulah – The Ultimate Shark Diving Destination</h4>
+                    <ul className="space-y-3 text-gray-300">
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Tiger Zone – close encounters with tiger sharks</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Thresher Shark Deep Dive – early morning dive for rare pelagic threshers</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Hammerhead Search – deep dive in the blue for schooling hammerheads</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>
+                          Farikede Plateau &amp; Pelagic Drift Dives – encounter silvertips and oceanic whitetips
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Sunset at Thoondu Beach, then overnight transfer toward Huvadhoo</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
 
-                <div className="bg-black rounded-lg p-6 border border-gray-700">
-                  <h4 className="text-xl font-bold mb-3 text-gray-300">
-                    Day 4-5: Huvadhoo Atoll – Channel Diving &amp; Pelagics
-                  </h4>
-                  <ul className="list-disc pl-5 text-gray-300 space-y-2">
-                    <li>Nilandhoo Kandu &amp; Vilingili Kandu – encounter hammerheads and grey reef sharks</li>
-                    <li>Koodhoo Kandu – strong current channel dive with silky sharks</li>
-                    <li>Maarehaa Thila – pristine coral reefs with vibrant marine biodiversity</li>
-                    <li>Uninhabited Island BBQ – sunset beach dinner experience</li>
-                    <li>Overnight cruise to Addu Atoll</li>
-                    <li>Departure from Gan International Airport (optional)</li>
-                  </ul>
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
+                  <div className="md:col-span-1 text-center md:text-left">
+                    <div className="inline-block md:block bg-white text-black font-bold text-xl py-2 px-4 mb-2">
+                      DAYS 4-5
+                    </div>
+                  </div>
+                  <div className="md:col-span-4 border-l-2 border-white pl-6">
+                    <h4 className="text-2xl font-bold mb-4">Huvadhoo Atoll – Channel Diving &amp; Pelagics</h4>
+                    <ul className="space-y-3 text-gray-300">
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Nilandhoo Kandu &amp; Vilingili Kandu – encounter hammerheads and grey reef sharks</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Koodhoo Kandu – strong current channel dive with silky sharks</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Maarehaa Thila – pristine coral reefs with vibrant marine biodiversity</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Uninhabited Island BBQ – sunset beach dinner experience</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Overnight cruise to Addu Atoll</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Departure from Gan International Airport (optional)</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -179,63 +367,142 @@ export default function DiveItinerariesPage() {
           {/* 7-Day Itinerary Content */}
           {activeTab === "7-day" && (
             <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold mb-4 text-black">7-Day Deep South Maldives Diving Itinerary</h3>
-                <p className="text-lg text-gray-800">Starting from Fuvahmulah &amp; Ending in Addu Atoll</p>
+              <div className="text-center mb-12">
+                <h3 className="text-3xl font-bold mb-4">7-Day Deep South Maldives Diving Itinerary</h3>
+                <p className="text-xl text-gray-300">Starting from Fuvahmulah &amp; Ending in Addu Atoll</p>
               </div>
 
-              <div className="space-y-8">
-                <div className="bg-black rounded-lg p-6 border border-gray-700">
-                  <h4 className="text-xl font-bold mb-3 text-gray-300">
-                    Day 1: Arrival in Fuvahmulah &amp; Deep Dive at Sea Fan
-                  </h4>
-                  <p className="text-gray-300 mb-4">
-                    Upon arrival, our representative will warmly welcome you. Once onboard, you will be shown to your
-                    cabin and given a comprehensive tour of the boat.
-                  </p>
-                  <ul className="list-disc pl-5 text-gray-300 space-y-2">
-                    <li>Arrival at Fuvahmulah Domestic Airport, transfer to dive boat</li>
-                    <li>First Dive: Sea Fan (Gorgonian) – a deep drift dive</li>
-                    <li>Evening briefing on shark diving and expedition plan</li>
-                  </ul>
+              <div className="space-y-12">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
+                  <div className="md:col-span-1 text-center md:text-left">
+                    <div className="inline-block md:block bg-white text-black font-bold text-xl py-2 px-4 mb-2">
+                      DAY 1
+                    </div>
+                  </div>
+                  <div className="md:col-span-4 border-l-2 border-white pl-6">
+                    <h4 className="text-2xl font-bold mb-4">Arrival in Fuvahmulah &amp; Deep Dive at Sea Fan</h4>
+                    <p className="text-gray-300 mb-6 leading-relaxed">
+                      Upon arrival, our representative will warmly welcome you. Once onboard, you will be shown to your
+                      cabin and given a comprehensive tour of the boat.
+                    </p>
+                    <ul className="space-y-3 text-gray-300">
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Arrival at Fuvahmulah Domestic Airport, transfer to dive boat</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>First Dive: Sea Fan (Gorgonian) – a deep drift dive</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Evening briefing on shark diving and expedition plan</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
 
-                <div className="bg-black rounded-lg p-6 border border-gray-700">
-                  <h4 className="text-xl font-bold mb-3 text-gray-300">
-                    Day 2-3: Fuvahmulah – The Ultimate Shark Diving Destination
-                  </h4>
-                  <ul className="list-disc pl-5 text-gray-300 space-y-2">
-                    <li>Tiger Zone – close encounters with tiger sharks</li>
-                    <li>Thresher Shark Deep Dive – early morning dive</li>
-                    <li>Hammerhead Search – deep dive in the blue</li>
-                    <li>Farikede Plateau &amp; Pelagic Drift Dives</li>
-                    <li>Sunset at Thoondu Beach</li>
-                  </ul>
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
+                  <div className="md:col-span-1 text-center md:text-left">
+                    <div className="inline-block md:block bg-white text-black font-bold text-xl py-2 px-4 mb-2">
+                      DAYS 2-3
+                    </div>
+                  </div>
+                  <div className="md:col-span-4 border-l-2 border-white pl-6">
+                    <h4 className="text-2xl font-bold mb-4">Fuvahmulah – The Ultimate Shark Diving Destination</h4>
+                    <ul className="space-y-3 text-gray-300">
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Tiger Zone – close encounters with tiger sharks</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Thresher Shark Deep Dive – early morning dive</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Hammerhead Search – deep dive in the blue</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Farikede Plateau &amp; Pelagic Drift Dives</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Sunset at Thoondu Beach</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
 
-                <div className="bg-black rounded-lg p-6 border border-gray-700">
-                  <h4 className="text-xl font-bold mb-3 text-gray-300">
-                    Day 4-5: Huvadhoo Atoll – Channel Diving &amp; Pelagics
-                  </h4>
-                  <ul className="list-disc pl-5 text-gray-300 space-y-2">
-                    <li>Nilandhoo Kandu &amp; Vilingili Kandu</li>
-                    <li>Koodhoo Kandu – strong current channel dive</li>
-                    <li>Maarehaa Thila – pristine coral reefs</li>
-                    <li>Uninhabited Island BBQ</li>
-                    <li>Overnight cruise to Addu Atoll</li>
-                  </ul>
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
+                  <div className="md:col-span-1 text-center md:text-left">
+                    <div className="inline-block md:block bg-white text-black font-bold text-xl py-2 px-4 mb-2">
+                      DAYS 4-5
+                    </div>
+                  </div>
+                  <div className="md:col-span-4 border-l-2 border-white pl-6">
+                    <h4 className="text-2xl font-bold mb-4">Huvadhoo Atoll – Channel Diving &amp; Pelagics</h4>
+                    <ul className="space-y-3 text-gray-300">
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Nilandhoo Kandu &amp; Vilingili Kandu</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Koodhoo Kandu – strong current channel dive</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Maarehaa Thila – pristine coral reefs</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Uninhabited Island BBQ</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Overnight cruise to Addu Atoll</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
 
-                <div className="bg-black rounded-lg p-6 border border-gray-700">
-                  <h4 className="text-xl font-bold mb-3 text-gray-300">Day 6-7: Addu Atoll – Manta Point</h4>
-                  <ul className="list-disc pl-5 text-gray-300 space-y-2">
-                    <li>Maakandu (Manta Point) – cleaning station for mantas</li>
-                    <li>Addu Shipwreck – a World War II-era oil tanker</li>
-                    <li>Addu Kandu Dives – deep channels</li>
-                    <li>Relax on an uninhabited island</li>
-                    <li>Final morning dive or snorkeling session</li>
-                    <li>Transfer to Gan International Airport for departure</li>
-                  </ul>
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
+                  <div className="md:col-span-1 text-center md:text-left">
+                    <div className="inline-block md:block bg-white text-black font-bold text-xl py-2 px-4 mb-2">
+                      DAYS 6-7
+                    </div>
+                  </div>
+                  <div className="md:col-span-4 border-l-2 border-white pl-6">
+                    <h4 className="text-2xl font-bold mb-4">Addu Atoll – Manta Point</h4>
+                    <ul className="space-y-3 text-gray-300">
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Maakandu (Manta Point) – cleaning station for mantas</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Addu Shipwreck – a World War II-era oil tanker</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Addu Kandu Dives – deep channels</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Relax on an uninhabited island</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Final morning dive or snorkeling session</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Transfer to Gan International Airport for departure</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -244,46 +511,100 @@ export default function DiveItinerariesPage() {
           {/* 10-Day Itinerary Content */}
           {activeTab === "10-day" && (
             <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold mb-4 text-black">10-Day Deep South Maldives Diving Itinerary</h3>
-                <p className="text-lg text-gray-800">Starting from Fuvahmulah &amp; Ending in Addu Atoll</p>
+              <div className="text-center mb-12">
+                <h3 className="text-3xl font-bold mb-4">10-Day Deep South Maldives Diving Itinerary</h3>
+                <p className="text-xl text-gray-300">Starting from Fuvahmulah &amp; Ending in Addu Atoll</p>
               </div>
 
-              <div className="space-y-8">
-                <div className="bg-black rounded-lg p-6 border border-gray-700">
-                  <h4 className="text-xl font-bold mb-3 text-gray-300">Day 1: Arrival in Fuvahmulah</h4>
-                  <p className="text-gray-300 mb-4">
-                    Upon arrival, our representative will warmly welcome you. Once onboard, you will be shown to your
-                    cabin and given a comprehensive tour of the boat.
-                  </p>
-                  <ul className="list-disc pl-5 text-gray-300 space-y-2">
-                    <li>Arrival at Fuvahmulah Domestic Airport</li>
-                    <li>First Dive: Sea Fan (Gorgonian)</li>
-                    <li>Evening briefing on shark diving</li>
-                  </ul>
+              <div className="space-y-12">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
+                  <div className="md:col-span-1 text-center md:text-left">
+                    <div className="inline-block md:block bg-white text-black font-bold text-xl py-2 px-4 mb-2">
+                      DAY 1
+                    </div>
+                  </div>
+                  <div className="md:col-span-4 border-l-2 border-white pl-6">
+                    <h4 className="text-2xl font-bold mb-4">Arrival in Fuvahmulah</h4>
+                    <p className="text-gray-300 mb-6 leading-relaxed">
+                      Upon arrival, our representative will warmly welcome you. Once onboard, you will be shown to your
+                      cabin and given a comprehensive tour of the boat.
+                    </p>
+                    <ul className="space-y-3 text-gray-300">
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Arrival at Fuvahmulah Domestic Airport</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>First Dive: Sea Fan (Gorgonian)</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Evening briefing on shark diving</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
 
-                <div className="bg-black rounded-lg p-6 border border-gray-700">
-                  <h4 className="text-xl font-bold mb-3 text-gray-300">Days 2-9: Diving Adventures</h4>
-                  <p className="text-gray-300 mb-4">
-                    Experience the best diving spots across multiple atolls including Fuvahmulah, Huvadhoo, and Addu.
-                  </p>
-                  <ul className="list-disc pl-5 text-gray-300 space-y-2">
-                    <li>Tiger Shark Zone – close encounters</li>
-                    <li>Thresher Shark Deep Dive</li>
-                    <li>Hammerhead Search</li>
-                    <li>Manta Point in Addu Atoll</li>
-                    <li>Remote &amp; Secret Spots in Huvadhoo</li>
-                    <li>Uninhabited Island BBQs</li>
-                  </ul>
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
+                  <div className="md:col-span-1 text-center md:text-left">
+                    <div className="inline-block md:block bg-white text-black font-bold text-xl py-2 px-4 mb-2">
+                      DAYS 2-9
+                    </div>
+                  </div>
+                  <div className="md:col-span-4 border-l-2 border-white pl-6">
+                    <h4 className="text-2xl font-bold mb-4">Diving Adventures</h4>
+                    <p className="text-gray-300 mb-6 leading-relaxed">
+                      Experience the best diving spots across multiple atolls including Fuvahmulah, Huvadhoo, and Addu.
+                    </p>
+                    <ul className="space-y-3 text-gray-300">
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Tiger Shark Zone – close encounters</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Thresher Shark Deep Dive</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Hammerhead Search</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Manta Point in Addu Atoll</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Remote &amp; Secret Spots in Huvadhoo</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Uninhabited Island BBQs</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
 
-                <div className="bg-black rounded-lg p-6 border border-gray-700">
-                  <h4 className="text-xl font-bold mb-3 text-gray-300">Day 10: Departure</h4>
-                  <ul className="list-disc pl-5 text-gray-300 space-y-2">
-                    <li>Relaxing morning snorkel or final dive (optional)</li>
-                    <li>Return transfer and departure</li>
-                  </ul>
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
+                  <div className="md:col-span-1 text-center md:text-left">
+                    <div className="inline-block md:block bg-white text-black font-bold text-xl py-2 px-4 mb-2">
+                      DAY 10
+                    </div>
+                  </div>
+                  <div className="md:col-span-4 border-l-2 border-white pl-6">
+                    <h4 className="text-2xl font-bold mb-4">Departure</h4>
+                    <ul className="space-y-3 text-gray-300">
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Relaxing morning snorkel or final dive (optional)</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="inline-block w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Return transfer and departure</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -291,22 +612,74 @@ export default function DiveItinerariesPage() {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">WHAT DIVERS SAY</h2>
+            <div className="w-24 h-1 bg-black mx-auto"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 border-2 border-black">
+              <div className="text-5xl font-serif mb-6">"</div>
+              <p className="text-gray-800 mb-6 italic">
+                The tiger shark encounter was the highlight of my diving career. The guides were professional and safety
+                was always the priority.
+              </p>
+              <div className="font-bold">Sarah T.</div>
+              <div className="text-gray-600">United Kingdom</div>
+            </div>
+
+            <div className="bg-white p-8 border-2 border-black">
+              <div className="text-5xl font-serif mb-6">"</div>
+              <p className="text-gray-800 mb-6 italic">
+                Incredible experience from start to finish. The 7-day itinerary was perfect - we saw everything from
+                thresher sharks to mantas.
+              </p>
+              <div className="font-bold">Michael D.</div>
+              <div className="text-gray-600">Australia</div>
+            </div>
+
+            <div className="bg-white p-8 border-2 border-black">
+              <div className="text-5xl font-serif mb-6">"</div>
+              <p className="text-gray-800 mb-6 italic">
+                The 10-day expedition exceeded all expectations. The remote locations and pristine reefs were absolutely
+                worth it.
+              </p>
+              <div className="font-bold">Elena M.</div>
+              <div className="text-gray-600">Spain</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-black text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6 text-black">Ready for Your Diving Adventure?</h2>
-            <p className="text-xl mb-8 text-black">
-              Contact our team to book your dream diving expedition in the Maldives
+            <h2 className="text-4xl font-bold mb-6">READY FOR YOUR DIVING ADVENTURE?</h2>
+            <div className="w-24 h-1 bg-white mx-auto mb-8"></div>
+            <p className="text-xl mb-12 max-w-2xl mx-auto">
+              Contact our team to book your dream diving expedition in the Maldives. Spaces are limited and fill quickly
+              for our peak season expeditions.
             </p>
-            <a
-              href="https://wa.me/9607780739"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-black text-white hover:bg-gray-900 px-8 py-4 rounded-lg font-medium text-lg transition-colors"
-            >
-              Contact Us on WhatsApp
-            </a>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <a
+                href="https://wa.me/9607780739"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-white text-black hover:bg-gray-200 px-10 py-4 font-medium text-lg transition-colors"
+              >
+                CONTACT US ON WHATSAPP
+              </a>
+              <a
+                href="mailto:info@example.com"
+                className="inline-block border-2 border-white text-white hover:bg-white/10 px-10 py-4 font-medium text-lg transition-colors"
+              >
+                EMAIL US
+              </a>
+            </div>
           </div>
         </div>
       </section>

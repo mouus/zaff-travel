@@ -1,165 +1,124 @@
-'use client';
-import Link from 'next/link';
-import {
-  FaFacebook,
-  FaInstagram,
-  FaWhatsapp,
-  FaShip,
-  FaBed,
-  FaTheaterMasks,
-  FaChevronLeft,
-  FaChevronRight,
-  FaTint,
-} from 'react-icons/fa';
-import { GiJourney } from 'react-icons/gi';
-import { TbScubaDiving } from 'react-icons/tb';
-import { GiDiving } from 'react-icons/gi';
-import { useState, useEffect, useRef } from 'react';
-import Footer from '@/components/Footer';
-import Image from 'next/image';
-import Navbar from '@/components/Navbar';
+"use client"
+import Link from "next/link"
+import { FaWhatsapp, FaShip, FaBed, FaTheaterMasks, FaChevronLeft, FaChevronRight } from "react-icons/fa"
+import { useState, useEffect, useRef } from "react"
+import Footer from "@/components/Footer"
+import Image from "next/image"
+import Navbar from "@/components/Navbar"
 
 export default function Home() {
-  // State for mobile menu toggle.
-  const [menuOpen, setMenuOpen] = useState(false);
-  // State for dynamic scroll transform on the southern image.
-  const [southernTransform, setSouthernTransform] = useState({ scale: 1, deltaX: 0, deltaY: 0 });
-  // State for Vessel Specifications slider.
-  const [currentSlide, setCurrentSlide] = useState(0);
+  // State for mobile menu toggle
+  const [menuOpen, setMenuOpen] = useState(false)
+  // State for Vessel Specifications slider
+  const [currentSlide, setCurrentSlide] = useState(0)
 
-  // Images array for the Journey with Us carousel.
+  // Images array for the Journey with Us carousel
   const journeyImages = [
-    'boat.JPG',
-    'room.JPG',
-    'coco2.JPG',
-    'coco.jpg',
-    'women.JPG',
-    'set.JPG',
-    'img-1.JPG',
-    'img-2.JPG',
-    'img-3.JPG',
-    'img-4.JPG',
-    'img-5.JPG',
-    'img-6.JPG',
-    'img-7.JPG',
-    'img-8.JPG',
-    'img-9.JPG',
-    'img-10.JPG',
-    'img-11.JPG',
-    'img-12.JPG',
-    'img-13.JPG',
-  ];
+    "boat.JPG",
+    "room.JPG",
+    "coco2.JPG",
+    "coco.jpg",
+    "women.JPG",
+    "set.JPG",
+    "img-1.JPG",
+    "img-2.JPG",
+    "img-3.JPG",
+    "img-4.JPG",
+    "img-5.JPG",
+    "img-6.JPG",
+    "img-7.JPG",
+    "img-8.JPG",
+    "img-9.JPG",
+    "img-10.JPG",
+    "img-11.JPG",
+    "img-12.JPG",
+    "img-13.JPG",
+  ]
 
-  // Responsive images per page.
-  const [imagesPerPage, setImagesPerPage] = useState(5);
+  // Responsive images per page
+  const [imagesPerPage, setImagesPerPage] = useState(5)
   useEffect(() => {
     const updateImagesPerPage = () => {
       if (window.innerWidth < 768) {
-        setImagesPerPage(2);
+        setImagesPerPage(2)
+      } else if (window.innerWidth < 1024) {
+        setImagesPerPage(3)
       } else {
-        setImagesPerPage(5);
+        setImagesPerPage(5)
       }
-    };
-    updateImagesPerPage();
-    window.addEventListener('resize', updateImagesPerPage);
-    return () => window.removeEventListener('resize', updateImagesPerPage);
-  }, []);
+    }
+    updateImagesPerPage()
+    window.addEventListener("resize", updateImagesPerPage)
+    return () => window.removeEventListener("resize", updateImagesPerPage)
+  }, [])
 
-  // Determine if the device is mobile (phones).
-  const [isMobile, setIsMobile] = useState(false);
+  // Determine if the device is mobile (phones)
+  const [isMobile, setIsMobile] = useState(false)
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  // Helper function: Group journeyImages into pages.
-  const getJourneyPages = () => {
-    let pages = [];
-    for (let i = 0; i < journeyImages.length; i += imagesPerPage) {
-      let page = journeyImages.slice(i, i + imagesPerPage);
-      // If last page is incomplete, fill with images from the start.
-      if (page.length < imagesPerPage) {
-        page = page.concat(journeyImages.slice(0, imagesPerPage - page.length));
-      }
-      pages.push(page);
+      setIsMobile(window.innerWidth < 768)
     }
-    return pages;
-  };
-  const journeyPages = getJourneyPages();
-  const totalPages = journeyPages.length;
-  const [currentJourneyPage, setCurrentJourneyPage] = useState(0);
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
-  // Use a ref to measure the container width.
-  const journeyContainerRef = useRef(null);
-  const [containerWidth, setContainerWidth] = useState(0);
+  // Helper function: Group journeyImages into pages
+  const getJourneyPages = () => {
+    const pages = []
+    for (let i = 0; i < journeyImages.length; i += imagesPerPage) {
+      let page = journeyImages.slice(i, i + imagesPerPage)
+      // If last page is incomplete, fill with images from the start
+      if (page.length < imagesPerPage) {
+        page = page.concat(journeyImages.slice(0, imagesPerPage - page.length))
+      }
+      pages.push(page)
+    }
+    return pages
+  }
+  const journeyPages = getJourneyPages()
+  const totalPages = journeyPages.length
+  const [currentJourneyPage, setCurrentJourneyPage] = useState(0)
+
+  // Use a ref to measure the container width
+  const journeyContainerRef = useRef(null)
+  const [containerWidth, setContainerWidth] = useState(0)
   useEffect(() => {
     const updateWidth = () => {
       if (journeyContainerRef.current) {
-        setContainerWidth(journeyContainerRef.current.offsetWidth);
+        setContainerWidth(journeyContainerRef.current.offsetWidth)
       }
-    };
-    updateWidth();
-    window.addEventListener('resize', updateWidth);
-    return () => window.removeEventListener('resize', updateWidth);
-  }, []);
+    }
+    updateWidth()
+    window.addEventListener("resize", updateWidth)
+    return () => window.removeEventListener("resize", updateWidth)
+  }, [])
 
-  // Scroll listener for the "southern" image.
+  // Scroll reveal functionality for sections
   useEffect(() => {
-    const minScale = 0.3; // Minimum scale factor when far from the viewport center
-    const maxScale = 1.5; // Maximum scale factor when fully centered
-    const handleScroll = () => {
-      // On phones, disable dynamic resizing.
-      if (window.innerWidth < 768) {
-        setSouthernTransform({ scale: 1, deltaX: 0, deltaY: 0 });
-        return;
-      }
-      const imgElem = document.getElementById('southernImage');
-      if (imgElem) {
-        const rect = imgElem.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
-        // Calculate progress based on how close the center of the image is to the viewport center.
-        const imageCenterY = rect.top + rect.height / 2;
-        const distance = Math.abs(viewportHeight / 2 - imageCenterY);
-        const progress = Math.max(0, 1 - distance / (viewportHeight / 2));
-        const newScale = minScale + (maxScale - minScale) * progress;
-        // Remove translation; only scaling is applied.
-        setSouthernTransform({ scale: newScale, deltaX: 0, deltaY: 0 });
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Scroll reveal functionality for sections and pop-ups.
-  useEffect(() => {
-    const reveals = document.querySelectorAll('.reveal');
+    const reveals = document.querySelectorAll(".reveal")
     const observer = new IntersectionObserver(
       (entries, obs) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            obs.unobserve(entry.target);
+            entry.target.classList.add("active")
+            obs.unobserve(entry.target)
           }
-        });
+        })
       },
-      { threshold: 0.2 }
-    );
-    reveals.forEach((r) => observer.observe(r));
-    return () => observer.disconnect();
-  }, []);
+      { threshold: 0.2 },
+    )
+    reveals.forEach((r) => observer.observe(r))
+    return () => observer.disconnect()
+  }, [])
 
-  // Vessel Specifications slider slides.
+  // Vessel Specifications slider slides
   const slides = [
     {
-      title: 'General Information',
-      icon: <FaShip className="mr-2 text-black" />,
+      title: "General Information",
+      icon: <FaShip className="mr-2" />,
       content: (
-        <ul className="list-disc pl-5 text-black space-y-1">
+        <ul className="list-disc pl-5 space-y-1">
           <li>Length: 21.6m (74 feet)</li>
           <li>Width: 6.61m</li>
           <li>Depth: 1.98m</li>
@@ -170,14 +129,14 @@ export default function Home() {
           <li>Cruise Speed: 12 knots</li>
           <li>Propulsion: Diesel Engine (Yanmar)</li>
         </ul>
-      )
+      ),
     },
     {
-      title: 'Accommodation & Public Areas',
-      icon: <FaBed className="mr-2 text-blue-800" />,
+      title: "Accommodation & Public Areas",
+      icon: <FaBed className="mr-2" />,
       content: (
         <>
-          <ul className="list-disc text-black pl-5 space-y-1">
+          <ul className="list-disc pl-5 space-y-1">
             <li>Cabins: 5 (Bunk Beds)</li>
             <li>
               Facilities:
@@ -192,7 +151,7 @@ export default function Home() {
             </li>
             <li>
               Equipment Provided:
-              <ul className="list-disc text-black pl-5">
+              <ul className="list-disc pl-5">
                 <li>Snorkeling Gear</li>
                 <li>Scuba Diving Equipment</li>
                 <li>Dinghy with Outboard Engine (Mercury)</li>
@@ -200,13 +159,13 @@ export default function Home() {
             </li>
           </ul>
         </>
-      )
+      ),
     },
     {
-      title: 'Leisure & Entertainment',
-      icon: <FaTheaterMasks className="mr-2 text-blue-800" />,
+      title: "Leisure & Entertainment",
+      icon: <FaTheaterMasks className="mr-2" />,
       content: (
-        <ul className="list-disc text-black pl-5 space-y-1">
+        <ul className="list-disc pl-5 space-y-1">
           <li>Snorkeling</li>
           <li>Scuba Diving</li>
           <li>Wavesurfing (on request)</li>
@@ -215,24 +174,24 @@ export default function Home() {
           <li>Yoga</li>
           <li>Cultural Shows (on request)</li>
         </ul>
-      )
+      ),
     },
     {
-      title: 'Electricity & Water',
+      title: "Electricity & Water",
       icon: null,
       content: (
-        <ul className="list-disc text-black pl-5 space-y-1">
+        <ul className="list-disc pl-5 space-y-1">
           <li>2 x 40 KW Cummins Generator Soundproof</li>
           <li>Power: AC 220V</li>
           <li>Water: Desalination System</li>
         </ul>
-      )
+      ),
     },
     {
-      title: 'Navigation & Communication',
+      title: "Navigation & Communication",
       icon: null,
       content: (
-        <ul className="list-disc text-black pl-5 space-y-1">
+        <ul className="list-disc pl-5 space-y-1">
           <li>Map &amp; Compass</li>
           <li>GPS</li>
           <li>Search Light</li>
@@ -243,10 +202,10 @@ export default function Home() {
           <li>Satellite Phone</li>
           <li>Free WiFi</li>
         </ul>
-      )
+      ),
     },
     {
-      title: 'Emergency Equipment',
+      title: "Emergency Equipment",
       icon: null,
       content: (
         <ul className="list-disc pl-5 space-y-1">
@@ -257,65 +216,62 @@ export default function Home() {
           <li>First Aid Kit</li>
           <li>DAN Oxygen Kit</li>
         </ul>
-      )
+      ),
     },
     {
-      title: 'Crew',
+      title: "Crew",
       icon: null,
       content: (
         <ul className="list-disc pl-5">
           <li>Total Crew: 4 (Including Captain &amp; Chef)</li>
         </ul>
-      )
-    }
-  ];
+      ),
+    },
+  ]
 
-  // Navigation functions for Vessel Specifications slider.
+  // Navigation functions for Vessel Specifications slider
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-  };
+    setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
+  }
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  };
+    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1))
+  }
 
-  // Navigation functions for the Journey carousel.
+  // Navigation functions for the Journey carousel
   const nextJourneySlide = () => {
-    setCurrentJourneyPage((prev) => (prev === totalPages - 1 ? 0 : prev + 1));
-  };
+    setCurrentJourneyPage((prev) => (prev === totalPages - 1 ? 0 : prev + 1))
+  }
   const prevJourneySlide = () => {
-    setCurrentJourneyPage((prev) => (prev === 0 ? totalPages - 1 : prev - 1));
-  };
+    setCurrentJourneyPage((prev) => (prev === 0 ? totalPages - 1 : prev - 1))
+  }
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white text-black">
       {/* Header */}
       <Navbar />
 
       {/* Main Content */}
       <main className="flex-grow">
         {/* Hero Section */}
-        <section
-          className="relative h-screen bg-cover bg-center"
-          style={{ backgroundImage: 'url(/img-4.JPG)' }}
-        >
-          <div className="absolute inset-0 bg-black opacity-50"></div>
+        <section className="relative h-screen bg-cover bg-center" style={{ backgroundImage: "url(/img-4.JPG)" }}>
+          <div className="absolute inset-0 bg-black opacity-60"></div>
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4 drop-shadow-lg">
+            <h1 className="text-4xl sm:text-6xl font-bold mb-6 drop-shadow-lg tracking-tight">
               Discover Paradise in the Maldives
             </h1>
-            <p className="text-lg sm:text-xl mb-6 drop-shadow-md">
-              Explore the deep south of the Maldives on an elegant cruise
+            <p className="text-lg sm:text-xl mb-8 drop-shadow-md max-w-2xl">
+              Explore the deep south of the Maldives on an elegant cruise experience
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/dive-itineraries"
-                className="bg-black hover:bg-gray-900 text-white px-6 py-3 rounded transition"
+                className="bg-transparent hover:bg-white hover:text-black text-white border-2 border-white px-8 py-3 rounded-none transition-all duration-300"
               >
                 Learn More
               </Link>
               <Link
                 href="/book"
-                className="bg-white text-gray-950 hover:bg-gray-200 px-6 py-3 rounded transition"
+                className="bg-white text-black hover:bg-black hover:text-white border-2 border-white px-8 py-3 rounded-none transition-all duration-300"
               >
                 Book Now
               </Link>
@@ -324,107 +280,101 @@ export default function Home() {
         </section>
 
         {/* Ocean Exploration Section */}
-        <section className="reveal py-12 transition-all duration-1000 bg-gray-100 md:bg-white">
-          <div className=" mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-8 text-black md:text-black">
-              Explore the Ocean
-            </h2>
-            <div className="grid grid-cols-1 md:flex-col gap-4 items-center">
+        <section className="reveal py-16 transition-all duration-1000 bg-white border-t border-b border-gray-200">
+          <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12 text-black">Explore the Ocean</h2>
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-8 items-center">
               <div className="flex justify-center">
                 {isMobile ? (
-                  <Image
-                    src="/island.JPG"
-                    alt="Island Map"
-                    width={400}
-                    height={400}
-                    className="rounded-lg object-cover"
-                  />
+                  <div className="relative overflow-hidden">
+                    <Image
+                      src="/island.JPG"
+                      alt="Island Map"
+                      width={400}
+                      height={400}
+                      className="object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                    <div className="absolute inset-0 border border-black pointer-events-none"></div>
+                  </div>
                 ) : (
-                  <Image
-                    src="/island-map.png"
-                    alt="Island Map"
-                    width={1920}
-                    height={400}
-                    className="rounded-lg object-cover"
-                  />
+                  <div className="relative overflow-hidden">
+                    <Image
+                      src="/island-map.png"
+                      alt="Island Map"
+                      width={1200}
+                      height={400}
+                      className="object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                    <div className="absolute inset-0 border border-black pointer-events-none"></div>
+                  </div>
                 )}
-
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Image
-                  src="/huvadhoo.png"
-                  alt="Diving"
-                  width={400}
-                  height={400}
-                  className="rounded-lg object-cover w-full max-w-xs sm:max-w-none"
-                />
-                   <Image
-                  src="/east.JPG"
-                  alt="Diving"
-                  width={400}
-                  height={400}
-                  className="rounded-lg object-cover w-full max-w-xs sm:max-w-none"
-                />
-                <Image
-                  src="/addu.png"
-                  alt="Diving"
-                  width={400}
-                  height={400}
-                  className="rounded-lg object-cover w-full max-w-xs sm:max-w-none"
-                />
               </div>
 
-              <div className="flex justify-center">
-                {isMobile ? (<Image
-                  src="/southern.png"
-                  alt="People diving"
-                  // Use the isMobile state to set a different width value on mobile devices.
-                  width={400}
-                  height={400}
-                  className="rounded-lg object-cover"
-                />) : (
-                  <Image
-                    src="/map.png"
-                    alt="People diving"
-                    // Use the isMobile state to set a different width value on mobile devices.
-                    width={1920}
-                    height={600}
-                    className="rounded-lg object-cover"
-                  />
-                )}
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-8">
+                {["huvadhoo.png", "east.JPG", "addu.png"].map((img, index) => (
+                  <div key={index} className="relative overflow-hidden group">
+                    <Image
+                      src={`/${img}`}
+                      alt={`Location ${index + 1}`}
+                      width={350}
+                      height={350}
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 border border-black pointer-events-none"></div>
+                  </div>
+                ))}
+              </div>
 
+              <div className="flex justify-center mt-8">
+                {isMobile ? (
+                  <div className="relative overflow-hidden">
+                    <Image
+                      src="/southern.png"
+                      alt="Southern Maldives"
+                      width={400}
+                      height={400}
+                      className="object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                    <div className="absolute inset-0 border border-black pointer-events-none"></div>
+                  </div>
+                ) : (
+                  <div className="relative overflow-hidden">
+                    <Image
+                      src="/map.png"
+                      alt="Maldives Map"
+                      width={1200}
+                      height={600}
+                      className="object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                    <div className="absolute inset-0 border border-black pointer-events-none"></div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
         </section>
 
         {/* Journey with Us Carousel */}
-        <section className="reveal bg-white py-12 w-full transition-all duration-1000">
-          <h2 className="text-3xl font-bold text-black text-center mb-8">
-            <span className="flex justify-center">
-              Journey With Us
-            </span>
-          </h2>
-          <div ref={journeyContainerRef} className="relative mx-auto w-full max-w-[1000px] px-4">
+        <section className="reveal py-16 w-full transition-all duration-1000 bg-gray-50">
+          <h2 className="text-3xl font-bold text-black text-center mb-12">Journey With Us</h2>
+          <div ref={journeyContainerRef} className="relative mx-auto w-full max-w-6xl px-4">
             <div className="overflow-hidden w-full">
               <div
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${currentJourneyPage * containerWidth}px)` }}
               >
                 {journeyPages.map((page, pageIndex) => (
-                  <div
-                    key={pageIndex}
-                    className="w-full flex-shrink-0 flex justify-center gap-4 px-4"
-                  >
+                  <div key={pageIndex} className="w-full flex-shrink-0 flex justify-center gap-4 px-4">
                     {page.map((img, index) => (
-                      <div key={index} className="w-[200px] h-[200px] relative">
+                      <div key={index} className="relative group overflow-hidden w-[200px] h-[200px]">
                         <Image
                           src={`/${img}`}
                           alt={`Journey image ${index}`}
                           layout="fill"
                           objectFit="cover"
-                          className="rounded-md shadow-md"
+                          className="transition-transform duration-500 group-hover:scale-110"
                         />
+                        <div className="absolute inset-0 border border-black opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                       </div>
                     ))}
                   </div>
@@ -434,43 +384,44 @@ export default function Home() {
             {/* Journey Carousel Arrow Buttons */}
             <button
               onClick={prevJourneySlide}
-              className="absolute left-2 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow-md hover:bg-gray-300 z-10"
+              className="absolute left-2 top-1/2 transform -translate-y-1/2 p-3 bg-white border border-black rounded-full hover:bg-black hover:text-white transition-colors duration-300 z-10"
               aria-label="Previous Journey Slide"
             >
-              <FaChevronLeft className="text-black" size={20} />
+              <FaChevronLeft size={20} />
             </button>
             <button
               onClick={nextJourneySlide}
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow-md hover:bg-gray-300 z-10"
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 p-3 bg-white border border-black rounded-full hover:bg-black hover:text-white transition-colors duration-300 z-10"
               aria-label="Next Journey Slide"
             >
-              <FaChevronRight className="text-black" size={20} />
+              <FaChevronRight size={20} />
             </button>
           </div>
         </section>
 
-
-        <section className="bg-white py-5">
-          <h2 className="text-center font-semibold text-2xl mb-2 text-black">
-            Cruise Republic Boat Plan Inside
-          </h2>
-          <div className="flex justify-center py-2">
-            <Image
-              src="/boat-map.jpg"
-              alt="Journey image"
-              width={400}
-              height={400}
-              className="rounded-lg px-2 py-1 shadow-lg shadow-black/20 object-cover"
-            />
+        {/* Boat Plan Section */}
+        <section className="bg-white py-16 border-t border-b border-gray-200">
+          <h2 className="text-center font-bold text-3xl mb-8 text-black">Cruise Republic Boat Plan</h2>
+          <div className="flex justify-center">
+            <div className="relative overflow-hidden group">
+              <Image
+                src="/boat-map.jpg"
+                alt="Boat floor plan"
+                width={500}
+                height={500}
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 border border-black pointer-events-none"></div>
+            </div>
           </div>
         </section>
 
         {/* Vessel Specifications Slider */}
-        <section className="reveal bg-gray-50 py-12 w-full transition-all duration-1000">
-          <div className="relative overflow-hidden w-full">
-            <h2 className="text-3xl font-bold text-center mb-8 flex items-center justify-center">
-              <FaShip className="mr-2 text-black" />
-              <span className="text-black">Vessel Specifications</span>
+        <section className="reveal bg-gray-50 py-16 w-full transition-all duration-1000">
+          <div className="relative overflow-hidden w-full max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12 flex items-center justify-center">
+              <FaShip className="mr-3" />
+              <span>Vessel Specifications</span>
             </h2>
             <div
               className="flex transition-transform duration-500 ease-in-out w-full"
@@ -478,69 +429,79 @@ export default function Home() {
             >
               {slides.map((slide, index) => (
                 <div key={index} className="w-full flex-shrink-0 px-4">
-                  <div className="bg-gray-50 p-6">
-                    <h3 className="text-2xl pl-10 font-semibold mb-4 flex items-center">
-                      <span className="text-black">{slide.icon}</span>
-                      <span className="text-black">{slide.title}</span>
+                  <div className="bg-white p-8 border border-gray-200">
+                    <h3 className="text-2xl font-bold mb-6 flex items-center">
+                      {slide.icon}
+                      <span>{slide.title}</span>
                     </h3>
-                    <div className="text-left pl-10 text-black">{slide.content}</div>
+                    <div className="text-left">{slide.content}</div>
                   </div>
                 </div>
               ))}
             </div>
-            {/* Vessel Specifications Arrow Buttons */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-2 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow-md hover:bg-gray-200"
-              aria-label="Previous Slide"
-            >
-              <FaChevronLeft className="text-black" size={20} />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow-md hover:bg-gray-200"
-              aria-label="Next Slide"
-            >
-              <FaChevronRight className="text-black" size={20} />
-            </button>
+            {/* Vessel Specifications Navigation */}
+            <div className="flex justify-between mt-8">
+              <button
+                onClick={prevSlide}
+                className="p-3 bg-white border border-black hover:bg-black hover:text-white transition-colors duration-300 flex items-center"
+                aria-label="Previous Slide"
+              >
+                <FaChevronLeft className="mr-2" size={16} />
+                <span>Previous</span>
+              </button>
+              <div className="flex items-center">
+                {slides.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentSlide(idx)}
+                    className={`w-3 h-3 mx-1 rounded-full border border-black ${
+                      currentSlide === idx ? "bg-black" : "bg-white"
+                    }`}
+                    aria-label={`Go to slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
+              <button
+                onClick={nextSlide}
+                className="p-3 bg-white border border-black hover:bg-black hover:text-white transition-colors duration-300 flex items-center"
+                aria-label="Next Slide"
+              >
+                <span>Next</span>
+                <FaChevronRight className="ml-2" size={16} />
+              </button>
+            </div>
           </div>
         </section>
-     
       </main>
 
-      {/* WhatsApp Button */}
-      <a
+       {/* WhatsApp Button */}
+       <a
         href="https://wa.me/9607780739"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition flex items-center justify-center"
-        style={{ zIndex: 1000 }}
+        className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition flex items-center justify-center z-50"
+        aria-label="Contact us on WhatsApp"
       >
-        <FaWhatsapp size={24} />
+        <FaWhatsapp size={28} />
       </a>
+
 
       {/* Footer */}
       <Footer />
 
-      {/* Global styles for reveal/pop-up animations */}
+      {/* Global styles for reveal animations */}
       <style jsx global>{`
         .reveal {
           opacity: 0;
-          transform: translateY(8px);
+          transform: translateY(20px);
           transition: all 1s ease;
         }
         .reveal.active {
           opacity: 1;
           transform: translateY(0);
         }
-        .pop-up {
-          opacity: 0;
-          transform: translateY(50px);
-        }
-        .pop-up.active {
-          animation: popUp 1.2s forwards;
-        }
       `}</style>
     </div>
-  );
+  )
 }
+
