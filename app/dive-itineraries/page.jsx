@@ -634,20 +634,18 @@ export default function DiveItinerariesPage() {
             <div className="bg-white p-8 border-2 border-black">
               <div className="text-5xl font-serif mb-6">"</div>
               <p className="text-gray-800 mb-6 italic">
-                Incredible experience from start to finish. The 7-day itinerary was perfect - we saw everything from
-                thresher sharks to mantas.
+              We took a day trip from Fuvahmulah to Addu to see manta rays with Cruise Republic and it was a 10! Super nice and attentive with everything. Great diving, food and trip in general. A hug to all
               </p>
-              <div className="font-bold">Michael D.</div>
-              <div className="text-gray-600">Australia</div>
+              <div className="font-bold">Maria E.</div>
+              <div className="text-gray-600">Spain</div>
             </div>
 
             <div className="bg-white p-8 border-2 border-black">
               <div className="text-5xl font-serif mb-6">"</div>
               <p className="text-gray-800 mb-6 italic">
-                The 10-day expedition exceeded all expectations. The remote locations and pristine reefs were absolutely
-                worth it.
+              An extraordinary experience, a great day of crossing from Fuvahmulha to Addu. We saw the sunrise in the sea, the beautiful dives with blankets, a very good breakfast and very good food... incredible sailing, exquisite treatment, I recommend it 100x100.
               </p>
-              <div className="font-bold">Elena M.</div>
+              <div className="font-bold">Carmen Q.</div>
               <div className="text-gray-600">Spain</div>
             </div>
           </div>
