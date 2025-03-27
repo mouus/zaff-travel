@@ -341,7 +341,7 @@ export default function Home() {
                 ) : (
                   <div className="relative overflow-hidden">
                     <Image
-                      src="/map.png"
+                      src="/map.PNG"
                       alt="Maldives Map"
                       width={1200}
                       height={600}
