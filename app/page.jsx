@@ -6,11 +6,6 @@ import Footer from "@/components/Footer"
 import Image from "next/image"
 import Navbar from "@/components/Navbar"
 
-export const metadata = {
-  title: "Maldives Dive Cruises | Explore the Deep South with Cruise Republic",
-  description:
-    "Experience unforgettable diving trips in the Maldives’ deep south. Join Cruise Republic for shark encounters, coral reefs, and vibrant marine life. Book your dive cruise today!",
-}
 
 export default function Home() {
   // State for mobile menu toggle
