@@ -193,7 +193,7 @@ export default function Home() {
         {/* Hero Section with Background Video */}
         <section className="relative h-screen overflow-hidden">
           <video autoPlay muted loop playsInline className="absolute w-full h-full object-cover">
-            <source src="/img66.mp4" type="video/mp4" />
+            <source src="/img66.MP4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-black opacity-60"></div>
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
