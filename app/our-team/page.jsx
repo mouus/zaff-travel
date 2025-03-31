@@ -78,7 +78,7 @@ export default function Page() {
               </div>
               <div className="md:w-2/3">
                 <h3 className="text-3xl font-bold mb-2">Abdulla Zafar Ali</h3>
-                <p className="text-xl font-semibold mb-6">Pioneer of Tiger Shark Diving in Fuvahmulah</p>
+                <p className="text-xl font-semibold mb-6">Pioneer of Tiger Shark Diving in Fuvahmulah | Founder & COO | Manager</p>
                 <div className="text-lg space-y-4">
                   <p>
                     Abdulla Zafar Ali is a PADI-certified scuba instructor, surfer, and hospitality professional with
@@ -135,31 +135,7 @@ export default function Page() {
         <section className="mb-20">
           <h2 className="text-4xl font-bold mb-12 text-center">Our Crew</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            {/* Team Member 1 */}
-            <div className="flex flex-col md:flex-row gap-8 items-start">
-              <div className="md:w-1/3 flex justify-center">
-                <div className="relative group overflow-hidden w-[180px] h-[180px]">
-                  <Image
-                    src="/team-1.PNG"
-                    alt="Lead Manager - Javier Ayensa"
-                    width={180}
-                    height={180}
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 border border-black pointer-events-none"></div>
-                </div>
-              </div>
-              <div className="md:w-2/3">
-                <h3 className="text-2xl font-bold mb-3">Javier Ayensa</h3>
-                <p className="text-lg font-medium mb-3">Lead Manager</p>
-                <p className="text-base">
-                  A PADI & SSI diving instructor and freediving enthusiast, Javi took his first dive at age 13 in
-                  Mexico, sparking a lifelong passion for the ocean. With hands-on experience in dive center operations
-                  and customer relations, he has worked closely with divers from around the world, deepening his
-                  knowledge of marine life and dive logistics.
-                </p>
-              </div>
-            </div>
+
 
             {/* Team Member 2 */}
             <div className="flex flex-col md:flex-row gap-8 items-start">
@@ -207,30 +183,6 @@ export default function Page() {
                   A highly skilled boat captain with nearly 11 years of experience, Nishan's deep knowledge of Maldivian
                   waters ensures smooth and safe journeys for all our guests. As a certified rescue diver, he adds an
                   extra layer of safety and expertise to every adventure.
-                </p>
-              </div>
-            </div>
-
-            {/* Team Member 4 */}
-            <div className="flex flex-col md:flex-row gap-8 items-start">
-              <div className="md:w-1/3 flex justify-center">
-                <div className="relative group overflow-hidden w-[180px] h-[180px]">
-                  <Image
-                    src="/team-3.jpg"
-                    alt="Crew - Jumaan"
-                    width={180}
-                    height={180}
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 border border-black pointer-events-none"></div>
-                </div>
-              </div>
-              <div className="md:w-2/3">
-                <h3 className="text-2xl font-bold mb-3">Jumaan</h3>
-                <p className="text-lg font-medium mb-3">Crew Member</p>
-                <p className="text-base">
-                  A young and energetic key player with a strong background in hospitality, food, and beverage service.
-                  Jumaan's dedication to excellence ensures that guests enjoy a seamless and comfortable experience.
                 </p>
               </div>
             </div>
