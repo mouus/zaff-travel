@@ -1,58 +1,41 @@
 "use client"
 import Link from "next/link"
-import { FaWhatsapp, FaShip, FaBed, FaTheaterMasks, FaChevronLeft, FaChevronRight } from "react-icons/fa"
-import { useState, useEffect, useRef } from "react"
-import Footer from "@/components/Footer"
+import { FaWhatsapp, FaShip, FaBed, FaTheaterMasks } from "react-icons/fa"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import Navbar from "@/components/Navbar"
-import Head from "next/head"
-
+import Footer from "@/components/Footer"
 
 export default function Home() {
   // State for mobile menu toggle
   const [menuOpen, setMenuOpen] = useState(false)
-  // State for Vessel Specifications slider
-  const [currentSlide, setCurrentSlide] = useState(0)
+  // State for Vessel Specifications tabs
+  const [activeTab, setActiveTab] = useState("general")
+  // State for featured journey image
+  const [featuredImage, setFeaturedImage] = useState("img-4.JPG")
 
-  // Images array for the Journey with Us carousel
+  // Images array for the Journey with Us section
   const journeyImages = [
-    "boat.JPG",
-    "room.JPG",
-    "coco2.JPG",
-    "coco.jpg",
-    "women.JPG",
-    "set.JPG",
-    "img-1.JPG",
-    "img-2.JPG",
-    "img-3.JPG",
-    "img-4.JPG",
-    "img-5.JPG",
-    "img-6.JPG",
-    "img-7.JPG",
-    "img-8.JPG",
-    "img-9.JPG",
-    "img-10.JPG",
-    "img-11.JPG",
-    "img-12.JPG",
-    "img-13.JPG",
+    { src: "boat.JPG", caption: "Our Luxury Vessel" },
+    { src: "room.JPG", caption: "Comfortable Accommodations" },
+    { src: "coco2.JPG", caption: "Pristine Beaches" },
+    { src: "coco.jpg", caption: "Island Paradise" },
+    { src: "women.JPG", caption: "Local Culture" },
+    { src: "set.JPG", caption: "Sunset Views" },
+    { src: "img-1.JPG", caption: "Underwater Exploration" },
+    { src: "img-2.JPG", caption: "Marine Life" },
+    { src: "img-3.JPG", caption: "Coral Reefs" },
+    { src: "img-4.JPG", caption: "Crystal Clear Waters" },
+    { src: "img-5.JPG", caption: "Tropical Scenery" },
+    { src: "img-6.JPG", caption: "Diving Adventures" },
+    { src: "img-7.JPG", caption: "Secluded Spots" },
+    { src: "img-8.JPG", caption: "Beachside Relaxation" },
+    { src: "img-9.JPG", caption: "Ocean Views" },
+    { src: "img-10.JPG", caption: "Maldivian Beauty" },
+    { src: "img-11.JPG", caption: "Tranquil Moments" },
+    { src: "img-12.JPG", caption: "Unforgettable Experiences" },
+    { src: "img-13.JPG", caption: "Hidden Gems" },
   ]
-
-  // Responsive images per page
-  const [imagesPerPage, setImagesPerPage] = useState(5)
-  useEffect(() => {
-    const updateImagesPerPage = () => {
-      if (window.innerWidth < 768) {
-        setImagesPerPage(2)
-      } else if (window.innerWidth < 1024) {
-        setImagesPerPage(3)
-      } else {
-        setImagesPerPage(5)
-      }
-    }
-    updateImagesPerPage()
-    window.addEventListener("resize", updateImagesPerPage)
-    return () => window.removeEventListener("resize", updateImagesPerPage)
-  }, [])
 
   // Determine if the device is mobile (phones)
   const [isMobile, setIsMobile] = useState(false)
@@ -63,37 +46,6 @@ export default function Home() {
     handleResize()
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
-  }, [])
-
-  // Helper function: Group journeyImages into pages
-  const getJourneyPages = () => {
-    const pages = []
-    for (let i = 0; i < journeyImages.length; i += imagesPerPage) {
-      let page = journeyImages.slice(i, i + imagesPerPage)
-      // If last page is incomplete, fill with images from the start
-      if (page.length < imagesPerPage) {
-        page = page.concat(journeyImages.slice(0, imagesPerPage - page.length))
-      }
-      pages.push(page)
-    }
-    return pages
-  }
-  const journeyPages = getJourneyPages()
-  const totalPages = journeyPages.length
-  const [currentJourneyPage, setCurrentJourneyPage] = useState(0)
-
-  // Use a ref to measure the container width
-  const journeyContainerRef = useRef(null)
-  const [containerWidth, setContainerWidth] = useState(0)
-  useEffect(() => {
-    const updateWidth = () => {
-      if (journeyContainerRef.current) {
-        setContainerWidth(journeyContainerRef.current.offsetWidth)
-      }
-    }
-    updateWidth()
-    window.addEventListener("resize", updateWidth)
-    return () => window.removeEventListener("resize", updateWidth)
   }, [])
 
   // Scroll reveal functionality for sections
@@ -114,9 +66,9 @@ export default function Home() {
     return () => observer.disconnect()
   }, [])
 
-  // Vessel Specifications slider slides
-  const slides = [
-    {
+  // Vessel Specifications content
+  const vesselSpecs = {
+    general: {
       title: "General Information",
       icon: <FaShip className="mr-2" />,
       content: (
@@ -133,7 +85,7 @@ export default function Home() {
         </ul>
       ),
     },
-    {
+    accommodation: {
       title: "Accommodation & Public Areas",
       icon: <FaBed className="mr-2" />,
       content: (
@@ -163,7 +115,7 @@ export default function Home() {
         </>
       ),
     },
-    {
+    leisure: {
       title: "Leisure & Entertainment",
       icon: <FaTheaterMasks className="mr-2" />,
       content: (
@@ -178,7 +130,7 @@ export default function Home() {
         </ul>
       ),
     },
-    {
+    utilities: {
       title: "Electricity & Water",
       icon: null,
       content: (
@@ -189,7 +141,7 @@ export default function Home() {
         </ul>
       ),
     },
-    {
+    navigation: {
       title: "Navigation & Communication",
       icon: null,
       content: (
@@ -206,7 +158,7 @@ export default function Home() {
         </ul>
       ),
     },
-    {
+    safety: {
       title: "Emergency Equipment",
       icon: null,
       content: (
@@ -220,7 +172,7 @@ export default function Home() {
         </ul>
       ),
     },
-    {
+    crew: {
       title: "Crew",
       icon: null,
       content: (
@@ -229,49 +181,20 @@ export default function Home() {
         </ul>
       ),
     },
-  ]
-
-  // Navigation functions for Vessel Specifications slider
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
-  }
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1))
-  }
-
-  // Navigation functions for the Journey carousel
-  const nextJourneySlide = () => {
-    setCurrentJourneyPage((prev) => (prev === totalPages - 1 ? 0 : prev + 1))
-  }
-  const prevJourneySlide = () => {
-    setCurrentJourneyPage((prev) => (prev === 0 ? totalPages - 1 : prev - 1))
   }
 
   return (
     <div className="flex flex-col min-h-screen bg-white text-black">
-       <Head>
-        <title>Maldives Dive Cruises | Explore the Deep South with Cruise Republic</title>
-        <meta
-          name="description"
-          content="Discover diverse dive itineraries in the Maldives, from tiger shark dives to colorful reefs. Plan your next underwater adventure with Cruise Republic."
-        />
-        <meta name="keywords" content="fuvahmulah dive, maldives dive, diving in fuvahmulah, maldives diving, underwater adventure, coral reefs, marine life, Cruise Republic" />
-        <meta property="og:title" content="Maldives Dive Cruises | Explore the Deep South with Cruise Republic" />
-        <meta property="og:description" content="Experience unforgettable diving trips in the Maldives deep south. Join Cruise Republic for shark encounters, coral reefs, and vibrant marine life. Book your dive cruise today!" />
-        <meta property="og:image" content="http://www.cruiserepublicmaldives.com/boat-top.jpg" />
-        <meta property="og:url" content="http://www.cruiserepublicmaldives.com" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Maldives Dive Cruises | Explore the Deep South with Cruise Republic" />
-        <meta name="twitter:description" content="Experience unforgettable diving trips in the Maldives deep south. Join Cruise Republic for shark encounters, coral reefs, and vibrant marine life. Book your dive cruise today!" />
-        <meta name="twitter:image" content="http://www.cruiserepublicmaldives.com/boat-top.jpg" />
-      </Head>
       {/* Header */}
       <Navbar />
 
       {/* Main Content */}
       <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="relative h-screen bg-cover bg-center" style={{ backgroundImage: "url(/img-4.JPG)" }}>
+        {/* Hero Section with Background Video */}
+        <section className="relative h-screen overflow-hidden">
+          <video autoPlay muted loop playsInline className="absolute w-full h-full object-cover">
+            <source src="/img66.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-black opacity-60"></div>
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
             <h1 className="text-4xl sm:text-6xl font-bold mb-6 drop-shadow-lg tracking-tight">
@@ -283,13 +206,13 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/dive-itineraries"
-                className="bg-transparent hover:bg-white hover:text-black text-white border-2 border-white px-8 py-3 rounded-none transition-all duration-300"
+                className="bg-transparent hover:bg-white hover:text-black text-white border-2 border-white px-8 py-3 transition-all duration-300"
               >
                 Learn More
               </Link>
               <Link
                 href="/book"
-                className="bg-white text-black hover:bg-black hover:text-white border-2 border-white px-8 py-3 rounded-none transition-all duration-300"
+                className="bg-white text-black hover:bg-black hover:text-white border-2 border-white px-8 py-3 transition-all duration-300"
               >
                 Book Now
               </Link>
@@ -298,202 +221,304 @@ export default function Home() {
         </section>
 
         {/* Ocean Exploration Section */}
-        <section className="reveal py-16 transition-all duration-1000 bg-white border-t border-b border-gray-200">
+        <section className="reveal py-16 transition-all duration-1000 text-black bg-white">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12 text-black">Explore the Ocean</h2>
-            <div className="grid grid-cols-1 md:grid-cols-1 gap-8 items-center">
-              <div className="flex justify-center">
-                {isMobile ? (
-                  <div className="relative overflow-hidden">
-                    <Image
-                      src="/island.JPG"
-                      alt="Island Map"
-                      width={400}
-                      height={400}
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                    <div className="absolute inset-0 border border-black pointer-events-none"></div>
-                  </div>
-                ) : (
-                  <div className="relative overflow-hidden">
-                    <Image
-                      src="/island-map.png"
-                      alt="Island Map"
-                      width={1200}
-                      height={400}
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                    <div className="absolute inset-0 border border-black pointer-events-none"></div>
-                  </div>
-                )}
-              </div>
+            <h2 className="text-3xl font-bold text-center mb-12">Explore the Ocean</h2>
 
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-8">
-                {["huvadhoo.png", "east.JPG", "addu.png"].map((img, index) => (
-                  <div key={index} className="relative overflow-hidden group">
+            {/* Main Map */}
+            <div className="mb-16 relative overflow-hidden">
+              <div className="relative aspect-[21/9] w-full">
+                <Image
+                  src="/map.PNG"
+                  alt="Maldives Map"
+                  layout="fill"
+                  objectFit="cover"
+                  className="transition-transform duration-700 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white">Southern Maldives</h3>
+                  <p className="text-sm md:text-base max-w-2xl text-white">
+                    Our cruises explore the pristine and less-traveled southern atolls of the Maldives, offering you a
+                    chance to discover untouched reefs and experience authentic local culture.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Three Location Maps */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              {["huvadhoo.png", "east.JPG", "addu.png"].map((img, index) => (
+                <div key={index} className="relative group">
+                  <div className="aspect-square relative overflow-hidden">
                     <Image
                       src={`/${img}`}
                       alt={`Location ${index + 1}`}
-                      width={350}
-                      height={350}
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      layout="fill"
+                      objectFit="cover"
+                      className="transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 border border-black pointer-events-none"></div>
-                  </div>
-                ))}
-              </div>
+                    <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                    <div className="absolute inset-0 border border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
-              <div className="flex justify-center mt-8">
-                {isMobile ? (
-                  <div className="relative overflow-hidden">
-                    <Image
-                      src="/southern.png"
-                      alt="Southern Maldives"
-                      width={400}
-                      height={400}
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                    <div className="absolute inset-0 border border-black pointer-events-none"></div>
-                  </div>
-                ) : (
-                  <div className="relative overflow-hidden">
-                    <Image
-                      src="/map.PNG"
-                      alt="Maldives Map"
-                      width={1200}
-                      height={600}
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                    <div className="absolute inset-0 border border-black pointer-events-none"></div>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Journey with Us Carousel */}
-        <section className="reveal py-16 w-full transition-all duration-1000 bg-gray-50">
-          <h2 className="text-3xl font-bold text-black text-center mb-12">Journey With Us</h2>
-          <div ref={journeyContainerRef} className="relative mx-auto w-full max-w-6xl px-4">
-            <div className="overflow-hidden w-full">
-              <div
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentJourneyPage * containerWidth}px)` }}
-              >
-                {journeyPages.map((page, pageIndex) => (
-                  <div key={pageIndex} className="w-full flex-shrink-0 flex justify-center gap-4 px-4">
-                    {page.map((img, index) => (
-                      <div key={index} className="relative group overflow-hidden w-[200px] h-[200px]">
-                        <Image
-                          src={`/${img}`}
-                          alt={`Journey image ${index}`}
-                          layout="fill"
-                          objectFit="cover"
-                          className="transition-transform duration-500 group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 border border-black opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </div>
-            {/* Journey Carousel Arrow Buttons */}
-            <button
-              onClick={prevJourneySlide}
-              className="absolute left-2 top-1/2 transform -translate-y-1/2 p-3 bg-white border border-black rounded-full hover:bg-black hover:text-white transition-colors duration-300 z-10"
-              aria-label="Previous Journey Slide"
-            >
-              <FaChevronLeft size={20} />
-            </button>
-            <button
-              onClick={nextJourneySlide}
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 p-3 bg-white border border-black rounded-full hover:bg-black hover:text-white transition-colors duration-300 z-10"
-              aria-label="Next Journey Slide"
-            >
-              <FaChevronRight size={20} />
-            </button>
-          </div>
-        </section>
-
-        {/* Boat Plan Section */}
-        <section className="bg-white py-16 border-t border-b border-gray-200">
-          <h2 className="text-center font-bold text-3xl mb-8 text-black">Cruise Republic Boat Plan</h2>
-          <div className="flex justify-center">
-            <div className="relative overflow-hidden group">
-              <Image
-                src="/boat-map.jpg"
-                alt="Boat floor plan"
-                width={500}
-                height={500}
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 border border-black pointer-events-none"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* Vessel Specifications Slider */}
-        <section className="reveal bg-gray-50 py-16 w-full transition-all duration-1000">
-          <div className="relative overflow-hidden w-full max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12 flex items-center justify-center">
-              <FaShip className="mr-3" />
-              <span>Vessel Specifications</span>
-            </h2>
-            <div
-              className="flex transition-transform duration-500 ease-in-out w-full"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-              {slides.map((slide, index) => (
-                <div key={index} className="w-full flex-shrink-0 px-4">
-                  <div className="bg-white p-8 border border-gray-200">
-                    <h3 className="text-2xl font-bold mb-6 flex items-center">
-                      {slide.icon}
-                      <span>{slide.title}</span>
-                    </h3>
-                    <div className="text-left">{slide.content}</div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
+                      <h3 className="text-xl font-bold text-white">
+                        {index === 0 ? "Huvadhoo Atoll" : index === 1 ? "Fuvahmulah" : "Addu Atoll"}
+                      </h3>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
-            {/* Vessel Specifications Navigation */}
-            <div className="flex justify-between mt-8">
-              <button
-                onClick={prevSlide}
-                className="p-3 bg-white border border-black hover:bg-black hover:text-white transition-colors duration-300 flex items-center"
-                aria-label="Previous Slide"
-              >
-                <FaChevronLeft className="mr-2" size={16} />
-                <span>Previous</span>
-              </button>
-              <div className="flex items-center">
-                {slides.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setCurrentSlide(idx)}
-                    className={`w-3 h-3 mx-1 rounded-full border border-black ${
-                      currentSlide === idx ? "bg-black" : "bg-white"
-                    }`}
-                    aria-label={`Go to slide ${idx + 1}`}
+
+            {/* Mobile Island Map */}
+            {isMobile && (
+              <div className="mb-12 relative overflow-hidden">
+                <div className="aspect-square relative">
+                  <Image
+                    src="/island.JPG"
+                    alt="Island Map"
+                    layout="fill"
+                    objectFit="cover"
+                    className="transition-transform duration-500 hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+                  <div className="absolute inset-0 border border-white pointer-events-none"></div>
+                </div>
+              </div>
+            )}
+
+            {/* Desktop Island Map */}
+            {!isMobile && (
+              <div className="mb-12 relative overflow-hidden">
+                <div className="aspect-[21/9] relative">
+                  <Image
+                    src="/island-map.png"
+                    alt="Island Map"
+                    layout="fill"
+                    objectFit="cover"
+                    className="transition-transform duration-500 hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+                  <div className="absolute inset-0 border border-white pointer-events-none"></div>
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* Journey with Us - Completely Redesigned */}
+        <section className="reveal py-20 w-full transition-all duration-1000 bg-black text-white">
+          <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center mb-16">Journey With Us</h2>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* Featured Image */}
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={`/${featuredImage}`}
+                  alt="Featured journey"
+                  layout="fill"
+                  objectFit="cover"
+                  className="transition-transform duration-700 ease-in-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <p className="text-xl font-medium">
+                    {journeyImages.find((img) => img.src === featuredImage)?.caption || "Maldives Experience"}
+                  </p>
+                </div>
+              </div>
+
+              {/* Image Grid */}
+              <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 h-full">
+                {journeyImages.slice(0, 12).map((img, index) => (
+                  <div
+                    key={index}
+                    className={`relative overflow-hidden cursor-pointer transition-all duration-300 ${
+                      img.src === featuredImage ? "ring-2 ring-white" : ""
+                    }`}
+                    onClick={() => setFeaturedImage(img.src)}
+                  >
+                    <div className="aspect-square relative">
+                      <Image
+                        src={`/${img.src}`}
+                        alt={img.caption}
+                        layout="fill"
+                        objectFit="cover"
+                        className="transition-transform duration-500 hover:scale-110"
+                      />
+                      <div
+                        className={`absolute inset-0 bg-black ${
+                          img.src === featuredImage ? "opacity-0" : "opacity-40 hover:opacity-20"
+                        } transition-opacity duration-300`}
+                      ></div>
+                    </div>
+                  </div>
                 ))}
               </div>
-              <button
-                onClick={nextSlide}
-                className="p-3 bg-white border border-black hover:bg-black hover:text-white transition-colors duration-300 flex items-center"
-                aria-label="Next Slide"
+            </div>
+
+            {/* Journey Description */}
+            <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-white/5 backdrop-blur-sm p-8 border border-white/10">
+                <h3 className="text-xl font-bold mb-4">Underwater Exploration</h3>
+                <p className="text-gray-300 mb-4">
+                  Dive into crystal clear waters and discover vibrant coral reefs, exotic marine life, and hidden
+                  underwater treasures.
+                </p>
+                <Link
+                  href="/diving"
+                  className="inline-block border-b border-white hover:text-gray-300 transition-colors"
+                >
+                  Explore Diving Options
+                </Link>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-sm p-8 border border-white/10">
+                <h3 className="text-xl font-bold mb-4">Island Adventures</h3>
+                <p className="text-gray-300 mb-4">
+                  Visit pristine beaches, secluded islands, and experience the authentic Maldivian culture away from
+                  tourist crowds.
+                </p>
+                <Link
+                  href="/islands"
+                  className="inline-block border-b border-white hover:text-gray-300 transition-colors"
+                >
+                  Discover Islands
+                </Link>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-sm p-8 border border-white/10">
+                <h3 className="text-xl font-bold mb-4">Onboard Experience</h3>
+                <p className="text-gray-300 mb-4">
+                  Enjoy comfortable accommodations, delicious cuisine, and relaxing moments on our carefully designed
+                  vessel.
+                </p>
+                <Link
+                  href="/experience"
+                  className="inline-block border-b border-white hover:text-gray-300 transition-colors"
+                >
+                  Learn About Our Boat
+                </Link>
+              </div>
+            </div>
+
+            <div className="mt-16 text-center">
+              <Link
+                href="/gallery"
+                className="inline-block border-2 border-white px-8 py-3 hover:bg-white hover:text-black transition-all duration-300"
               >
-                <span>Next</span>
-                <FaChevronRight className="ml-2" size={16} />
-              </button>
+                View Full Gallery
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Boat Plan Section */}
+        <section className="bg-white py-16">
+          <div className="max-w-5xl mx-auto px-4">
+            <h2 className="text-center font-bold text-3xl mb-12 text-black">Cruise Republic Boat Plan</h2>
+            <div className="flex justify-center">
+              <div className="relative overflow-hidden group">
+                <Image
+                  src="/boat-map.jpg"
+                  alt="Boat floor plan"
+                  width={700}
+                  height={500}
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 border border-black pointer-events-none"></div>
+              </div>
+            </div>
+
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-gray-50 p-6">
+                <h3 className="text-xl font-bold mb-4">Upper Deck</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-black rounded-full mr-2"></span>
+                    <span>Sundeck with loungers</span>
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-black rounded-full mr-2"></span>
+                    <span>Outdoor dining area</span>
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-black rounded-full mr-2"></span>
+                    <span>Navigation bridge</span>
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-black rounded-full mr-2"></span>
+                    <span>Shaded relaxation space</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gray-50 p-6">
+                <h3 className="text-xl font-bold mb-4">Lower Deck</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-black rounded-full mr-2"></span>
+                    <span>5 comfortable cabins</span>
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-black rounded-full mr-2"></span>
+                    <span>Indoor dining area</span>
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-black rounded-full mr-2"></span>
+                    <span>Lounge with entertainment</span>
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-black rounded-full mr-2"></span>
+                    <span>Dive equipment storage</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Vessel Specifications with Tabs */}
+        <section className="reveal py-16 w-full transition-all duration-1000 bg-black text-white">
+          <div className="max-w-4xl mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12 flex items-center justify-center">
+              <FaShip className="mr-3" />
+              <span>Vessel Specifications</span>
+            </h2>
+
+            {/* Tabs */}
+            <div className="flex flex-wrap justify-center mb-12">
+              {Object.entries(vesselSpecs).map(([key, spec]) => (
+                <button
+                  key={key}
+                  onClick={() => setActiveTab(key)}
+                  className={`px-6 py-3 text-lg font-medium mx-2 mb-2 transition-colors ${
+                    activeTab === key
+                      ? "bg-white text-black"
+                      : "bg-transparent text-white border border-white hover:bg-white/10"
+                  }`}
+                >
+                  {spec.title}
+                </button>
+              ))}
+            </div>
+
+            {/* Tab Content */}
+            <div className="bg-black text-white p-8">
+              <h3 className="text-2xl font-bold mb-6 flex items-center">
+                {vesselSpecs[activeTab].icon}
+                <span>{vesselSpecs[activeTab].title}</span>
+              </h3>
+              <div className="text-left">{vesselSpecs[activeTab].content}</div>
             </div>
           </div>
         </section>
       </main>
 
-       {/* WhatsApp Button */}
-       <a
+      {/* WhatsApp Button */}
+      <a
         href="https://wa.me/9607780739"
         target="_blank"
         rel="noopener noreferrer"
@@ -502,7 +527,6 @@ export default function Home() {
       >
         <FaWhatsapp size={28} />
       </a>
-
 
       {/* Footer */}
       <Footer />

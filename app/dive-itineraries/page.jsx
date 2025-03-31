@@ -4,10 +4,11 @@ import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import Head from "next/head"
 import Link from "next/link"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { FaWhatsapp, FaCalendarAlt, FaMapMarkerAlt, FaArrowRight } from "react-icons/fa"
 
 export default function DiveItinerariesPage() {
+
   const [activeTab, setActiveTab] = useState("5-day")
 
   return (
