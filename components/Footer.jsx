@@ -121,7 +121,7 @@ function Footer() {
               <li className="flex items-center">
                 <FaEnvelope className="text-white mr-3 flex-shrink-0" />
                 <a href="mailto:info@cruiserepublic.mv" className="text-gray-300 hover:text-white transition-colors">
-                  info@cruiserepublic.mv
+                  sales@cruiserepublicmaldives.com
                 </a>
               </li>
             </ul>
