@@ -45,7 +45,7 @@ export default function Home() {
       title: "Fuvahmulah",
       subtitle: "The Tiger Shark Capital",
       description: "Fuvahmulah is a unique island with a distinctive geography, featuring freshwater lakes and a remarkable marine ecosystem. It's known worldwide as the 'Tiger Shark Capital' where divers can have thrilling encounters with these magnificent predators. The island also offers encounters with thresher sharks, oceanic manta rays, and other pelagic species in its deep blue waters.",
-      image: "/east.JPG",
+      image: "/island.JPG",
       facts: [
         "The only island in Maldives with freshwater lakes",
         "One of the few places in the world for reliable tiger shark encounters",
