@@ -62,13 +62,13 @@ Post-dive activities include sandbank visits, walks on local islands, or marine 
 
         <div className="space-y-6">
           {faqs.map((faq, index) => (
-            <div key={index} className="p-6 bg-white rounded-2xl ">
+            <div key={index} className="p-6 bg-white  text-black rounded-2xl ">
               <h2 className="text-xl font-semibold mb-2">{faq.question}</h2>
               <p className="text-gray-700 whitespace-pre-line">{faq.answer}</p>
             </div>
           ))}
 
-          <div className="p-6 bg-white rounded-2xl ">
+          <div className="p-6 bg-white text-black rounded-2xl ">
             <h2 className="text-xl font-semibold mb-4">General Travel Information</h2>
             <ul className="list-disc pl-6 space-y-2 text-gray-700">
               <li>
