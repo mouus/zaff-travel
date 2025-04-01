@@ -141,14 +141,14 @@ function Footer() {
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
             &copy; {currentYear} Cruise Republic. All rights reserved.
           </p>
-          <div className="flex space-x-4 text-sm text-gray-400">
+          {/* <div className="flex space-x-4 text-sm text-gray-400">
             <Link href="/privacy-policy" className="hover:text-white transition-colors">
               Privacy Policy
             </Link>
             <Link href="/terms-of-service" className="hover:text-white transition-colors">
               Terms of Service
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link"
-import { FaWhatsapp, FaShip, FaBed, FaTheaterMasks } from "react-icons/fa"
+import { FaWhatsapp, FaShip, FaBed, FaTheaterMasks,FaWater, FaFish, FaMapMarkerAlt, FaArrowRight  } from "react-icons/fa"
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Navbar from "@/components/Navbar"
@@ -13,6 +13,60 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState("general")
   // State for featured journey image
   const [featuredImage, setFeaturedImage] = useState("img-4.JPG")
+  const [activeLocation, setActiveLocation] = useState("maldives")
+
+  //locations
+  const locations = {
+    maldives: {
+      title: "The Maldives",
+      subtitle: "A Paradise on Earth",
+      description: "The Maldives is an archipelago of 26 atolls and over 1,000 coral islands in the Indian Ocean. Known for its crystal-clear waters, vibrant coral reefs, and abundant marine life, it's a paradise for divers and ocean enthusiasts. The southern atolls offer a more authentic and less-traveled experience, with pristine reefs and unique diving opportunities.",
+      image: "/map.PNG",
+      facts: [
+        "1,192 coral islands spread across 26 atolls",
+        "Average temperature of 27-30°C year-round",
+        "Home to over 2,000 species of fish",
+        "World's lowest country with an average elevation of 1.5 meters"
+      ]
+    },
+    huvadhoo: {
+      title: "Huvadhoo Atoll",
+      subtitle: "The Diving Paradise",
+      description: "Huvadhoo is one of the largest and deepest atolls in the Maldives, featuring pristine reefs, thrilling channels, and diverse marine life. Its remote location has preserved its natural beauty and underwater ecosystems. The atoll is known for its manta ray cleaning stations, shark encounters, and spectacular coral formations that remain largely untouched by mass tourism.",
+      image: "/huvadhoo.png",
+      facts: [
+        "Over 230 islands with only 10 inhabited",
+        "Home to some of the healthiest coral reefs in the Maldives",
+        "Famous for 'Manta Point' cleaning stations",
+        "Strong currents create thrilling drift dives for experienced divers"
+      ]
+    },
+    fuvahmulah: {
+      title: "Fuvahmulah",
+      subtitle: "The Tiger Shark Capital",
+      description: "Fuvahmulah is a unique island with a distinctive geography, featuring freshwater lakes and a remarkable marine ecosystem. It's known worldwide as the 'Tiger Shark Capital' where divers can have thrilling encounters with these magnificent predators. The island also offers encounters with thresher sharks, oceanic manta rays, and other pelagic species in its deep blue waters.",
+      image: "/east.JPG",
+      facts: [
+        "The only island in Maldives with freshwater lakes",
+        "One of the few places in the world for reliable tiger shark encounters",
+        "Unique geography with a reef that drops to over 2,000 meters",
+        "Home to rare thresher sharks that are typically found in deep waters"
+      ]
+    },
+    addu: {
+      title: "Addu Atoll",
+      subtitle: "The Historical Gem",
+      description: "Addu is the southernmost atoll of the Maldives with a rich history and unique culture. It features the British Loyalty shipwreck, a remnant from WWII, and is the only place in the Maldives with a continuous reef system connecting multiple islands. The atoll offers diverse diving experiences from wreck exploration to vibrant reef systems teeming with marine life.",
+      image: "/addu.png",
+      facts: [
+        "Home to the British Loyalty shipwreck from World War II",
+        "Only place in Maldives with a continuous reef connecting multiple islands",
+        "Abundant turtle populations and manta ray cleaning stations",
+        "Historical significance with British military presence until the 1970s"
+      ]
+    }
+  };
+
 
   // Images array for the Journey with Us section
   const journeyImages = [
@@ -221,91 +275,146 @@ export default function Home() {
         </section>
 
         {/* Ocean Exploration Section */}
-        <section className="reveal py-16 transition-all duration-1000 text-black bg-white">
-          <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">Explore the Ocean</h2>
+        <section className="py-24 bg-black text-white">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4">Explore the Southern Maldives</h2>
+          <p className="text-xl max-w-3xl mx-auto text-gray-300">
+            Discover the pristine atolls and unique diving experiences of the southern Maldives, where untouched reefs
+            and extraordinary marine life await.
+          </p>
+        </div>
 
-            {/* Main Map */}
-            <div className="mb-16 relative overflow-hidden">
-              <div className="relative aspect-[21/9] w-full">
-                <Image
-                  src="/map.PNG"
-                  alt="Maldives Map"
-                  layout="fill"
-                  objectFit="cover"
-                  className="transition-transform duration-700 hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white">Southern Maldives</h3>
-                  <p className="text-sm md:text-base max-w-2xl text-white">
-                    Our cruises explore the pristine and less-traveled southern atolls of the Maldives, offering you a
-                    chance to discover untouched reefs and experience authentic local culture.
-                  </p>
-                </div>
-              </div>
+        {/* Location Selector */}
+        <div className="flex flex-wrap justify-center mb-16">
+          {Object.entries(locations).map(([key, location]) => (
+            <button
+              key={key}
+              onClick={() => setActiveLocation(key)}
+              className={`px-6 py-3 text-lg font-medium mx-2 mb-2 transition-colors ${
+                activeLocation === key
+                  ? "bg-white text-black"
+                  : "bg-transparent text-white border border-white hover:bg-white/10"
+              }`}
+            >
+              {location.title}
+            </button>
+          ))}
+        </div>
+
+        {/* Location Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          {/* Map/Image */}
+          <div className="relative order-2 lg:order-1">
+            <div className="aspect-[4/3] relative overflow-hidden">
+              <Image
+                src={locations[activeLocation].image || "/placeholder.svg"}
+                alt={locations[activeLocation].title}
+                layout="fill"
+                objectFit="cover"
+                className="transition-transform duration-700 hover:scale-105"
+              />
+              <div className="absolute inset-0 border border-white pointer-events-none"></div>
             </div>
-
-            {/* Three Location Maps */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              {["huvadhoo.png", "east.JPG", "addu.png"].map((img, index) => (
-                <div key={index} className="relative group">
-                  <div className="aspect-square relative overflow-hidden">
-                    <Image
-                      src={`/${img}`}
-                      alt={`Location ${index + 1}`}
-                      layout="fill"
-                      objectFit="cover"
-                      className="transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300"></div>
-                    <div className="absolute inset-0 border border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-
-                    <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
-                      <h3 className="text-xl font-bold text-white">
-                        {index === 0 ? "Huvadhoo Atoll" : index === 1 ? "Fuvahmulah" : "Addu Atoll"}
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Mobile Island Map */}
-            {isMobile && (
-              <div className="mb-12 relative overflow-hidden">
-                <div className="aspect-square relative">
-                  <Image
-                    src="/island.JPG"
-                    alt="Island Map"
-                    layout="fill"
-                    objectFit="cover"
-                    className="transition-transform duration-500 hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-                  <div className="absolute inset-0 border border-white pointer-events-none"></div>
-                </div>
-              </div>
-            )}
-
-            {/* Desktop Island Map */}
-            {!isMobile && (
-              <div className="mb-12 relative overflow-hidden">
-                <div className="aspect-[21/9] relative">
-                  <Image
-                    src="/island-map.png"
-                    alt="Island Map"
-                    layout="fill"
-                    objectFit="cover"
-                    className="transition-transform duration-500 hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-                  <div className="absolute inset-0 border border-white pointer-events-none"></div>
-                </div>
-              </div>
-            )}
           </div>
-        </section>
+
+          {/* Content */}
+          <div className="order-1 lg:order-2">
+            <div className="flex items-center mb-2">
+              <FaMapMarkerAlt className="mr-2" />
+              <h3 className="text-xl text-gray-400">{locations[activeLocation].subtitle}</h3>
+            </div>
+            <h3 className="text-3xl font-bold mb-6">{locations[activeLocation].title}</h3>
+            <p className="text-gray-300 mb-8 leading-relaxed">{locations[activeLocation].description}</p>
+
+            <div className="bg-white/5 backdrop-blur-sm p-6 border border-white/10">
+              <h4 className="text-xl font-bold mb-4 flex items-center">
+                <FaWater className="mr-2" />
+                <span>Key Facts</span>
+              </h4>
+              <ul className="space-y-3">
+                {locations[activeLocation].facts.map((fact, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="text-white mr-2 mt-1">•</span>
+                    <span>{fact}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Marine Life Highlight */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="bg-white/5 backdrop-blur-sm p-6 border border-white/10">
+            <div className="flex items-center mb-4">
+              <FaFish className="text-white mr-3" size={20} />
+              <h4 className="text-xl font-bold">Huvadhoo Marine Life</h4>
+            </div>
+            <p className="text-gray-300 mb-4">
+              Encounter grey reef sharks, eagle rays, and manta rays in the thrilling channels and pristine reefs of
+              Huvadhoo Atoll.
+            </p>
+            <div className="mt-auto">
+              <Link
+                href="/dive-itineraries/huvadhoo"
+                className="inline-flex items-center text-white hover:text-gray-300 transition-colors"
+              >
+                Explore Huvadhoo <FaArrowRight className="ml-2" />
+              </Link>
+            </div>
+          </div>
+
+          <div className="bg-white/5 backdrop-blur-sm p-6 border border-white/10">
+            <div className="flex items-center mb-4">
+              <FaFish className="text-white mr-3" size={20} />
+              <h4 className="text-xl font-bold">Fuvahmulah Sharks</h4>
+            </div>
+            <p className="text-gray-300 mb-4">
+              Experience thrilling encounters with tiger sharks, thresher sharks, and oceanic manta rays in the deep
+              blue waters of Fuvahmulah.
+            </p>
+            <div className="mt-auto">
+              <Link
+                href="/dive-itineraries/fuvahmulah"
+                className="inline-flex items-center text-white hover:text-gray-300 transition-colors"
+              >
+                Explore Fuvahmulah <FaArrowRight className="ml-2" />
+              </Link>
+            </div>
+          </div>
+
+          <div className="bg-white/5 backdrop-blur-sm p-6 border border-white/10">
+            <div className="flex items-center mb-4">
+              <FaFish className="text-white mr-3" size={20} />
+              <h4 className="text-xl font-bold">Addu Diversity</h4>
+            </div>
+            <p className="text-gray-300 mb-4">
+              Dive the British Loyalty shipwreck and explore the continuous reef system teeming with turtles, reef
+              sharks, and colorful coral formations.
+            </p>
+            <div className="mt-auto">
+              <Link
+                href="/dive-itineraries/addu"
+                className="inline-flex items-center text-white hover:text-gray-300 transition-colors"
+              >
+                Explore Addu <FaArrowRight className="ml-2" />
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center">
+          <Link
+            href="/dive-itineraries"
+            className="inline-block bg-white text-black px-8 py-3 hover:bg-gray-200 transition-colors"
+          >
+            View All Dive Itineraries
+          </Link>
+        </div>
+      </div>
+    </section>
 
         {/* Journey with Us - Completely Redesigned */}
         <section className="reveal py-20 w-full transition-all duration-1000 bg-black text-white">
@@ -368,7 +477,7 @@ export default function Home() {
                   underwater treasures.
                 </p>
                 <Link
-                  href="/diving"
+                  href="https://wa.me/9607780739"
                   className="inline-block border-b border-white hover:text-gray-300 transition-colors"
                 >
                   Explore Diving Options
@@ -382,7 +491,7 @@ export default function Home() {
                   tourist crowds.
                 </p>
                 <Link
-                  href="/islands"
+                  href="https://wa.me/9607780739"
                   className="inline-block border-b border-white hover:text-gray-300 transition-colors"
                 >
                   Discover Islands
@@ -396,7 +505,7 @@ export default function Home() {
                   vessel.
                 </p>
                 <Link
-                  href="/experience"
+                  href="https://wa.me/9607780739"
                   className="inline-block border-b border-white hover:text-gray-300 transition-colors"
                 >
                   Learn About Our Boat
