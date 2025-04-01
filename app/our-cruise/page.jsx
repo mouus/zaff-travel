@@ -516,7 +516,7 @@ export default function CruisePage() {
           
           <div className="text-center mt-16">
             <Link
-              href="/gallery"
+              href="https://www.instagram.com/cruiserepublicmv/"
               className="inline-block bg-white text-black px-8 py-3 hover:bg-gray-200 transition-colors"
             >
               View Full Gallery

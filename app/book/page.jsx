@@ -605,7 +605,7 @@ export default function BookingPage() {
                 href="https://wa.me/9607780739"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-green-500 text-white hover:bg-green-600 px-8 py-3 transition-colors flex items-center justify-center"
+                className="bg-transparent border border-white hover:bg-white/10 px-8 py-3 transition-colors flex items-center justify-center"
               >
                 <FaWhatsapp className="mr-2" />
                 WhatsApp

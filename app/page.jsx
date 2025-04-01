@@ -277,7 +277,34 @@ export default function Home() {
         {/* Ocean Exploration Section */}
         <section className="py-24 bg-black text-white">
       <div className="max-w-7xl mx-auto px-4">
+      <div className='relative flex gap-5 justify-center mb-16'>
+            <Image 
+                src={"/padi.png"} 
+                objectFit='cover'
+                className='rounded-lg'
+                alt='about banner'
+                width={100}
+                height={50}
+              />
+               <Image 
+                src={"/dan.png"} 
+                objectFit='cover'
+                className='rounded-lg'
+                alt='about banner'
+                width={40}
+                height={40}
+              />
+              <Image 
+                src={"/subapro.png"} 
+                objectFit='cover'
+                alt='about banner'
+                width={40}
+                height={40}
+                className="bg-white rounded-lg"
+              />
+        </div>
         <div className="text-center mb-16">
+          
           <h2 className="text-4xl font-bold mb-4">Explore the Southern Maldives</h2>
           <p className="text-xl max-w-3xl mx-auto text-gray-300">
             Discover the pristine atolls and unique diving experiences of the southern Maldives, where untouched reefs

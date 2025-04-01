@@ -25,7 +25,7 @@ function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://www.facebook.com/share/19xrPbFbDc/?mibextid=wwXIfr"
+                href="https://www.facebook.com/share/1YqGj4zrdT/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition-all duration-300"
@@ -34,7 +34,7 @@ function Footer() {
                 <FaFacebook className="text-white" />
               </a>
               <a
-                href="https://www.instagram.com/cruiserepublicmv?igsh=YnI1YzZjazR1N3Jr&utm_source=qr"
+                href="https://www.instagram.com/cruiserepublicmv?igsh=MTBvNDYzdnF4YWt0NQ=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition-all duration-300"
