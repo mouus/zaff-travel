@@ -137,7 +137,7 @@ export default function BookingPage() {
 
       <main className="flex-grow">
         {/* Header Section */}
-        <section className="py-16 px-6 bg-black text-white text-center">
+        <section className="py-20 px-6  bg-black text-white text-center">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Book Your Maldives Adventure</h1>
             <p className="text-lg md:text-xl max-w-3xl mx-auto">
@@ -631,3 +631,4 @@ export default function BookingPage() {
   )
 }
 
+  

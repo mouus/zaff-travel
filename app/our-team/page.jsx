@@ -133,7 +133,7 @@ export default function TeamPage() {
     },
     {
       id: "crew4",
-      name: "Ibrahim",
+      name: "Dummy Crew ",
       role: "Dive Master",
       image: "/placeholder.svg?height=180&width=180",
       bio: "With over 5,000 dives in the Maldives, Ibrahim knows every reef and channel in the southern atolls. His calm demeanor and expert knowledge make him an exceptional guide for divers of all experience levels.",
