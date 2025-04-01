@@ -160,7 +160,6 @@ export default function DiveGearPage() {
       perDay: true,
       includes: ["Mask", "Snorkel", "Fins", "Wetsuit"],
       ideal: "Perfect for snorkeling and casual diving",
-      image: "/basic-package.jpg",
     },
     {
       id: "standard",
@@ -169,7 +168,6 @@ export default function DiveGearPage() {
       perDay: true,
       includes: ["Mask", "Snorkel", "Fins", "Wetsuit", "BCD", "Regulator", "11L Tank"],
       ideal: "Ideal for recreational divers",
-      image: "/standard-package.jpg",
       popular: true,
     },
     {
@@ -179,7 +177,6 @@ export default function DiveGearPage() {
       perDay: true,
       includes: ["Mask", "Snorkel", "Fins", "Wetsuit", "BCD", "Regulator", "15L Tank", "Dive Computer", "Torch"],
       ideal: "Complete setup for serious divers",
-      image: "/premium-package.jpg",
     },
   ]
 
@@ -252,7 +249,7 @@ export default function DiveGearPage() {
                     </div>
                   )}
 
-                  <div className="relative aspect-[4/3] mb-6 overflow-hidden">
+                  {/* <div className="relative aspect-[4/3] mb-6 overflow-hidden">
                     <Image
                       src={pkg.image || "/placeholder.svg?height=300&width=400"}
                       alt={pkg.name}
@@ -260,7 +257,7 @@ export default function DiveGearPage() {
                       objectFit="cover"
                       className="transition-transform duration-500 hover:scale-105"
                     />
-                  </div>
+                  </div> */}
 
                   <h3 className="text-2xl font-bold mb-2">{pkg.name}</h3>
                   <div className="flex items-baseline mb-4">
@@ -327,7 +324,7 @@ export default function DiveGearPage() {
                   key={item.id}
                   className="border border-black group cursor-pointer transition-all duration-300 hover:shadow-lg"
                 >
-                  <div className="relative aspect-square overflow-hidden">
+                  {/* <div className="relative aspect-square overflow-hidden">
                     <Image
                       src={item.image || `/placeholder.svg?height=400&width=400`}
                       alt={item.name}
@@ -335,7 +332,7 @@ export default function DiveGearPage() {
                       objectFit="cover"
                       className="transition-transform duration-500 group-hover:scale-105"
                     />
-                  </div>
+                  </div> */}
 
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-2">{item.name}</h3>
@@ -463,7 +460,12 @@ export default function DiveGearPage() {
               personalized recommendations or to check equipment availability.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="bg-white text-black hover:bg-gray-200 px-8 py-3 transition-colors">
+              <Link 
+                     href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@cruiserepublicmaldives.com&su=Interested%20in%20a%20cruise&body=Hello%20Team,"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                    className="bg-white text-black hover:bg-gray-200 px-8 py-3 transition-colors"
+              >
                 Contact Us
               </Link>
               <a

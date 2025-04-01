@@ -73,7 +73,7 @@ export default function Home() {
     { src: "boat.JPG", caption: "Our Luxury Vessel" },
     { src: "room.JPG", caption: "Comfortable Accommodations" },
     { src: "coco2.JPG", caption: "Pristine Beaches" },
-    { src: "coco.jpg", caption: "Island Paradise" },
+    { src: "img1.jpg", caption: "Island Paradise" },
     { src: "women.JPG", caption: "Local Culture" },
     { src: "set.JPG", caption: "Sunset Views" },
     { src: "img-1.JPG", caption: "Underwater Exploration" },

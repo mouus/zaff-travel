@@ -543,7 +543,7 @@ export default function CruisePage() {
                   className="bg-gray-50 p-10 border border-gray-200"
                 >
                   <div className="flex flex-col md:flex-row gap-8 items-center">
-                    <div className="md:w-1/3">
+                    {/* <div className="md:w-1/3">
                       <div className="relative w-40 h-40 rounded-full overflow-hidden mx-auto">
                         <Image
                           src={testimonials[activeTestimonial].image || "/placeholder.svg?height=160&width=160"}
@@ -553,7 +553,7 @@ export default function CruisePage() {
                         />
                         <div className="absolute inset-0 border border-black pointer-events-none rounded-full"></div>
                       </div>
-                    </div>
+                    </div> */}
                     
                     <div className="md:w-2/3 text-center md:text-left">
                       <FaQuoteRight className="text-gray-300 text-4xl mb-4 mx-auto md:mx-0" />

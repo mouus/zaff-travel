@@ -237,8 +237,8 @@ export default function DiveItinerariesPage() {
             <button
               onClick={() => setActiveTab("5-day")}
               className={`px-8 py-4 text-lg font-medium mx-2 mb-2 transition-colors ${activeTab === "5-day"
-                  ? "bg-white text-black"
-                  : "bg-transparent text-white border border-white hover:bg-white/10"
+                ? "bg-white text-black"
+                : "bg-transparent text-white border border-white hover:bg-white/10"
                 }`}
             >
               5-Day Itinerary
@@ -246,8 +246,8 @@ export default function DiveItinerariesPage() {
             <button
               onClick={() => setActiveTab("7-day")}
               className={`px-8 py-4 text-lg font-medium mx-2 mb-2 transition-colors ${activeTab === "7-day"
-                  ? "bg-white text-black"
-                  : "bg-transparent text-white border border-white hover:bg-white/10"
+                ? "bg-white text-black"
+                : "bg-transparent text-white border border-white hover:bg-white/10"
                 }`}
             >
               7-Day Itinerary
@@ -255,8 +255,8 @@ export default function DiveItinerariesPage() {
             <button
               onClick={() => setActiveTab("10-day")}
               className={`px-8 py-4 text-lg font-medium mx-2 mb-2 transition-colors ${activeTab === "10-day"
-                  ? "bg-white text-black"
-                  : "bg-transparent text-white border border-white hover:bg-white/10"
+                ? "bg-white text-black"
+                : "bg-transparent text-white border border-white hover:bg-white/10"
                 }`}
             >
               10-Day Itinerary
@@ -687,7 +687,9 @@ export default function DiveItinerariesPage() {
                 CONTACT US ON WHATSAPP
               </a>
               <a
-                href="mailto:info@example.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@cruiserepublicmaldives.com&su=Interested%20in%20a%20cruise&body=Hello%20Team,"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block border-2 border-white text-white hover:bg-white/10 px-10 py-4 font-medium text-lg transition-colors"
               >
                 EMAIL US

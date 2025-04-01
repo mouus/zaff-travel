@@ -38,21 +38,19 @@ export default function AboutPage() {
         "Our experience with Cruise Republic was nothing short of magical. The team's knowledge of the Maldives and their passion for marine life made our diving adventure unforgettable.",
       author: "Sarah & Michael",
       location: "United Kingdom",
-      image: "/testimonial-1.jpg",
+
     },
     {
       quote:
         "As avid divers, we've explored many destinations, but Cruise Republic's expertise and personalized service in the Maldives was exceptional. We saw tiger sharks, manta rays, and so much more!",
       author: "David & Emma",
       location: "Australia",
-      image: "/testimonial-2.jpg",
     },
     {
       quote:
         "The crew's knowledge of local marine ecosystems and their commitment to sustainable tourism practices made our trip both educational and environmentally responsible.",
       author: "Thomas & Lisa",
       location: "Germany",
-      image: "/testimonial-3.jpg",
     },
   ]
 
@@ -63,28 +61,28 @@ export default function AboutPage() {
       title: "The Discovery",
       description:
         "Abdulla Zafar Ali had his first scuba diving experience in Fuvahmulah, discovering the island's potential as a diving destination despite having no dive centers at the time.",
-      image: "/timeline-1.jpg",
+      image: "/insta1.jpg",
     },
     {
       year: "2015",
       title: "Tiger Shark Revelation",
       description:
         "Zafar made the groundbreaking discovery of tiger sharks near Fuvahmulah's harbor, beginning the island's transformation into a world-class diving destination.",
-      image: "/timeline-2.jpg",
+      image: "/img2.jpg",
     },
     {
       year: "2018",
       title: "Cruise Republic Founded",
       description:
         "With a vision to share the wonders of the Maldives' southern atolls, Cruise Republic was established to provide authentic and sustainable marine adventures.",
-      image: "/timeline-3.jpg",
+      image: "/img-2.jpg",
     },
     {
       year: "2020",
       title: "Expanding Horizons",
       description:
         "Despite global challenges, Cruise Republic expanded its offerings to include specialized expeditions to Huvadhoo and Addu atolls, showcasing the diverse marine ecosystems of the southern Maldives.",
-      image: "/timeline-4.jpg",
+      image: "/img1.jpg",
     },
     {
       year: "Present",
@@ -164,7 +162,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="aspect-[4/3] relative overflow-hidden">
                   <Image
-                    src="/about-story.jpg"
+                    src="/logo.jpg"
                     alt="Our Story"
                     layout="fill"
                     objectFit="cover"
@@ -191,9 +189,8 @@ export default function AboutPage() {
                 {timeline.map((item, index) => (
                   <div
                     key={index}
-                    className={`mb-16 md:mb-0 transition-opacity duration-500 ${
-                      activeTimelineItem === index ? "opacity-100" : "opacity-0 absolute"
-                    }`}
+                    className={`mb-16 md:mb-0 transition-opacity duration-500 ${activeTimelineItem === index ? "opacity-100" : "opacity-0 absolute"
+                      }`}
                     style={{ display: activeTimelineItem === index ? "block" : "none" }}
                   >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -239,9 +236,8 @@ export default function AboutPage() {
                     <button
                       key={index}
                       onClick={() => setActiveTimelineItem(index)}
-                      className={`w-3 h-3 rounded-full transition-colors ${
-                        activeTimelineItem === index ? "bg-white" : "bg-white/30 hover:bg-white/50"
-                      }`}
+                      className={`w-3 h-3 rounded-full transition-colors ${activeTimelineItem === index ? "bg-white" : "bg-white/30 hover:bg-white/50"
+                        }`}
                       aria-label={`Go to timeline item ${index + 1}`}
                     />
                   ))}
@@ -360,24 +356,12 @@ export default function AboutPage() {
               {testimonials.map((testimonial, index) => (
                 <div
                   key={index}
-                  className={`transition-opacity duration-500 ${
-                    activeTestimonial === index ? "opacity-100" : "opacity-0 absolute"
-                  }`}
+                  className={`transition-opacity duration-500 ${activeTestimonial === index ? "opacity-100" : "opacity-0 absolute"
+                    }`}
                   style={{ display: activeTestimonial === index ? "block" : "none" }}
                 >
                   <div className="flex flex-col md:flex-row gap-8 items-center">
-                    <div className="md:w-1/3">
-                      <div className="relative aspect-square overflow-hidden">
-                        <Image
-                          src={testimonial.image || "/placeholder.svg?height=400&width=400"}
-                          alt={testimonial.author}
-                          layout="fill"
-                          objectFit="cover"
-                          className="transition-transform duration-700 hover:scale-105"
-                        />
-                        <div className="absolute inset-0 border border-white pointer-events-none"></div>
-                      </div>
-                    </div>
+                
 
                     <div className="md:w-2/3">
                       <FaQuoteLeft size={40} className="text-white/30 mb-6" />
@@ -406,9 +390,8 @@ export default function AboutPage() {
                     <button
                       key={index}
                       onClick={() => setActiveTestimonial(index)}
-                      className={`w-3 h-3 rounded-full transition-colors ${
-                        activeTestimonial === index ? "bg-white" : "bg-white/30 hover:bg-white/50"
-                      }`}
+                      className={`w-3 h-3 rounded-full transition-colors ${activeTestimonial === index ? "bg-white" : "bg-white/30 hover:bg-white/50"
+                        }`}
                       aria-label={`Go to testimonial ${index + 1}`}
                     />
                   ))}
@@ -439,7 +422,9 @@ export default function AboutPage() {
                 Explore Our Cruises
               </Link>
               <Link
-                href="mailto:sales@cruiserepublicmaldives.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@cruiserepublicmaldives.com&su=Interested%20in%20a%20cruise&body=Hello%20Team,"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-transparent text-black border border-black hover:bg-black/5 px-8 py-3 transition-colors"
               >
                 Contact Us

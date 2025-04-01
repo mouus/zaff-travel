@@ -210,7 +210,7 @@ export default function BookingPage() {
                       }`}
                       onClick={() => setSelectedPackage(pkg.id)}
                     >
-                      <div className="relative aspect-[4/3] mb-4 overflow-hidden">
+                      {/* <div className="relative aspect-[4/3] mb-4 overflow-hidden">
                         <Image
                           src={pkg.image || "/placeholder.svg?height=300&width=400"}
                           alt={pkg.name}
@@ -218,7 +218,7 @@ export default function BookingPage() {
                           objectFit="cover"
                           className="transition-transform duration-500 hover:scale-105"
                         />
-                      </div>
+                      </div> */}
 
                       <h3 className="text-xl font-bold mb-2">{pkg.name}</h3>
                       <p className="text-sm text-gray-600 mb-4">{pkg.description}</p>

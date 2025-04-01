@@ -37,7 +37,7 @@ export default function TeamPage() {
       title: "Scuba Diving & Shark Expeditions",
       description:
         "Our team of highly trained dive professionals offers world-class diving experiences in the southern atolls of the Maldives. We specialize in tiger shark encounters in Fuvahmulah, manta ray expeditions in Huvadhoo, and wreck diving in Addu Atoll.",
-      image: "/diving-expertise.jpg",
+      image: "/img2.jpg",
       stats: [
         { value: "1000+", label: "Dives Conducted" },
         { value: "25+", label: "Years Experience" },
@@ -48,7 +48,7 @@ export default function TeamPage() {
       title: "Island-Hopping & Private Charters",
       description:
         "Our experienced crew navigates the stunning waters of the Maldives, taking you to pristine sandbanks, remote islands, and vibrant snorkeling sites. We customize each journey to create the perfect balance of adventure and relaxation.",
-      image: "/charter-expertise.jpg",
+      image: "/boat-people.jpg",
       stats: [
         { value: "50+", label: "Islands Explored" },
         { value: "200+", label: "Private Charters" },
@@ -59,7 +59,7 @@ export default function TeamPage() {
       title: "Sunset Cruises & Exclusive Experiences",
       description:
         "Our hospitality team ensures a relaxing, enjoyable experience with cocktails, music, and breathtaking ocean views. From romantic sunset cruises to private beach dinners, we create unforgettable moments in paradise.",
-      image: "/sunset-expertise.jpg",
+      image: "/boat-sunset.jpg",
       stats: [
         { value: "365", label: "Days of Sunshine" },
         { value: "∞", label: "Perfect Sunsets" },
@@ -148,7 +148,7 @@ export default function TeamPage() {
 
       {/* Hero Section */}
       <section className="relative h-[60vh] bg-black">
-        
+
         <div className="relative h-full flex items-center justify-center text-center z-10">
           <div className="max-w-4xl px-6">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">Meet Our Team</h1>
@@ -193,11 +193,10 @@ export default function TeamPage() {
                 <button
                   key={key}
                   onClick={() => setActiveExpertise(key)}
-                  className={`px-6 py-3 text-lg font-medium mx-2 mb-2 transition-colors ${
-                    activeExpertise === key
+                  className={`px-6 py-3 text-lg font-medium mx-2 mb-2 transition-colors ${activeExpertise === key
                       ? "bg-white text-black"
                       : "bg-transparent text-white border border-white hover:bg-white/10"
-                  }`}
+                    }`}
                 >
                   {value.title}
                 </button>
@@ -353,7 +352,9 @@ export default function TeamPage() {
 
             <div className="mt-12">
               <Link
-                href="/contact"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@cruiserepublicmaldives.com&su=Interested%20in%20a%20cruise&body=Hello%20Team,"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block bg-white text-black px-8 py-3 hover:bg-gray-200 transition-colors"
               >
                 Connect With Our Team
