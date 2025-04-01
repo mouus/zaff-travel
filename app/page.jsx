@@ -383,12 +383,12 @@ export default function Home() {
               Huvadhoo Atoll.
             </p>
             <div className="mt-auto">
-              <Link
+              {/* <Link
                 href="/dive-itineraries/huvadhoo"
                 className="inline-flex items-center text-white hover:text-gray-300 transition-colors"
               >
                 Explore Huvadhoo <FaArrowRight className="ml-2" />
-              </Link>
+              </Link> */}
             </div>
           </div>
 
@@ -402,12 +402,12 @@ export default function Home() {
               blue waters of Fuvahmulah.
             </p>
             <div className="mt-auto">
-              <Link
+              {/* <Link
                 href="/dive-itineraries/fuvahmulah"
                 className="inline-flex items-center text-white hover:text-gray-300 transition-colors"
               >
                 Explore Fuvahmulah <FaArrowRight className="ml-2" />
-              </Link>
+              </Link> */}
             </div>
           </div>
 
@@ -421,12 +421,12 @@ export default function Home() {
               sharks, and colorful coral formations.
             </p>
             <div className="mt-auto">
-              <Link
+              {/* <Link
                 href="/dive-itineraries/addu"
                 className="inline-flex items-center text-white hover:text-gray-300 transition-colors"
               >
                 Explore Addu <FaArrowRight className="ml-2" />
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
