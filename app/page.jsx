@@ -542,7 +542,7 @@ export default function Home() {
 
             <div className="mt-16 text-center">
               <Link
-                href="/gallery"
+                href="https://www.instagram.com/cruiserepublicmv?igsh=MTBvNDYzdnF4YWt0NQ=="
                 className="inline-block border-2 border-white px-8 py-3 hover:bg-white hover:text-black transition-all duration-300"
               >
                 View Full Gallery
