@@ -89,7 +89,7 @@ export default function AboutPage() {
       title: "Leading the Way",
       description:
         "Today, Cruise Republic stands as a premier provider of diving and cruising experiences in the Maldives, committed to conservation and creating unforgettable adventures.",
-      image: "/timeline-5.JPG",
+      image: "/lead.JPG",
     },
   ]
 
