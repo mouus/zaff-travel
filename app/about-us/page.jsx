@@ -75,7 +75,7 @@ export default function AboutPage() {
       title: "Cruise Republic Founded",
       description:
         "With a vision to share the wonders of the Maldives' southern atolls, Cruise Republic was established to provide authentic and sustainable marine adventures.",
-      image: "/img-2.jpg",
+      image: "/img-2.JPG",
     },
     {
       year: "2020",
@@ -89,7 +89,7 @@ export default function AboutPage() {
       title: "Leading the Way",
       description:
         "Today, Cruise Republic stands as a premier provider of diving and cruising experiences in the Maldives, committed to conservation and creating unforgettable adventures.",
-      image: "/timeline-5.jpg",
+      image: "/timeline-5.JPG",
     },
   ]
 
