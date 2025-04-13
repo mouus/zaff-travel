@@ -131,14 +131,6 @@ export default function TeamPage() {
       bio: "An experienced food and beverage professional with a background in five-star resorts, Rafhan brings refined hospitality skills to our team. His attention to detail and guest-focused service ensure a premium onboard experience.",
       expertise: "Food & Beverage, Guest Service, Hospitality",
     },
-    {
-      id: "crew4",
-      name: "Dummy Crew ",
-      role: "Dive Master",
-      image: "/placeholder.svg?height=180&width=180",
-      bio: "With over 5,000 dives in the Maldives, Ibrahim knows every reef and channel in the southern atolls. His calm demeanor and expert knowledge make him an exceptional guide for divers of all experience levels.",
-      expertise: "Marine Life Identification, Dive Safety, Underwater Photography",
-    },
   ]
 
   return (
